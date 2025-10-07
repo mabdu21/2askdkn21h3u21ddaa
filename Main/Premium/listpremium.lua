@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | V734.999999928
+-- DYHUB-PREMIUM.lua | V734.999999929
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -264,6 +264,12 @@ return {
         Day = 14,
         Key = "DYHUB-K7TG3-KEY14DAY"
     },
+    ["Bellx_qr"] = {
+        Tag = "xpez_",
+        Time = nil,
+        Day = 3,
+        Key = "DYHUB-L7KM5-KEY3DAY"
+    },
     
     -- ====================== Booster ==============================
     ["gugageme_brs"] = {
@@ -304,17 +310,24 @@ return {
         Day = 7,
         Key = "DYHUB-P8KA1-G5T1A-KEY7DAY"
     },
+    ["Solvrynnn2"] = {
+        Tag = "solvrynnn",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-K8MA3-H7NA4-KEY14DAY"
+    },
+    
     -- ====================== RAID =============================
     ["UltraSelis"] = {
         Tag = "elpepesissjs",
         Time = nil,
         Day = 3,
-        Key = "DYHUB-RAID01-KEY3DAY" -- giveaway 
+        Key = "DYHUB-RAID01-KEY3DAY"
     },
     ["madara_uchiha00912"] = {
         Tag = "i_amsylus",
         Time = nil,
         Day = 3,
-        Key = "DYHUB-RAID02-KEY3DAY" -- giveaway 
+        Key = "DYHUB-RAID02-KEY3DAY"
     },
 }
