@@ -1,4 +1,4 @@
--- ======================= V5147 ==============================
+-- ======================= V5149 ==============================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 -- =================== Loader Script ==========================
 
@@ -245,7 +245,7 @@ local allowedGamesforPremiumByCreatorId = {
     [35815907] = {name = "Steal A Brainrot", url = "https://api.luarmor.net/files/v3/loaders/53325754de16c11fbf8bf78101c1c881.lua"},
     [3104358] = {name = "Brookhaven RP", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BrookHaven.lua"},
     [7513662] = {name = "KAT X", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/kat.lua"},
-    [7381705] = {name = "Fisch", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fisch/Fisch.lua"},
+    [7381705] = {name = "Fisch", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/FischV2/Fisch.lua"},
     [4217910] = {name = "Tower of Hell", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Towerofhell.lua"},
     [36015593] = {name = "Hunty Zombie", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/hztest.lua"},
     [15491373] = {name = "Container RNG", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Container%20RNG.lua"},
@@ -285,7 +285,7 @@ local AllowGameforPremiumByPlaceId = {
     ["2788229376"] = {name = "Da Hood", url = "https://raw.githubusercontent.com/faisal222212/zeraya-stuff/refs/heads/main/zerayagui.lua"},
     ["136372246050123"] = {name = "Stick Battles", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/main/STICKBATTLE.lua"},
     ["89744231770777"] = {name = "Dead Spells", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/DS.lua"},
-    ["142823291"] = {name = "Murder Mystery 2", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mm2dyhubv22.lua"},
+    ["142823291"] = {name = "Murder Mystery 2", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mm2dyhub2.lua"},
     ["95702387256198"] = {name = "Steal a Car", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SAC.lua"},
     ["11276071411"] = {name = "Be NPC or DIE", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BeNpcOrDie.lua"},
     ["126244816328678"] = {name = "DIG", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Dig.lua"},
