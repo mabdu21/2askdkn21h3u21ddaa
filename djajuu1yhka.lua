@@ -1,4 +1,4 @@
--- ======================= V5150 ==============================
+-- ======================= V5151 ==============================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 -- =================== Loader Script ==========================
 
@@ -160,7 +160,7 @@ end
 -- ===================== Load Premium Users from URL ==========================
 
 local success, premiumUsers = pcall(function()
-    local code = game:HttpGet("https://raw.githubusercontent.com/dyumra/Whitelist/refs/heads/main/DYHUB-PREMIUM.lua")
+    local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua")
     local func = loadstring(code)
     return func and func() or {}
 end)
