@@ -8,9 +8,9 @@ end
 if not getgenv().LoaderV2 then return end
 
 local success, buyerList = pcall(function()
-    local code = game:HttpGet("https://raw.githubusercontent.com/dyumra/Whitelist/refs/heads/main/DYHUB-PREMIUM.lua")
+    local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua")
     local func = loadstring(code)
-    return func and func() or error("Failed to parse Buyer list")
+    return func and func() or error("Failed to parse Buyer")
 end)
 
 if not success or type(buyerList) ~= "table" or not next(buyerList) then
@@ -96,4 +96,4 @@ end
 getgenv().UserTag = buyerData.Tag
 getgenv().ExpireTime = timeValue or dayValue
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/dyumra/Webhook/refs/heads/main/Premium-Version.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Webhook/Premium-Version.lua"))()
