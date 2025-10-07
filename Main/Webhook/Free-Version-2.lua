@@ -82,7 +82,7 @@ local requestFunction = (syn and syn.request) or http_request or (http and http.
 
 local function loadNextScript()
     task.wait(0.1)
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/dyumra/LOADER-V2/refs/heads/main/DYHUB-982-321-712'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/djajuu1yhka.lua'))()
 end
 
 local success, response = pcall(function()
