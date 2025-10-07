@@ -264,7 +264,7 @@ return {
         Day = 14,
         Key = "DYHUB-K7TG3-KEY14DAY"
     },
-    ["Bellx_qr"] = {
+    ["aku4su"] = {
         Tag = "xpez_",
         Time = nil,
         Day = 3,
