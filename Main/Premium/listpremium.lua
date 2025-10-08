@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | V734.99999998882
+-- DYHUB-PREMIUM.lua | V734.99999998883
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -248,6 +248,12 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-D5GA3-X3DQ2-N7B4A-L9MY5-V6BR3-LIFETIME"
+    },
+    ["klnd40glsd60"] = {
+        Tag = "ekngchaa555555",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-JMY7B-BP5VA-KA7NQ-CH4CP-BX4FQ-LIFETIME"
     },
     
     -- ===================== YOUTUBE =============================
