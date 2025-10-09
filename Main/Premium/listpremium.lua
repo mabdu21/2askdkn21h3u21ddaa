@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | V734.99999998884
+-- DYHUB-PREMIUM.lua | V734.99999998897
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -316,6 +316,12 @@ return {
         Time = nil,
         Day = 7,
         Key = "DYHUB-VA4QS-KEY7DAY"
+    },
+    ["ayfernaz79"] = {
+        Tag = "axumpcions",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-F5NA7-KEY7DAY"
     },
     ["rshyamqdsy90"] = {
         Tag = "oldsasuke.",
