@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 699
+-- DYHUB-PREMIUM.lua | 681
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -261,6 +261,12 @@ return {
         Day = nil,
         Key = "DYHUB-KAH6F-MU7A1-L91AD-BG3H9-P9CA3-LIFETIME"
     },
+    ["Zeyss404"] = {
+        Tag = "itsme_joo",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-P9CA3-LAJ29-EQ4TS-BA7NQ-OAI8F-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -271,12 +277,6 @@ return {
     },
     
     -- ====================== Buyer ==============================
-    ["Zeyss404"] = {
-        Tag = "itsme_joo",
-        Time = nil,
-        Day = 24,
-        Key = "DYHUB-XQJ29-F4A3Q-K8JA6-7BR85-KEY24DAY"
-    },
     ["ChanomAroiMakMak"] = {
         Tag = "piekai0424",
         Time = nil,
