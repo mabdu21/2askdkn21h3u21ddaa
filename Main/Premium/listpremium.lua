@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 689
+-- DYHUB-PREMIUM.lua | 686
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -288,6 +288,12 @@ return {
         Time = nil,
         Day = 14,
         Key = "DYHUB-K7TG3-KEY14DAY"
+    },
+    ["acengsniper"] = {
+        Tag = "manskiw",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-M6BA3-KEY14DAY"
     },
     
     -- ====================== Booster ==============================
