@@ -1,4 +1,4 @@
--- ======================= V5151 ==============================
+-- ======================= V5152 ==============================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 -- =================== Loader Script ==========================
 
@@ -237,6 +237,7 @@ local allowedGamesforPremiumByCreatorId = {
     [3049798] = {name = "Doors", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/door.lua"},
     [4372130] = {name = "Blox Fruits", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/bfv2.lua"},
     [5292947] = {name = "ASTD X", url = "https://raw.githubusercontent.com/bunnnwee/JimiHub/refs/heads/main/ASTDX-Normal"},
+    [13104578] = {name = "Z Piece", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Apakmaakpiece"},
     [5205652] = {name = "SPECTER", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SpecterV2/specter.lua"},
     [9950771] = {name = "Slap Battles", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/slap-battle.lua"},
     [35568770] = {name = "Fight Anime Bosses", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/anime-boss-raid.lua"},
