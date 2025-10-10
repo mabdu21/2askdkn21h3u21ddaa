@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | V734.99999998897
+-- DYHUB-PREMIUM.lua | 617
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -296,6 +296,12 @@ return {
         Time = nil,
         Day = 5,
         Key = "DYHUB-F4Q2I-KEYBOOSTER"
+    },
+    ["luau_aa"] = {
+        Tag = "zen_starfish_79989",
+        Time = nil,
+        Day = 3,
+        Key = "DYHUB-NH5V3-KEYBOOSTER"
     },
 
     -- ====================== Giveaway =============================
