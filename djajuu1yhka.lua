@@ -1,4 +1,4 @@
--- ======================= V5153 ==============================
+-- ======================= V5154 ==============================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 -- =================== Loader Script ==========================
 
@@ -272,7 +272,8 @@ local AllowGameforPremiumByPlaceId = {
     ["3101667897"] = {name = "Legends Of Speed", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/LOS.lua"},
     ["105141077088559"] = {name = "Anime RaiIs in-Game", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/ARAW.lua"},
     ["72992062125248"] = {name = "Hunters", url = "https://raw.githubusercontent.com/LawrenceLud/Templo/refs/heads/main/TemploLoader.lua"},
-    ["15060257865"] = {name = "Z Piece", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Apakmaakpiece"},
+    ["15060257865"] = {name = "Z Piece (Server: 1)", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Apakmaakpiece"},
+    ["96968864216949"] = {name = "Z Piece (Server: 2)", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Apakmaakpiece"},
     ["133781619558477"] = {name = "Steal a K-Pop Demon Hunter", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Sakph.lua"},
     ["10260193230"] = {name = "Meme Sea", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/MemeSea.lua"},
     ["88728793053496"] = {name = "Build A Car", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BaC.lua"},
