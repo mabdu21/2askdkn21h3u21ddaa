@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 681
+-- DYHUB-PREMIUM.lua | 689
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -267,6 +267,12 @@ return {
         Day = nil,
         Key = "DYHUB-P9CA3-LAJ29-EQ4TS-BA7NQ-OAI8F-LIFETIME"
     },
+    ["aku4su"] = {
+        Tag = "xpez_",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-N7MI4-VA4CQ-M7NA4-L9MA4-C4DQ3-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -282,12 +288,6 @@ return {
         Time = nil,
         Day = 14,
         Key = "DYHUB-K7TG3-KEY14DAY"
-    },
-    ["aku4su"] = {
-        Tag = "xpez_",
-        Time = nil,
-        Day = 3,
-        Key = "DYHUB-L7KM5-KEY3DAY"
     },
     
     -- ====================== Booster ==============================
