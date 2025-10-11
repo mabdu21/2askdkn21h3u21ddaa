@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 686
+-- DYHUB-PREMIUM.lua | 689
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -272,6 +272,12 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-N7MI4-VA4CQ-M7NA4-L9MA4-C4DQ3-LIFETIME"
+    },
+    ["frizette91"] = {
+        Tag = "egorov_zhenya",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-P1V3-BAX5T-NA7QE-MAK7Q-BCVS7-LIFETIME"
     },
     
     -- ===================== YOUTUBE =============================
