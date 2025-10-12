@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 689
+-- DYHUB-PREMIUM.lua | 670
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -278,6 +278,18 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-P1V3-BAX5T-NA7QE-MAK7Q-BCVS7-LIFETIME"
+    },
+    ["SumbuI03"] = {
+        Tag = "kingdhoo",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-BA6GQ-JA5VQ-BA7HQ-KA9Q2-BA5VQ-LIFETIME"
+    },
+    ["Minirval"] = {
+        Tag = "kama.z",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-XRA3Q-BA6G1-GS6B7-ML8OQ5-CA3Q8-LIFETIME"
     },
     
     -- ===================== YOUTUBE =============================
