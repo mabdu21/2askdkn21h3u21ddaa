@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 670
+-- DYHUB-PREMIUM.lua | 671
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -290,6 +290,12 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-XRA3Q-BA6G1-GS6B7-ML8OQ5-CA3Q8-LIFETIME"
+    },
+    ["N008p"] = {
+        Tag = "theonlybeamer",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-QA9X2-TM6F4-RL8C3-NZ1Y7-LIFETIME"
     },
     
     -- ===================== YOUTUBE =============================
