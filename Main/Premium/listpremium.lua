@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 674
+-- DYHUB-PREMIUM.lua | 675
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -332,6 +332,12 @@ return {
         Time = nil,
         Day = 14,
         Key = "DYHUB-P9QUA-DRE5R-T4UA8-O7ETA-R5Q0W-KEYBOOSTER"
+    },
+    ["thehyxon"] = {
+        Tag = "h1nrq",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-K8MA7-JA7BQ-KEYBOOSTER"
     },
     ["gugageme_brs"] = {
         Tag = "piadocas2020",
