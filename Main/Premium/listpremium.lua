@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 673
+-- DYHUB-PREMIUM.lua | 674
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -365,11 +365,17 @@ return {
         Day = 7,
         Key = "DYHUB-VA4QS-KEY7DAY"
     },
-    ["ayfernaz79"] = {
-        Tag = "axumpcions",
+    ["theapexx4"] = {
+        Tag = "frist2550",
         Time = nil,
         Day = 7,
-        Key = "DYHUB-F5NA7-KEY7DAY"
+        Key = "DYHUB-VA4QS-KEY7DAY"
+    },
+    ["KajeBerkshire"] = {
+        Tag = "yourmysteryy",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-M7NA4-KEY7DAY"
     },
     ["rshyamqdsy90"] = {
         Tag = "oldsasuke.",
