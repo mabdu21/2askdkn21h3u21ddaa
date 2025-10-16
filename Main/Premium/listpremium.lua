@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 675
+-- DYHUB-PREMIUM.lua | 676
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -303,6 +303,12 @@ return {
         Day = nil,
         Key = "DYHUB-VG5G2-NAY6G-F4CQ5-UQ8N6-LIFETIME"
     },
+    ["thehyxon"] = {
+        Tag = "h1nrq",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-M8KA9-FA4CQ-JA7NQ-N7BA5-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -332,12 +338,6 @@ return {
         Time = nil,
         Day = 14,
         Key = "DYHUB-P9QUA-DRE5R-T4UA8-O7ETA-R5Q0W-KEYBOOSTER"
-    },
-    ["thehyxon"] = {
-        Tag = "h1nrq",
-        Time = nil,
-        Day = 14,
-        Key = "DYHUB-K8MA7-JA7BQ-KEYBOOSTER"
     },
     ["gugageme_brs"] = {
         Tag = "piadocas2020",
