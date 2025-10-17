@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 676
+-- DYHUB-PREMIUM.lua | 677
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -316,6 +316,12 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-SINISTER"
+    },
+    ["Briwbou"] = {
+        Tag = "kumi5002",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-Holiger"
     },
     
     -- ====================== Buyer ==============================
