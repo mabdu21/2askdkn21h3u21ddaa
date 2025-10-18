@@ -210,8 +210,8 @@ local function createKeyGui(onCorrectKey)
 		title2.TextScaled = true
 
 		local title67 = Instance.new("TextLabel", frame2)
-		title67.Size = UDim2.new(1,0,0,10)
-		title67.Position = UDim2.new(0,0,0,25)
+		title67.Size = UDim2.new(1,0,0,20)
+		title67.Position = UDim2.new(0,0,0,60)
 		title67.BackgroundTransparency = 1
 		title67.Text = "Get Access Key from Discord"
 		title67.TextColor3 = Color3.fromRGB(180, 180, 180)
