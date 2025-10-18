@@ -1,3 +1,4 @@
+-- V6
 return {
     FreeVersion = {
         allowedGamesByCreatorId = {
@@ -18,7 +19,7 @@ return {
             ["6677985923"] = {name = "Millionaire Empire Tycoon", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/MET.lua"},
             ["3571215756"] = {name = "House Tycoon", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/HT.lua"},
             ["126803389599637"] = {name = "Anime Tower Piece", url = "https://raw.githubusercontent.com/dyumra/Dupe-Anime-Rails/refs/heads/main/ATP.lua"},
-            ["286090429"] = {name = "Arsenal", url = "https://pastebin.com/raw/NeCbQB58"},
+            ["286090429"] = {name = "Arsenal", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Main-Script.lua"},
             ["15694107053"] = {name = "Jujutsu Legacy", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/jjlv2.lua"},
             ["103661214879860"] = {name = "ABILITIES TOWER", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/AssT.lua"},
             ["89343390950953"] = {name = "My Singing Brainrot [DYHUB X TORA]", url = "https://raw.githubusercontent.com/gumanba/Scripts/main/MySingingBrainrot"},
@@ -114,7 +115,7 @@ return {
             ["2788229376"] = {name = "Da Hood", url = "https://raw.githubusercontent.com/faisal222212/zeraya-stuff/refs/heads/main/zerayagui.lua"},
             ["136372246050123"] = {name = "Stick Battles", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/main/STICKBATTLE.lua"},
             ["89744231770777"] = {name = "Dead Spells", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/DS.lua"},
-            ["142823291"] = {name = "Murder Mystery 2", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mm2dyhub2.lua"},
+            ["142823291"] = {name = "Murder Mystery 2", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mm2dyhubvw2.lua"},
             ["95702387256198"] = {name = "Steal a Car", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SAC.lua"},
             ["11276071411"] = {name = "Be NPC or DIE", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BeNpcOrDie.lua"},
             ["126244816328678"] = {name = "DIG", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Dig.lua"},
