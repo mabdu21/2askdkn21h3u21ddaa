@@ -1,6 +1,6 @@
 -- =========================================================
--- 💎 DYHUB UNIVERSAL LOADER | V6 Updated GUI
--- Author: dyumra (GUI Style Update by ChatGPT)
+-- DYHUB LOADER | V6 
+-- Author: dyumra
 -- =========================================================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 
@@ -21,7 +21,7 @@ end
 
 --// Blur Screen Effect
 local blur = Instance.new("BlurEffect", Lighting)
-blur.Size = 20
+blur.Size = 15
 
 --// Key System
 local VALID_KEY = "reyosgnik"
@@ -55,105 +55,125 @@ local function createKeyGui(onCorrectKey)
 
 	keyGui.Destroying:Connect(function() blur:Destroy() end)
 
-	-- Background Image
-	local bgImage = Instance.new("ImageLabel", keyGui)
-	bgImage.Size = UDim2.new(1, 0, 1, 0)
-	bgImage.BackgroundTransparency = 1
-	bgImage.Image = "rbxassetid://104487529937663"
-	bgImage.ImageTransparency = 0.5
-	bgImage.ZIndex = 1000
+	local bg = Instance.new("Frame", keyGui)
+	bg.Size = UDim2.new(1, 0, 1, 0)
+	bg.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+	bg.BackgroundTransparency = 0.7
+	bg.ZIndex = 1000
 
 	local frame = Instance.new("Frame", keyGui)
-	frame.Size = UDim2.new(0, 400, 0, 260)
-	frame.Position = UDim2.new(0.5, -200, 0.5, -130)
-	frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	frame.BorderSizePixel = 0
+	frame.Size = UDim2.new(0, 350, 0, 210)
+	frame.Position = UDim2.new(0.5, -175, 0.5, -105)
+	frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 	frame.ZIndex = 1001
-	Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 25)
+	Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 20)
 
-	-- Header
-	local header = Instance.new("Frame", frame)
-	header.Size = UDim2.new(1, 0, 0, 60)
-	header.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-	header.BorderSizePixel = 0
-	header.ZIndex = 1002
-	Instance.new("UICorner", header).CornerRadius = UDim.new(0, 25)
-
-	local title = Instance.new("TextLabel", header)
-	title.Size = UDim2.new(1, -20, 1, -10)
-	title.Position = UDim2.new(0, 10, 0, 5)
+	local title = Instance.new("TextLabel", frame)
+	title.Size = UDim2.new(1, 0, 0, 25)
+	title.Position = UDim2.new(0, 0, 0, 25)
 	title.BackgroundTransparency = 1
-	title.Text = "🔐 DYHUB Access Key"
+	title.Text = "Access Key Required"
 	title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	title.Font = Enum.Font.GothamBold
 	title.TextScaled = true
-	title.ZIndex = 1003
+	title.ZIndex = 1002
 
-	-- Subtitle
 	local subtitle = Instance.new("TextLabel", frame)
 	subtitle.Size = UDim2.new(1, -40, 0, 30)
-	subtitle.Position = UDim2.new(0, 20, 0, 70)
+	subtitle.Position = UDim2.new(0, 20, 0, 50)
 	subtitle.BackgroundTransparency = 1
-	subtitle.Text = "Enter your key to continue"
-	subtitle.TextColor3 = Color3.fromRGB(200, 200, 200)
+	subtitle.Text = "Enter your access key below to continue"
+	subtitle.TextColor3 = Color3.fromRGB(180, 180, 180)
 	subtitle.Font = Enum.Font.Gotham
-	subtitle.TextSize = 18
+	subtitle.TextSize = 16
 	subtitle.ZIndex = 1002
 
-	-- KeyBox
 	local keyBox = Instance.new("TextBox", frame)
-	keyBox.Size = UDim2.new(1, -40, 0, 45)
-	keyBox.Position = UDim2.new(0, 20, 0, 110)
+	keyBox.Size = UDim2.new(1, -40, 0, 40)
+	keyBox.Position = UDim2.new(0, 20, 0, 80)
 	keyBox.PlaceholderText = "Enter key here..."
-	keyBox.BackgroundColor3 = Color3.fromRGB(80, 80, 80)
+	keyBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 	keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	keyBox.Font = Enum.Font.GothamSemibold
-	keyBox.TextSize = 22
+	keyBox.TextSize = 20
 	keyBox.ClearTextOnFocus = false
 	keyBox.ZIndex = 1002
-	Instance.new("UICorner", keyBox).CornerRadius = UDim.new(0, 20)
+	Instance.new("UICorner", keyBox).CornerRadius = UDim.new(0, 15)
 
-	-- Submit Button
 	local submitBtn = Instance.new("TextButton", frame)
-	submitBtn.Size = UDim2.new(1, -40, 0, 45)
-	submitBtn.Position = UDim2.new(0, 20, 0, 165)
+	submitBtn.Size = UDim2.new(1, -40, 0, 40)
+	submitBtn.Position = UDim2.new(0, 20, 0, 122)
 	submitBtn.Text = "Submit"
 	submitBtn.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
 	submitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 	submitBtn.Font = Enum.Font.GothamBold
 	submitBtn.TextSize = 22
 	submitBtn.ZIndex = 1002
-	Instance.new("UICorner", submitBtn).CornerRadius = UDim.new(0, 20)
+	Instance.new("UICorner", submitBtn).CornerRadius = UDim.new(0, 15)
 
-	-- Get Key Button
 	local getKeyBtn = Instance.new("TextButton", frame)
-	getKeyBtn.Size = UDim2.new(1, -40, 0, 45)
-	getKeyBtn.Position = UDim2.new(0, 20, 0, 220)
+	getKeyBtn.Size = UDim2.new(1, -40, 0, 40)
+	getKeyBtn.Position = UDim2.new(0, 20, 0, 165)
 	getKeyBtn.Text = "Get Key in Discord"
 	getKeyBtn.BackgroundColor3 = Color3.fromRGB(70, 130, 255)
 	getKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 	getKeyBtn.Font = Enum.Font.GothamBold
 	getKeyBtn.TextSize = 18
 	getKeyBtn.ZIndex = 1002
-	Instance.new("UICorner", getKeyBtn).CornerRadius = UDim.new(0, 20)
+	Instance.new("UICorner", getKeyBtn).CornerRadius = UDim.new(0, 15)
 
-	-- Button Events
 	submitBtn.MouseButton1Click:Connect(function()
 		clickTween(submitBtn)
 		local enteredKey = keyBox.Text:lower():gsub("%s+", "")
 		if enteredKey == VALID_KEY:lower() then
 			notify("✅ Correct Key! Loading...")
-			task.wait(1)
-			notify("🔑 Access Granted! Free Version | DYHUB")
+
+			local guiTween = TweenService:Create(frame, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 0, 0, 0),
+				Position = UDim2.new(0.5, 0, 0.5, 0),
+				BackgroundTransparency = 1
+			})
+			guiTween:Play()
+			guiTween.Completed:Wait()
+
 			keyGui:Destroy()
 			blur:Destroy()
+			notify("🔑 Access Granted! Free Version | DYHUB")
+
+			local imageGui = Instance.new("ScreenGui")
+			imageGui.Name = "DYHUB_ImageEffect"
+			imageGui.ResetOnSpawn = false
+			imageGui.Parent = player:WaitForChild("PlayerGui")
+
+			local image = Instance.new("ImageLabel", imageGui)
+			image.Size = UDim2.new(0, 200, 0, 200)
+			image.Position = UDim2.new(0.5, -100, 0.5, -100)
+			image.BackgroundTransparency = 1
+			image.Image = "rbxassetid://104487529937663"
+			image.AnchorPoint = Vector2.new(0.5, 0.5)
+			image.ZIndex = 1000
+
+			local rotateTween = TweenService:Create(image, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 400, 0, 400),
+				Rotation = 360,
+				Position = UDim2.new(0.5, 0, 0.5, 0)
+			})
+			rotateTween:Play()
+			rotateTween.Completed:Wait()
+
+			local fadeTween = TweenService:Create(image, TweenInfo.new(0.5), {ImageTransparency = 1})
+			fadeTween:Play()
+			fadeTween.Completed:Wait()
+
+			imageGui:Destroy()
+
 			if onCorrectKey then onCorrectKey() end
 		else
 			notify("❌ Incorrect Key! Try again.")
 			local flash = TweenService:Create(keyBox, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(255,70,70)})
 			flash:Play()
 			flash.Completed:Wait()
-			TweenService:Create(keyBox, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(80,80,80)}):Play()
+			TweenService:Create(keyBox, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(70,70,70)}):Play()
 		end
 	end)
 
