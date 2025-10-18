@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V8 Full
+-- DYHUB LOADER | V9
 -- Author: dyumra
 -- =========================================================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
@@ -116,7 +116,7 @@ local function createKeyGui(onCorrectKey)
 	local getKeyBtn = Instance.new("TextButton", frame)
 	getKeyBtn.Size = UDim2.new(1, -40, 0, 40)
 	getKeyBtn.Position = UDim2.new(0, 20, 0, 165)
-	getKeyBtn.Text = "Get Key in Discord"
+	getKeyBtn.Text = "Get Key"
 	getKeyBtn.BackgroundColor3 = Color3.fromRGB(70, 130, 255)
 	getKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 	getKeyBtn.Font = Enum.Font.GothamBold
@@ -142,6 +142,34 @@ local function createKeyGui(onCorrectKey)
 			blur:Destroy()
 			notify("🔑 Access Granted! Free Version | DYHUB")
 
+			local imageGui = Instance.new("ScreenGui")
+			imageGui.Name = "DYHUB_ImageEffect"
+			imageGui.ResetOnSpawn = false
+			imageGui.Parent = player:WaitForChild("PlayerGui")
+
+			local image = Instance.new("ImageLabel", imageGui)
+			image.Size = UDim2.new(0, 200, 0, 200)
+			image.Position = UDim2.new(0.5, -100, 0.5, -100)
+			image.BackgroundTransparency = 1
+			image.Image = "rbxassetid://104487529937663"
+			image.AnchorPoint = Vector2.new(0.5, 0.5)
+			image.ZIndex = 1000
+			Instance.new("UICorner", image).CornerRadius = UDim.new(0, 15)
+
+			local rotateTween = TweenService:Create(image, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+				Size = UDim2.new(0, 400, 0, 400),
+				Rotation = 360,
+				Position = UDim2.new(0.5, 0, 0.5, 0)
+			})
+			rotateTween:Play()
+			rotateTween.Completed:Wait()
+
+			local fadeTween = TweenService:Create(image, TweenInfo.new(0.5), {ImageTransparency = 1})
+			fadeTween:Play()
+			fadeTween.Completed:Wait()
+
+			imageGui:Destroy()
+
 			if onCorrectKey then onCorrectKey() end
 		else
 			notify("❌ Incorrect Key! Try again.")
@@ -164,7 +192,7 @@ local function createKeyGui(onCorrectKey)
 		local bg2 = Instance.new("Frame", linkGui)
 		bg2.Size = UDim2.new(1,0,1,0)
 		bg2.BackgroundColor3 = Color3.fromRGB(20,20,20)
-		bg2.BackgroundTransparency = 0.7
+		bg2.BackgroundTransparency = 1
 
 		local frame2 = Instance.new("Frame", linkGui)
 		frame2.Size = UDim2.new(0,350,0,210)
@@ -174,12 +202,21 @@ local function createKeyGui(onCorrectKey)
 
 		local title2 = Instance.new("TextLabel", frame2)
 		title2.Size = UDim2.new(1,0,0,30)
-		title2.Position = UDim2.new(0,0,0,20)
+		title2.Position = UDim2.new(0,0,0,10)
 		title2.BackgroundTransparency = 1
 		title2.Text = "Choose Discord Link"
 		title2.TextColor3 = Color3.fromRGB(255,255,255)
 		title2.Font = Enum.Font.GothamBold
 		title2.TextScaled = true
+
+		local title67 = Instance.new("TextLabel", frame2)
+		title67.Size = UDim2.new(1,0,0,10)
+		title67.Position = UDim2.new(0,0,0,25)
+		title67.BackgroundTransparency = 1
+		title67.Text = "Get Access Key from Discord"
+		title67.TextColor3 = Color3.fromRGB(180, 180, 180)
+		title67.Font = Enum.Font.GothamBold
+		title67.TextScaled = true
 
 		local fullBtn = Instance.new("TextButton", frame2)
 		fullBtn.Size = UDim2.new(1, -40, 0, 40)
