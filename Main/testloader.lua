@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V7
+-- DYHUB LOADER | V8 Full
 -- Author: dyumra
 -- =========================================================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
@@ -47,9 +47,10 @@ local function clickTween(btn)
 	tween2:Play()
 end
 
+--// Function to create Key GUI
 local function createKeyGui(onCorrectKey)
 	local keyGui = Instance.new("ScreenGui")
-	keyGui.Name = "DYHUB | Key System"
+	keyGui.Name = "DYHUB | Access Key"
 	keyGui.ResetOnSpawn = false
 	keyGui.Parent = player:WaitForChild("PlayerGui")
 
@@ -141,34 +142,6 @@ local function createKeyGui(onCorrectKey)
 			blur:Destroy()
 			notify("🔑 Access Granted! Free Version | DYHUB")
 
-			local imageGui = Instance.new("ScreenGui")
-			imageGui.Name = "DYHUB_ImageEffect"
-			imageGui.ResetOnSpawn = false
-			imageGui.Parent = player:WaitForChild("PlayerGui")
-
-			local image = Instance.new("ImageLabel", imageGui)
-			image.Size = UDim2.new(0, 200, 0, 200)
-			image.Position = UDim2.new(0.5, -100, 0.5, -100)
-			image.BackgroundTransparency = 1
-			image.Image = "rbxassetid://104487529937663"
-			image.AnchorPoint = Vector2.new(0.5, 0.5)
-			image.ZIndex = 1000
-			Instance.new("UICorner", image).CornerRadius = UDim.new(0, 15)
-
-			local rotateTween = TweenService:Create(image, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-				Size = UDim2.new(0, 400, 0, 400),
-				Rotation = 360,
-				Position = UDim2.new(0.5, 0, 0.5, 0)
-			})
-			rotateTween:Play()
-			rotateTween.Completed:Wait()
-
-			local fadeTween = TweenService:Create(image, TweenInfo.new(0.5), {ImageTransparency = 1})
-			fadeTween:Play()
-			fadeTween.Completed:Wait()
-
-			imageGui:Destroy()
-
 			if onCorrectKey then onCorrectKey() end
 		else
 			notify("❌ Incorrect Key! Try again.")
@@ -181,10 +154,86 @@ local function createKeyGui(onCorrectKey)
 
 	getKeyBtn.MouseButton1Click:Connect(function()
 		clickTween(getKeyBtn)
-		pcall(function()
-			setclipboard("https://www.dsc.gg/dyhub")
+
+		local linkGui = Instance.new("ScreenGui")
+		linkGui.Name = "DYHUB | Link"
+		linkGui.ResetOnSpawn = false
+		linkGui.Parent = player:WaitForChild("PlayerGui")
+
+		-- Background
+		local bg2 = Instance.new("Frame", linkGui)
+		bg2.Size = UDim2.new(1,0,1,0)
+		bg2.BackgroundColor3 = Color3.fromRGB(20,20,20)
+		bg2.BackgroundTransparency = 0.7
+
+		local frame2 = Instance.new("Frame", linkGui)
+		frame2.Size = UDim2.new(0,350,0,210)
+		frame2.Position = UDim2.new(0.5,-175,0.5,-105)
+		frame2.BackgroundColor3 = Color3.fromRGB(40,40,40)
+		Instance.new("UICorner", frame2).CornerRadius = UDim.new(0,20)
+
+		local title2 = Instance.new("TextLabel", frame2)
+		title2.Size = UDim2.new(1,0,0,30)
+		title2.Position = UDim2.new(0,0,0,20)
+		title2.BackgroundTransparency = 1
+		title2.Text = "Choose Discord Link"
+		title2.TextColor3 = Color3.fromRGB(255,255,255)
+		title2.Font = Enum.Font.GothamBold
+		title2.TextScaled = true
+
+		local fullBtn = Instance.new("TextButton", frame2)
+		fullBtn.Size = UDim2.new(1, -40, 0, 40)
+		fullBtn.Position = UDim2.new(0, 20, 0, 70)
+		fullBtn.Text = "Link Discord [Full]"
+		fullBtn.BackgroundColor3 = Color3.fromRGB(70,130,255)
+		fullBtn.TextColor3 = Color3.fromRGB(255,255,255)
+		fullBtn.Font = Enum.Font.GothamBold
+		fullBtn.TextSize = 18
+		Instance.new("UICorner", fullBtn).CornerRadius = UDim.new(0,15)
+
+		local shortBtn = Instance.new("TextButton", frame2)
+		shortBtn.Size = UDim2.new(1, -40, 0, 40)
+		shortBtn.Position = UDim2.new(0, 20, 0, 120)
+		shortBtn.Text = "Link Discord [Short]"
+		shortBtn.BackgroundColor3 = Color3.fromRGB(70,130,255)
+		shortBtn.TextColor3 = Color3.fromRGB(255,255,255)
+		shortBtn.Font = Enum.Font.GothamBold
+		shortBtn.TextSize = 18
+		Instance.new("UICorner", shortBtn).CornerRadius = UDim.new(0,15)
+
+		local backBtn = Instance.new("TextButton", frame2)
+		backBtn.Size = UDim2.new(1, -40, 0, 40)
+		backBtn.Position = UDim2.new(0, 20, 0, 165)
+		backBtn.Text = "Back"
+		backBtn.BackgroundColor3 = Color3.fromRGB(255,85,85)
+		backBtn.TextColor3 = Color3.fromRGB(255,255,255)
+		backBtn.Font = Enum.Font.GothamBold
+		backBtn.TextSize = 18
+		Instance.new("UICorner", backBtn).CornerRadius = UDim.new(0,15)
+
+		-- Full Button Logic
+		fullBtn.MouseButton1Click:Connect(function()
+			clickTween(fullBtn)
+			pcall(function()
+				setclipboard("https://discord.com/invite/jWNDPNMmyB")
+			end)
+			notify("🔗 Full Discord Link copied to clipboard!")
 		end)
-		notify("🔗 Link copied to clipboard!")
+
+		-- Short Button Logic
+		shortBtn.MouseButton1Click:Connect(function()
+			clickTween(shortBtn)
+			pcall(function()
+				setclipboard("https://dsc.gg/dyhub")
+			end)
+			notify("🔗 Short Discord Link copied to clipboard!")
+		end)
+
+		-- Back Button Logic
+		backBtn.MouseButton1Click:Connect(function()
+			clickTween(backBtn)
+			linkGui:Destroy()
+		end)
 	end)
 
 	return keyGui
@@ -240,7 +289,7 @@ local gameData = freeGameData or premiumGameData
 if not gameData then
 	notify("❌ This script is not supported in this game!")
 	task.wait(4)
-	player:Kick("⚠️ Script not supported here.\nJoin Discord: " .. DYHUBTHEBEST)
+	player:Kick("⚠️ Script not supported here.\n📊 Please run the script in supported games.\nCheck in: " .. DYHUBTHEBEST)
 	return
 end
 
@@ -249,9 +298,9 @@ end
 -- =========================================================
 local playerPremium = premiumUsers[player.Name]
 if premiumGameData and not playerPremium then
-	notify("⛔ Premium only game!")
+	notify("⛔ You must be Premium to use this script in this game!")
 	task.wait(4)
-	player:Kick("💳 Get Premium to play this script!\nJoin Discord: " .. DYHUBTHEBEST)
+	player:Kick("⛔ Premium only game!\n📊 Get premium to run this script here.\n💳 Buy Premium: " .. DYHUBTHEBEST)
 	return
 end
 
