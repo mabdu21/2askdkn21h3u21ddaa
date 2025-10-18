@@ -92,6 +92,7 @@ local function createKeyGui(onCorrectKey)
 	keyBox.Size = UDim2.new(1, -40, 0, 40)
 	keyBox.Position = UDim2.new(0, 20, 0, 80)
 	keyBox.PlaceholderText = "Enter key here..."
+	keyBox.Text = ""
 	keyBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
 	keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 	keyBox.Font = Enum.Font.GothamSemibold
@@ -152,6 +153,7 @@ local function createKeyGui(onCorrectKey)
 			image.Image = "rbxassetid://104487529937663"
 			image.AnchorPoint = Vector2.new(0.5, 0.5)
 			image.ZIndex = 1000
+			Instance.new("UICorner", image).CornerRadius = UDim.new(0, 15)
 
 			local rotateTween = TweenService:Create(image, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 				Size = UDim2.new(0, 400, 0, 400),
