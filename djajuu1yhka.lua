@@ -182,7 +182,7 @@ local FreeVersionallowedGamesByCreatorId = {
     [35888785] = {name = "Prospecting", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Prospecting.lua"},
     [35786254] = {name = "Mines", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mine.lua"},
     [35815576] = {name = "Schedule 🥔", url = "https://pastebin.com/raw/gCSmFnbb"},
-    [34761390] = {name = "Protect The House From Monsters", url = "https://pastebin.com/raw/1f844Hbr"}, 
+    [34761390] = {name = "Protect The House From Monsters", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/protect.lua"}, 
     [8818124] = {name = "Violence District", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/ITHINKIKNOWBCURCracker.lua"},
     [6022628] = {name = "ST : Blockade Battlefront", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/STBBV2/test.lua"},
     [12398672] = {name = "Ink Game", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/inkgame.lua"},
