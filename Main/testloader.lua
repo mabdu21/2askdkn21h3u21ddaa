@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V9.5
+-- DYHUB LOADER | V9.8
 -- Author: dyumra
 -- =========================================================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
@@ -71,7 +71,7 @@ local function createKeyGui(onCorrectKey)
 
 	local title = Instance.new("TextLabel", frame)
 	title.Size = UDim2.new(1, 0, 0, 25)
-	title.Position = UDim2.new(0, 0, 0, 25)
+	title.Position = UDim2.new(0, 0, 0, 20)
 	title.BackgroundTransparency = 1
 	title.Text = "Access Key Required"
 	title.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -81,7 +81,7 @@ local function createKeyGui(onCorrectKey)
 
 	local subtitle = Instance.new("TextLabel", frame)
 	subtitle.Size = UDim2.new(1, -40, 0, 30)
-	subtitle.Position = UDim2.new(0, 20, 0, 50)
+	subtitle.Position = UDim2.new(0, 20, 0, 45)
 	subtitle.BackgroundTransparency = 1
 	subtitle.Text = "Enter your access key below to continue"
 	subtitle.TextColor3 = Color3.fromRGB(180, 180, 180)
@@ -91,7 +91,7 @@ local function createKeyGui(onCorrectKey)
 
 	local keyBox = Instance.new("TextBox", frame)
 	keyBox.Size = UDim2.new(1, -40, 0, 40)
-	keyBox.Position = UDim2.new(0, 20, 0, 80)
+	keyBox.Position = UDim2.new(0, 20, 0, 75)
 	keyBox.PlaceholderText = "Enter key here..."
 	keyBox.Text = ""
 	keyBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
@@ -104,7 +104,7 @@ local function createKeyGui(onCorrectKey)
 
 	local submitBtn = Instance.new("TextButton", frame)
 	submitBtn.Size = UDim2.new(1, -40, 0, 40)
-	submitBtn.Position = UDim2.new(0, 20, 0, 122)
+	submitBtn.Position = UDim2.new(0, 20, 0, 120)
 	submitBtn.Text = "Submit"
 	submitBtn.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
 	submitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -143,7 +143,7 @@ local function createKeyGui(onCorrectKey)
 			notify("🔑 Access Granted! Free Version | DYHUB")
 
 			local imageGui = Instance.new("ScreenGui")
-			imageGui.Name = "DYHUB_ImageEffect"
+			imageGui.Name = "DYHUB | Icon"
 			imageGui.ResetOnSpawn = false
 			imageGui.Parent = player:WaitForChild("PlayerGui")
 
@@ -201,8 +201,8 @@ local function createKeyGui(onCorrectKey)
 		Instance.new("UICorner", frame2).CornerRadius = UDim.new(0,20)
 
 		local title2 = Instance.new("TextLabel", frame2)
-		title2.Size = UDim2.new(1,0,0,30)
-		title2.Position = UDim2.new(0,0,0,10)
+		title2.Size = UDim2.new(1,0,0,25)
+		title2.Position = UDim2.new(0,0,0,20)
 		title2.BackgroundTransparency = 1
 		title2.Text = "Choose Discord Link"
 		title2.TextColor3 = Color3.fromRGB(255,255,255)
@@ -210,13 +210,14 @@ local function createKeyGui(onCorrectKey)
 		title2.TextScaled = true
 
 		local title67 = Instance.new("TextLabel", frame2)
-		title67.Size = UDim2.new(1,0,0,20)
-		title67.Position = UDim2.new(0,0,0,60)
+		title67.Size = UDim2.new(1,0,0,8)
+		title67.Position = UDim2.new(0,0,0,52)
 		title67.BackgroundTransparency = 1
-		title67.Text = "Get Access Key from Discord"
+		title67.Text = "Get Access Key from Discord to unlock"
 		title67.TextColor3 = Color3.fromRGB(180, 180, 180)
 		title67.Font = Enum.Font.GothamBold
-		title67.TextScaled = true
+        title67.TextSize = 16
+	    title67.ZIndex = 1002
 
 		local fullBtn = Instance.new("TextButton", frame2)
 		fullBtn.Size = UDim2.new(1, -40, 0, 40)
@@ -230,7 +231,7 @@ local function createKeyGui(onCorrectKey)
 
 		local shortBtn = Instance.new("TextButton", frame2)
 		shortBtn.Size = UDim2.new(1, -40, 0, 40)
-		shortBtn.Position = UDim2.new(0, 20, 0, 120)
+		shortBtn.Position = UDim2.new(0, 20, 0, 118)
 		shortBtn.Text = "Link Discord [Short]"
 		shortBtn.BackgroundColor3 = Color3.fromRGB(70,130,255)
 		shortBtn.TextColor3 = Color3.fromRGB(255,255,255)
