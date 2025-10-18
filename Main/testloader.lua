@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V9
+-- DYHUB LOADER | V9.5
 -- Author: dyumra
 -- =========================================================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
@@ -120,7 +120,7 @@ local function createKeyGui(onCorrectKey)
 	getKeyBtn.BackgroundColor3 = Color3.fromRGB(70, 130, 255)
 	getKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 	getKeyBtn.Font = Enum.Font.GothamBold
-	getKeyBtn.TextSize = 18
+	getKeyBtn.TextSize = 23
 	getKeyBtn.ZIndex = 1002
 	Instance.new("UICorner", getKeyBtn).CornerRadius = UDim.new(0, 15)
 
