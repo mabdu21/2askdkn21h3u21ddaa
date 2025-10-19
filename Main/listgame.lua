@@ -1,4 +1,4 @@
--- V8
+-- V8.5
 return {
     FreeVersion = {
         allowedGamesByCreatorId = {
@@ -96,6 +96,7 @@ return {
         },
 
         allowedGamesByPlaceId = {
+            ["1537690962"] = {name = "Bee Swarm Simulator", url = "https://pastefy.app/ARSsnhVE/raw"},
             ["2413927524"] = {name = "The Rake REMASTERED", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Kuyyyyyhahah.lua"},
             ["110239180142623"] = {name = "Tsunami Escape", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/TE.lua"},
             ["3101667897"] = {name = "Legends Of Speed", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/LOS.lua"},
