@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 681
+-- DYHUB-PREMIUM.lua | 682
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -368,6 +368,12 @@ return {
         Time = nil,
         Day = 3,
         Key = "DYHUB-NH5V3-KEYBOOSTER"
+    },
+    ["Sazonhiatt26112"] = {
+        Tag = "basmysad",
+        Time = nil,
+        Day = 24,
+        Key = "DYHUB-MKA3Q-KEYBOOSTER"
     },
 
     -- ====================== Giveaway =============================
