@@ -1,4 +1,4 @@
--- V6
+-- V7
 return {
     FreeVersion = {
         allowedGamesByCreatorId = {
@@ -56,6 +56,7 @@ return {
 
     PremiumVersion = {
         allowedGamesByCreatorId = {
+            [16911831] = {name = "Guts & Blackpowder", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/GAB.lua"},
             [660479131] = {name = "Fish a Brainrot", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/FaB.lua"},  
             [36097751] = {name = "Steal A Fish", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Saf.lua"},  
             [11392290] = {name = "Cut Trees", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/CT.lua"},  
