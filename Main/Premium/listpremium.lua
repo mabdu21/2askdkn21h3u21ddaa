@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 685
+-- DYHUB-PREMIUM.lua | 687
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -73,7 +73,7 @@ return {
         Day = nil,
         Key = "DYHUB-hhhh-888"
     },
-    ["a2i_lowercaseispw"] = {
+    ["fivooooo"] = {
         Tag = "nano_1010.",
         Time = "Lifetime",
         Day = nil,
