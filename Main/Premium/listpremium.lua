@@ -31,11 +31,11 @@ return {
         Day = 8888888,
         Key = "DYHUB-KYN8S-SUPPORT"
     },
-    ["Fsaiohs"] = {
+    ["Z4xw9"] = {
         Tag = "oszq_",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "DYHUB-FSAIOHS-Y200"
+        Time = nil,
+        Day = 111,
+        Key = "DYHUB-nigga"
     },
     ["Go_Ertadx4"] = {
         Tag = "Free",
