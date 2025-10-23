@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 688
+-- DYHUB-PREMIUM.lua | 689
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -354,6 +354,12 @@ return {
         Time = nil,
         Day = 7,
         Key = "DYHUB-N7NA4-KEY7DAY"
+    },
+    ["KunzaThai"] = {
+        Tag = "tui1558",
+        Time = nil,
+        Day = 1,
+        Key = "DYHUB-DK8M5-KEY1DAY"
     },
     
     -- ====================== Booster ==============================
