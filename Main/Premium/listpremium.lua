@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 689
+-- DYHUB-PREMIUM.lua | 690
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -321,6 +321,12 @@ return {
         Day = nil,
         Key = "DYHUB-M7NA5-FA4CQ-JA7NQ-N7BA5-LIFETIME"
     },
+    ["KunzaThai"] = {
+        Tag = "tui1558",
+        Time = nil,
+        Day = 1,
+        Key = "DYHUB-FA4CQ-JA7NQ-N7BA5-DK8M5-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -354,12 +360,6 @@ return {
         Time = nil,
         Day = 7,
         Key = "DYHUB-N7NA4-KEY7DAY"
-    },
-    ["KunzaThai"] = {
-        Tag = "tui1558",
-        Time = nil,
-        Day = 1,
-        Key = "DYHUB-DK8M5-KEY1DAY"
     },
     
     -- ====================== Booster ==============================
