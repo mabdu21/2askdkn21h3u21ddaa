@@ -89,7 +89,7 @@ return {
             [34873522] = {name = "Anime Eternal", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Anime-Eternal.lua"},
             [3385385] = {name = "Hypershot", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Hypershot.lua"},
             [2782840] = {name = "Build A Boat For Treasure", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BABFT"},
-            [35102746] = {name = "Fish It", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/FISHIT.lua"},
+            [35102746] = {name = "Fish It", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fishfishfishfuckingit.lua"},
             [35561581] = {name = "Protect the Stash", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/STS.lua"},
             [34223768] = {name = "Jump Stars", url = "https://raw.githubusercontent.com/Crazy0z/Crazy/refs/heads/main/JumpOnMyCockMobile.lua"},
             [5693735] = {name = "Evade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Evadedyhub.lua"},
