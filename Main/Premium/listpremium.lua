@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 693
+-- DYHUB-PREMIUM.lua | 694
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -448,6 +448,12 @@ return {
         Time = nil,
         Day = 38,
         Key = "DYHUB-A4CQ5-H7NA4-KEY38DAY"
+    },
+    ["kikoman714"] = {
+        Tag = "fanluser",
+        Time = nil,
+        Day = 38,
+        Key = "DYHUB-P9MA6-N6HQ5-KEY38DAY"
     },
     
     -- ====================== RAID =============================
