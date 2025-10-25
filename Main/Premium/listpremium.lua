@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 692
+-- DYHUB-PREMIUM.lua | 693
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -442,6 +442,12 @@ return {
         Time = nil,
         Day = 38,
         Key = "DYHUB-E4Q5W-H7NA4-KEY38DAY"
+    },
+    ["WindShootCSGO"] = {
+        Tag = "doquagningg",
+        Time = nil,
+        Day = 38,
+        Key = "DYHUB-A4CQ5-H7NA4-KEY38DAY"
     },
     
     -- ====================== RAID =============================
