@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 690
+-- DYHUB-PREMIUM.lua | 691
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -326,6 +326,12 @@ return {
         Time = nil,
         Day = 1,
         Key = "DYHUB-FA4CQ-JA7NQ-N7BA5-DK8M5-LIFETIME"
+    },
+    ["saitamasankundes"] = {
+        Tag = "kia1phmtidkii",
+        Time = nil,
+        Day = 1,
+        Key = "DYHUB-J7NA6-JA7NQ-N7BA5-DK8M5-LIFETIME"
     },
     
     -- ===================== YOUTUBE =============================
