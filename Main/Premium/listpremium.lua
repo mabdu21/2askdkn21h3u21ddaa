@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 691
+-- DYHUB-PREMIUM.lua | 692
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -436,6 +436,12 @@ return {
         Time = nil,
         Day = 14,
         Key = "DYHUB-K8MA3-H7NA4-KEY14DAY"
+    },
+    ["Pipahaha13"] = {
+        Tag = "electitous142",
+        Time = nil,
+        Day = 38,
+        Key = "DYHUB-E4Q5W-H7NA4-KEY38DAY"
     },
     
     -- ====================== RAID =============================
