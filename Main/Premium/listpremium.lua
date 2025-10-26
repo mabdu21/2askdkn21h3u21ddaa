@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 694
+-- DYHUB-PREMIUM.lua | 695
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -323,15 +323,21 @@ return {
     },
     ["KunzaThai"] = {
         Tag = "tui1558",
-        Time = nil,
-        Day = 1,
+        Time = "Lifetime",
+        Day = nil,
         Key = "DYHUB-FA4CQ-JA7NQ-N7BA5-DK8M5-LIFETIME"
     },
     ["saitamasankundes"] = {
         Tag = "kia1phmtidkii",
-        Time = nil,
-        Day = 1,
+        Time = "Lifetime",
+        Day = nil,
         Key = "DYHUB-J7NA6-JA7NQ-N7BA5-DK8M5-LIFETIME"
+    },
+    ["Xdarkmaster35"] = {
+        Tag = "unkn0wn_death",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-JA7A4-P9MA4-N7BA5-DK8M5-LIFETIME"
     },
     
     -- ===================== YOUTUBE =============================
