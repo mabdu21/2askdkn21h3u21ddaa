@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V9.8
+-- DYHUB LOADER | V9.9
 -- Author: dyumra
 -- =========================================================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
@@ -281,7 +281,7 @@ end
 -- 💾 Load Premium List
 -- =========================================================
 local success, premiumUsers = pcall(function()
-	local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua")
+	local code = game:HttpGet("https://pastefy.app/pDaWds2r/raw")
 	local func = loadstring(code)
 	return func and func() or {}
 end)
@@ -297,7 +297,7 @@ end
 -- 💾 Load Game List
 -- =========================================================
 local successGame, gameLists = pcall(function()
-	local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/listgame.lua")
+	local code = game:HttpGet("https://pastefy.app/IH7diT76/raw")
 	local func = loadstring(code)
 	return func and func() or {}
 end)
