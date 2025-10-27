@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V9.9
+-- DYHUB LOADER | V9.99
 -- Author: dyumra
 -- =========================================================
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
@@ -281,7 +281,7 @@ end
 -- 💾 Load Premium List
 -- =========================================================
 local success, premiumUsers = pcall(function()
-	local code = game:HttpGet("https://pastefy.app/pDaWds2r/raw")
+	local code = game:HttpGet("https://pastefy.app/YgXWjRMj/raw")
 	local func = loadstring(code)
 	return func and func() or {}
 end)
@@ -289,7 +289,7 @@ end)
 if not success then
 	notify("❌ Failed to load Premium list!")
 	task.wait(3)
-	player:Kick("⚠️ Could not load Premium data.\nContact: " .. DYHUBTHEBEST)
+	player:Kick("⚠️ Could not load Premium data.\n🔎 Change your executor to use this script.\nContact: " .. DYHUBTHEBEST)
 	return
 end
 
@@ -297,7 +297,7 @@ end
 -- 💾 Load Game List
 -- =========================================================
 local successGame, gameLists = pcall(function()
-	local code = game:HttpGet("https://pastefy.app/IH7diT76/raw")
+	local code = game:HttpGet("https://pastefy.app/MmaYrHC3/raw")
 	local func = loadstring(code)
 	return func and func() or {}
 end)
@@ -305,7 +305,7 @@ end)
 if not successGame or not gameLists then
 	notify("❌ Failed to load game list!")
 	task.wait(3)
-	player:Kick("⚠️ Could not load game data.\nContact: " .. DYHUBTHEBEST)
+	player:Kick("⚠️ Could not load game data.\n🔎 Change your executor to use this script.\nContact: " .. DYHUBTHEBEST)
 	return
 end
 
