@@ -2,7 +2,7 @@
 -- DYHUB LOADER | V9.99
 -- Author: dyumra
 -- =========================================================
-getgenv().owners = {"Yolmar_43", "55555555555555555455"}
+getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
 local prefix = "."
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
