@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V9.99
+-- DYHUB LOADER | V9.993
 -- Author: dyumra
 -- =========================================================
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
@@ -20,10 +20,8 @@ local function findPlayersByName(query)
     for _, p in ipairs(Players:GetPlayers()) do
         if query == "all" then
             table.insert(t, p)
-        else
-            if starts_with(p.Name, query) then
-                table.insert(t, p)
-            end
+        elseif starts_with(p.Name, query) then
+            table.insert(t, p)
         end
     end
     return t
@@ -38,19 +36,27 @@ local function isOwner(player)
     return false
 end
 
+local function startLoop(id, interval, fn)
+    if activeLoops[id] then return end
+    activeLoops[id] = true
+    spawn(function()
+        while activeLoops[id] do
+            pcall(fn)
+            task.wait(interval)
+        end
+    end)
+end
+
+local function stopLoop(id)
+    activeLoops[id] = nil
+end
+
+-- 🧠 Control Commands
 local function bring(ownerChar, targets)
     if not ownerChar or not ownerChar.PrimaryPart then return end
-    if targets == "all" then
-        for _, plr in ipairs(Players:GetPlayers()) do
-            if plr.Character and plr.Character.PrimaryPart and plr ~= ownerChar.Parent then
-                plr.Character:SetPrimaryPartCFrame(ownerChar.PrimaryPart.CFrame * CFrame.new(0,5,0))
-            end
-        end
-    else
-        for _, plr in ipairs(targets) do
-            if plr.Character and plr.Character.PrimaryPart then
-                plr.Character:SetPrimaryPartCFrame(ownerChar.PrimaryPart.CFrame * CFrame.new(0,5,0))
-            end
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            plr.Character:SetPrimaryPartCFrame(ownerChar.PrimaryPart.CFrame * CFrame.new(0, 5, 0))
         end
     end
 end
@@ -64,50 +70,25 @@ end
 local function freeze(targets)
     for _, plr in ipairs(targets) do
         if plr.Character and plr.Character.PrimaryPart then
-            local hrp = plr.Character.PrimaryPart
-            if not savedStates[plr.Name] then savedStates[plr.Name] = {} end
-            local s = savedStates[plr.Name]
-            if plr.Character:FindFirstChildOfClass("Humanoid") then
-                s.Humanoid = plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed
-                plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = 0
-                plr.Character:FindFirstChildOfClass("Humanoid").JumpPower = 0
+            local hum = plr.Character:FindFirstChildOfClass("Humanoid")
+            if hum then
+                hum.WalkSpeed = 0
+                hum.JumpPower = 0
             end
-            s.Anchored = hrp.Anchored
-            hrp.Anchored = true
+            plr.Character.PrimaryPart.Anchored = true
         end
     end
 end
 
 local function unfreeze(targets)
     for _, plr in ipairs(targets) do
-        if plr.Character and plr.Character.PrimaryPart and savedStates[plr.Name] then
-            local hrp = plr.Character.PrimaryPart
-            local s = savedStates[plr.Name]
-            if plr.Character:FindFirstChildOfClass("Humanoid") and s.Humanoid then
-                plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = s.Humanoid
-                plr.Character:FindFirstChildOfClass("Humanoid").JumpPower = 50
+        if plr.Character and plr.Character.PrimaryPart then
+            local hum = plr.Character:FindFirstChildOfClass("Humanoid")
+            if hum then
+                hum.WalkSpeed = 16
+                hum.JumpPower = 50
             end
-            if s.Anchored ~= nil then hrp.Anchored = s.Anchored end
-            savedStates[plr.Name] = nil
-        end
-    end
-end
-
-local function setSpeed(targets, val)
-    for _, plr in ipairs(targets) do
-        if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") then
-            if not savedStates[plr.Name] then savedStates[plr.Name] = {} end
-            savedStates[plr.Name].OldSpeed = plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed
-            plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = tonumber(val) or 16
-        end
-    end
-end
-
-local function restoreSpeed(targets)
-    for _, plr in ipairs(targets) do
-        if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") and savedStates[plr.Name] and savedStates[plr.Name].OldSpeed then
-            plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = savedStates[plr.Name].OldSpeed
-            savedStates[plr.Name].OldSpeed = nil
+            plr.Character.PrimaryPart.Anchored = false
         end
     end
 end
@@ -131,57 +112,239 @@ end
 local function void(targets)
     for _, plr in ipairs(targets) do
         if plr.Character and plr.Character.PrimaryPart then
-            plr.Character:SetPrimaryPartCFrame(CFrame.new(0,9999999,0))
+            plr.Character:SetPrimaryPartCFrame(CFrame.new(0, -999999, 0))
         end
     end
 end
 
-local function startLoop(id, interval, fn)
-    if activeLoops[id] then return end
-    activeLoops[id] = true
-    spawn(function()
-        while activeLoops[id] do
-            pcall(fn)
-            wait(interval)
+-- 💫 Fun Commands
+local function spin(targets, speed)
+    for _, plr in ipairs(targets) do
+        spawn(function()
+            while true do
+                if not plr.Character or not plr.Character.PrimaryPart then break end
+                plr.Character:SetPrimaryPartCFrame(plr.Character.PrimaryPart.CFrame * CFrame.Angles(0, math.rad(speed or 10), 0))
+                task.wait(0.05)
+            end
+        end)
+    end
+end
+
+local function floatPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            plr.Character.PrimaryPart.Anchored = true
+            plr.Character:SetPrimaryPartCFrame(plr.Character.PrimaryPart.CFrame + Vector3.new(0, 10, 0))
         end
-    end)
+    end
 end
 
-local function stopLoop(id)
-    activeLoops[id] = nil
+local function headBig(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            plr.Character.Head.Size = Vector3.new(8, 8, 8)
+        end
+    end
 end
 
+local function tinyPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, part in ipairs(plr.Character:GetChildren()) do
+                if part:IsA("BasePart") then
+                    part.Size = part.Size * 0.5
+                end
+            end
+        end
+    end
+end
+
+local function explodePlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local e = Instance.new("Explosion", workspace)
+            e.Position = plr.Character.PrimaryPart.Position
+            plr.Character:BreakJoints()
+        end
+    end
+end
+
+local function ghostPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, part in ipairs(plr.Character:GetChildren()) do
+                if part:IsA("BasePart") then
+                    part.Transparency = 0.5
+                end
+            end
+        end
+    end
+end
+
+local function flingPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local bodyVel = Instance.new("BodyAngularVelocity")
+            bodyVel.AngularVelocity = Vector3.new(0, 5000, 0)
+            bodyVel.MaxTorque = Vector3.new(1e5, 1e5, 1e5)
+            bodyVel.Parent = plr.Character.PrimaryPart
+            task.wait(3)
+            bodyVel:Destroy()
+        end
+    end
+end
+
+local function launchPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local bv = Instance.new("BodyVelocity")
+            bv.Velocity = Vector3.new(0, 200, 0)
+            bv.MaxForce = Vector3.new(1e5, 1e5, 1e5)
+            bv.Parent = plr.Character.PrimaryPart
+            task.wait(1)
+            bv:Destroy()
+        end
+    end
+end
+
+local function randomTeleport(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local x, y, z = math.random(-500, 500), 50, math.random(-500, 500)
+            plr.Character:SetPrimaryPartCFrame(CFrame.new(x, y, z))
+        end
+    end
+end
+
+local function spamEmoji(targets)
+    local emojis = {"😂", "🤣", "😎", "💀", "🔥", "💩", "🤡", "👻", "😈", "🦆"}
+    for _, plr in ipairs(targets) do
+        for i = 1, 10 do
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(emojis[math.random(1, #emojis)], "All")
+            task.wait(2)
+        end
+    end
+end
+
+local function spamdyhub(targets)
+    local dyhub = {"DYHUB ON TOP", "DYHUB THE BEST"}
+    for _, plr in ipairs(targets) do
+        for i = 1, 2 do
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(dyhub[math.random(1, #dyhub)], "All")
+            task.wait(5)
+        end
+    end
+end
+
+local function invertPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            plr.Character:SetPrimaryPartCFrame(plr.Character.PrimaryPart.CFrame * CFrame.Angles(math.rad(180), 0, 0))
+        end
+    end
+end
+
+local function invisiblePlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, part in ipairs(plr.Character:GetChildren()) do
+                if part:IsA("BasePart") then part.Transparency = 1 end
+            end
+        end
+    end
+end
+
+local function fireEffect(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local fire = Instance.new("Fire", plr.Character.PrimaryPart)
+            fire.Size = 20
+        end
+    end
+end
+
+local function iceEffect(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local particle = Instance.new("ParticleEmitter", plr.Character.PrimaryPart)
+            particle.Texture = "rbxassetid://241594186"
+            particle.Rate = 50
+            particle.Lifetime = NumberRange.new(1)
+            freeze({plr})
+        end
+    end
+end
+
+local function cloneArmy(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for i = 1, 10 do
+                local clone = plr.Character:Clone()
+                clone.Parent = workspace
+                clone:SetPrimaryPartCFrame(plr.Character.PrimaryPart.CFrame * CFrame.new(math.random(-5,5),0,math.random(-5,5)))
+            end
+        end
+    end
+end
+
+local function spinMyself(ownerChar, targets, speed)
+    if not ownerChar or not ownerChar.PrimaryPart then return end
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            freeze({plr})
+            spawn(function()
+                while plr.Character and plr.Character.PrimaryPart do
+                    local angle = tick() * (tonumber(speed) or 5)
+                    local radius = 10
+                    local newPos = ownerChar.PrimaryPart.Position + Vector3.new(math.cos(angle)*radius, 3, math.sin(angle)*radius)
+                    plr.Character:SetPrimaryPartCFrame(CFrame.new(newPos, ownerChar.PrimaryPart.Position))
+                    task.wait(0.03)
+                end
+            end)
+        end
+    end
+end
+
+-- ⚙️ Command Handler
 local function handleCommand(msg, player)
     if not isOwner(player) then return end
     local parts = string.split(msg, " ")
-    local cmd = string.lower(parts[1] or "")
-    local arg1 = parts[2]
-    local arg2 = parts[3]
+    local cmd, arg1, arg2 = string.lower(parts[1] or ""), parts[2], parts[3]
     local ownerChar = player.Character
     local targets = arg1 and findPlayersByName(arg1) or {}
 
-    if cmd == prefix.."bring" then
-        if arg1 == "all" then bring(ownerChar, "all") else bring(ownerChar, targets) end
-    elseif cmd == prefix.."kick" then
-        kick(targets, table.concat(parts, " ", 3))
+    if cmd == prefix.."bring" then bring(ownerChar, targets)
+    elseif cmd == prefix.."kick" then kick(targets)
     elseif cmd == prefix.."freeze" then freeze(targets)
     elseif cmd == prefix.."unfreeze" then unfreeze(targets)
-    elseif cmd == prefix.."speed" then if arg2 then setSpeed(targets, arg2) end
-    elseif cmd == prefix.."restorespeed" then restoreSpeed(targets)
     elseif cmd == prefix.."kill" then kill(targets)
     elseif cmd == prefix.."sit" then sit(targets)
     elseif cmd == prefix.."void" then void(targets)
-    elseif cmd == prefix.."loopbring" then if arg2 then startLoop("loopbring_"..arg1, tonumber(arg2) or 1, function() if ownerChar then bring(ownerChar, targets) end end) end
-    elseif cmd == prefix.."loopfreeze" then if arg2 then startLoop("loopfreeze_"..arg1, tonumber(arg2) or 1, function() freeze(targets) end) end
-    elseif cmd == prefix.."loopkill" then if arg2 then startLoop("loopkill_"..arg1, tonumber(arg2) or 1, function() kill(targets) end) end
-    elseif cmd == prefix.."loopsit" then if arg2 then startLoop("loopsit_"..arg1, tonumber(arg2) or 1, function() sit(targets) end) end
-    elseif cmd == prefix.."loopvoid" then if arg2 then startLoop("loopvoid_"..arg1, tonumber(arg2) or 1, function() void(targets) end) end
-    elseif cmd == prefix.."stoploop" then if arg1 then stopLoop(arg1) end
+    elseif cmd == prefix.."spin" then spin(targets, tonumber(arg2))
+    elseif cmd == prefix.."float" then floatPlayer(targets)
+    elseif cmd == prefix.."headbig" then headBig(targets)
+    elseif cmd == prefix.."tiny" then tinyPlayer(targets)
+    elseif cmd == prefix.."explode" then explodePlayer(targets)
+    elseif cmd == prefix.."ghost" then ghostPlayer(targets)
+    elseif cmd == prefix.."fling" then flingPlayer(targets)
+    elseif cmd == prefix.."launch" then launchPlayer(targets)
+    elseif cmd == prefix.."randomtp" then randomTeleport(targets)
+    elseif cmd == prefix.."spamemoji" then spamEmoji(targets)
+    elseif cmd == prefix.."spamchat" then spamdyhub(targets)
+    elseif cmd == prefix.."invert" then invertPlayer(targets)
+    elseif cmd == prefix.."invisible" then invisiblePlayer(targets)
+    elseif cmd == prefix.."fire" then fireEffect(targets)
+    elseif cmd == prefix.."ice" then iceEffect(targets)
+    elseif cmd == prefix.."clonearmy" then cloneArmy(targets)
+    elseif cmd == prefix.."spinmyself" then spinMyself(ownerChar, targets, tonumber(arg2))
     end
 end
 
+-- 🎧 Connect Chat Events
 local function onPlayerChat(p)
-    p.Chatted:Connect(function(msg) handleCommand(msg,p) end)
+    p.Chatted:Connect(function(msg)
+        handleCommand(msg, p)
+    end)
 end
 
 for _, p in ipairs(Players:GetPlayers()) do onPlayerChat(p) end
