@@ -385,11 +385,11 @@ return {
         Day = 14,
         Key = "DYHUB-M6BA3-KEY14DAY"
     },
-    ["yoiwantplaygame3"] = {
-        Tag = "notzzx_",
+    ["TTMEE11"] = {
+        Tag = "pineappl_e.",
         Time = nil,
-        Day = 7,
-        Key = "DYHUB-N7NA4-KEY7DAY"
+        Day = 2,
+        Key = "DYHUB-N7NA4-KEY2DAY"
     },
     
     -- ====================== Booster ==============================
