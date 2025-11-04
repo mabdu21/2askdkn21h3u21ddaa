@@ -1,9 +1,10 @@
 -- =========================================================
--- DYHUB LOADER | V9.993
+-- DYHUB LOADER | V9.993213
 -- Author: dyumra
 -- =========================================================
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
 local prefix = "."
+local cmdtest = "h"
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 
@@ -314,6 +315,7 @@ local function handleCommand(msg, player)
     local targets = arg1 and findPlayersByName(arg1) or {}
 
     if cmd == prefix.."bring" then bring(ownerChar, targets)
+	elseif cmd == cmdtest.."i" then bring(ownerChar, targets)
     elseif cmd == prefix.."kick" then kick(targets)
     elseif cmd == prefix.."freeze" then freeze(targets)
     elseif cmd == prefix.."unfreeze" then unfreeze(targets)
@@ -646,24 +648,140 @@ end
 -- =========================================================
 -- 💾 Load Game List
 -- =========================================================
-local successGame, gameLists = pcall(function()
-	local code = game:HttpGet("https://pastefy.app/MmaYrHC3/raw")
-	local func = loadstring(code)
-	return func and func() or {}
-end)
+local gameLists = {
+    FreeVersion = {
+        allowedGamesByCreatorId = {
+            [6556072] = {name = "A Universal Time", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/AUUUT.lua"},
+            [34869880] = {name = "Plants Vs Brainrots", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fuckyou.lua"},
+            [9482918] = {name = "The Mimic (DYHUB X RAELHUB)", url = "https://raw.githubusercontent.com/Laelmano24/Rael-Hub/refs/heads/main/main.txt"},
+            [6042520] = {name = "99 Nights in the Forest", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Gagga.lua"},
+            [12832037] = {name = "Baddies", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BBdie.lua"},
+            [35888785] = {name = "Prospecting", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Prospecting.lua"},
+            [35786254] = {name = "Mines", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mine.lua"},
+            [35815576] = {name = "Schedule 🥔", url = "https://pastebin.com/raw/gCSmFnbb"},
+            [34761390] = {name = "Protect The House From Monsters", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/protect.lua"}, 
+            [8818124] = {name = "Violence District", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/VIIIIIID.lua"},
+            [6022628] = {name = "ST : Blockade Battlefront", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/STBBV2/test.lua"},
+            [12398672] = {name = "Ink Game", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/inkgame.lua"},
+        },
 
-if not successGame or not gameLists then
-	notify("❌ Failed to load game list!")
-	task.wait(3)
-	player:Kick("⚠️ Could not load game data.\n🔎 Change your executor to use this script.\nContact: " .. DYHUBTHEBEST)
-	return
-end
+        allowedGamesByPlaceId = {
+            ["6677985923"] = {name = "Millionaire Empire Tycoon", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/MET.lua"},
+            ["3571215756"] = {name = "House Tycoon", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/HT.lua"},
+            ["126803389599637"] = {name = "Anime Tower Piece", url = "https://raw.githubusercontent.com/dyumra/Dupe-Anime-Rails/refs/heads/main/ATP.lua"},
+            ["286090429"] = {name = "Arsenal", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Main-Script.lua"},
+            ["15694107053"] = {name = "Jujutsu Legacy", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/jjlv2.lua"},
+            ["103661214879860"] = {name = "ABILITIES TOWER", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/AssT.lua"},
+            ["89343390950953"] = {name = "My Singing Brainrot [DYHUB X TORA]", url = "https://raw.githubusercontent.com/gumanba/Scripts/main/MySingingBrainrot"},
+            ["80932898798323"] = {name = "Cross Piece", url = "https://raw.githubusercontent.com/meobeo8/type/main/Loader"},
+            ["914010731"] = {name = "Ro-Ghoul", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Roghoul.lua"},
+            ["13618878564"] = {name = "Bloxel Gun", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BLOXEL.lua"},
+            ["221718525"] = {name = "Ninja Tycoon", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/NT.lua"},
+            ["74392180661358"] = {name = "Grow a Mine", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/GAM.lua"},
+            ["113809264674979"] = {name = "Steal a Sword", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SAS.lua"},
+            ["14940775218"] = {name = "No-Scope Arcade (2021)", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Camlock.lua"},
+            ["6407649031"] = {name = "No-Scope Arcade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Camlock.lua"},
+            ["8260276694"] = {name = "Ability Wars", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Ability-War.lua"},
+            ["3623096087"] = {name = "Muscle Legends", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Muscle%20Legends.lua"},
+            ["81968724698850"] = {name = "Loot Fish", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/LF.lua"},
+            ["134699215023675"] = {name = "Steal a Garden", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SAG.lua"},
+            ["86628581581863"] = {name = "Anime Rails", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/ARv2_fixed.lua"},
+            ["71575927487690"] = {name = "Build A Brainrot", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Build%20A%20Brainrot.lua"},
+            ["82593820387667"] = {name = "Arcade Store Simulator", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Ass.lua"},
+            ["73934517857372"] = {name = "+1 Speed Prison Escape", url = "https://pastebin.com/raw/KTCsyQSk"},
+            ["17126500142"] = {name = "Abyss Miner", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/AbssyMiner.lua"},
+            ["99013571721937"] = {name = "Aether Adventure", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/AeA.lua"},
+            ["139143597034555"] = {name = "+1 Speed Prison Escape [🦑]", url = "https://pastebin.com/raw/RKPm9zJB"},
+            ["119048529960596"] = {name = "Restaurant Tycoon 3", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/rt3.lua"},
+            ["124180759222403"] = {name = "Ants", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Ant"},
+            ["17357719939"] = {name = "Wizard West", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Wwv2.lua"},
+            ["116495829188952"] = {name = "Dead Rails", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Drlobby.lua"},
+            ["70876832253163"] = {name = "Dead Rails [In-game]", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/DRDYHUB.lua"},
+            ["136806264049477"] = {name = "Keys and Knives", url = "https://raw.githubusercontent.com/gumanba/Scripts/main/KeysandKnives"},
+            ["110931811137535"] = {name = "Feed a Brainrot", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/fyb.lua"},
+            ["137925884276740"] = {name = "Build A Plane", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/bap.lua"},
+            ["6407649031"] = {name = "No-Scope Arcade", url = "https://pastefy.app/IQHwChkh/raw"},
+            ["14940775218"] = {name = "No-Scope Arcade (2021)", url = "https://pastefy.app/IQHwChkh/raw"},        
+            ["70671905624144"] = {name = "Steal A Baddie", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SABaddie.lua"},
+        }
+    },
 
--- Assign data
-local FreeVersionallowedGamesByCreatorId = gameLists.FreeVersion and gameLists.FreeVersion.allowedGamesByCreatorId or {}
-local FreeVersionallowedGamesByPlaceId = gameLists.FreeVersion and gameLists.FreeVersion.allowedGamesByPlaceId or {}
-local allowedGamesforPremiumByCreatorId = gameLists.PremiumVersion and gameLists.PremiumVersion.allowedGamesByCreatorId or {}
-local AllowGameforPremiumByPlaceId = gameLists.PremiumVersion and gameLists.PremiumVersion.allowedGamesByPlaceId or {}
+    PremiumVersion = {
+        allowedGamesByCreatorId = { 
+            [16911831] = {name = "Guts & Blackpowder", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/GAB.lua"},
+            [660479131] = {name = "Fish a Brainrot", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/FaB.lua"},  
+            [36097751] = {name = "Steal A Fish", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Saf.lua"},  
+            [11392290] = {name = "Cut Trees", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/CT.lua"},  
+            [35595896] = {name = "Build ur Base", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Bub.lua"},
+            [36008925] = {name = "Build a Zoo", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Baz.lua"},
+            [3049798] = {name = "Doors", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/door.lua"},
+            [4372130] = {name = "Blox Fruits", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/bfv2.lua"},
+            [5292947] = {name = "ASTD X", url = "https://raw.githubusercontent.com/bunnnwee/JimiHub/refs/heads/main/ASTDX-Normal"},
+            [5205652] = {name = "SPECTER", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SpecterV2/specter.lua"},
+            [9950771] = {name = "Slap Battles", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/slap-battle.lua"},
+            [35568770] = {name = "Fight Anime Bosses", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/anime-boss-raid.lua"},
+            [2564897] = {name = "Dinosaur Simulator [Check]", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/dinosaursimulator.lua"},
+            [35873946] = {name = "Bomb A Friend", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BOMBAF.lua"},
+            [35815907] = {name = "Steal A Brainrot", url = "https://api.luarmor.net/files/v3/loaders/53325754de16c11fbf8bf78101c1c881.lua"},
+            [3104358] = {name = "Brookhaven RP", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BrookHaven.lua"},
+            [7513662] = {name = "KAT X", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Kidkatx.lua"},
+            [7381705] = {name = "Fisch", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/FischV2/Fisch.lua"},
+            [4217910] = {name = "Tower of Hell", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Towerofhell.lua"},
+            [36015593] = {name = "Hunty Zombie", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/hztest.lua"},
+            [15491373] = {name = "Container RNG", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Container%20RNG.lua"},
+            [14502869] = {name = "Kaizen Battlegrounds", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Kaizenb.lua"},
+            [33859442] = {name = "Anime Royale", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Aroyal.lua"},
+            [15009415] = {name = "Anime Ranger X", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/arx.lua"},
+            [35154829] = {name = "Anime Power", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/ap.lua"},
+            [35789249] = {name = "Grow a Garden", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/GAG.lua"},  
+            [3461453] = {name = "Rivals", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/RIVALS.lua"},
+            [278905007] = {name = "Build My Car", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BMC.lua"},
+            [34873522] = {name = "Anime Eternal", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Anime-Eternal.lua"},
+            [3385385] = {name = "Hypershot", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Hypershot.lua"},
+            [2782840] = {name = "Build A Boat For Treasure", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BABFT"},
+            [35102746] = {name = "Fish It", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fishfishfishfuckingit.lua"},
+            [35561581] = {name = "Protect the Stash", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/STS.lua"},
+            [34223768] = {name = "Jump Stars", url = "https://raw.githubusercontent.com/Crazy0z/Crazy/refs/heads/main/JumpOnMyCockMobile.lua"},
+            [5693735] = {name = "Evade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Evadedyhub.lua"},
+            [12013007] = {name = "The Strongest Battleground", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/TSB.lua"},
+            [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Bladeballdyhub.lua"},
+        },
+
+        allowedGamesByPlaceId = {
+            ["1537690962"] = {name = "Bee Swarm Simulator", url = "https://pastefy.app/ARSsnhVE/raw"},
+            ["2413927524"] = {name = "The Rake REMASTERED", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Kuyyyyyhahah.lua"},
+            ["110239180142623"] = {name = "Tsunami Escape", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/TE.lua"},
+            ["3101667897"] = {name = "Legends Of Speed", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/LOS.lua"},
+            ["105141077088559"] = {name = "Anime RaiIs in-Game", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/ARAW.lua"},
+            ["72992062125248"] = {name = "Hunters", url = "https://raw.githubusercontent.com/LawrenceLud/Templo/refs/heads/main/TemploLoader.lua"},
+            ["15060257865"] = {name = "Z Piece (Server: 1)", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Apakmaakpiece"},
+            ["96968864216949"] = {name = "Z Piece (Server: 2)", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Apakmaakpiece"},
+            ["133781619558477"] = {name = "Steal a K-Pop Demon Hunter", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Sakph.lua"},
+            ["10260193230"] = {name = "Meme Sea", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/MemeSea.lua"},
+            ["88728793053496"] = {name = "Build A Car", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BaC.lua"},
+            ["133487110685834"] = {name = "4KING CUTIE", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/4KING"},
+            ["104965156633249"] = {name = "Poop", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Poop"},
+            ["228181322"] = {name = "Dinosaur Simulator", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/dinosaursimulator.lua"},
+            ["18687417158"] = {name = "Forsaken", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fosaken.lua"},
+            ["87039211657390"] = {name = "Arise Crossover", url = "https://raw.githubusercontent.com/EtherbyteHub/MAIN/refs/heads/main/Dantes"},
+            ["93774312410805"] = {name = "Anime RNG TD", url = "https://raw.githubusercontent.com/dyumra/Dupe-Anime-Rails/refs/heads/main/ARTD.lua"},
+            ["6938803436"] = {name = "Anime Dimensions Simulator", url = "https://raw.githubusercontent.com/Yanwanlnwza/SmellLikeHacker/main/Animedimensions.lua"},
+            ["2788229376"] = {name = "Da Hood", url = "https://raw.githubusercontent.com/faisal222212/zeraya-stuff/refs/heads/main/zerayagui.lua"},
+            ["136372246050123"] = {name = "Stick Battles", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/main/STICKBATTLE.lua"},
+            ["89744231770777"] = {name = "Dead Spells", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/DS.lua"},
+            ["142823291"] = {name = "Murder Mystery 2", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mm2dyhubvw2.lua"},
+            ["95702387256198"] = {name = "Steal a Car", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SAC.lua"},
+            ["11276071411"] = {name = "Be NPC or DIE", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/BeNpcOrDie.lua"},
+            ["126244816328678"] = {name = "DIG", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Dig.lua"},
+            ["5991163185"] = {name = "Spray Print", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SP.lua"},
+        }
+    }
+}
+
+local FreeVersionallowedGamesByCreatorId = gameLists.FreeVersion.allowedGamesByCreatorId
+local FreeVersionallowedGamesByPlaceId = gameLists.FreeVersion.allowedGamesByPlaceId
+local allowedGamesforPremiumByCreatorId = gameLists.PremiumVersion.allowedGamesByCreatorId
+local AllowGameforPremiumByPlaceId = gameLists.PremiumVersion.allowedGamesByPlaceId
 
 -- =========================================================
 -- 🧩 Determine Game
@@ -676,8 +794,8 @@ local gameData = freeGameData or premiumGameData
 
 if not gameData then
 	notify("❌ This script is not supported in this game!")
-	task.wait(4)
-	player:Kick("⚠️ Script not supported here.\n📊 Please run the script in supported games.\nCheck in: " .. DYHUBTHEBEST)
+	task.wait(5)
+	print("⚠️ Script not supported here.\n📊 Please run the script in supported games.\nCheck in: " .. DYHUBTHEBEST)
 	return
 end
 
@@ -687,7 +805,7 @@ end
 local playerPremium = premiumUsers[player.Name]
 if premiumGameData and not playerPremium then
 	notify("⛔ You must be Premium to use this script in this game!")
-	task.wait(4)
+	task.wait(5)
 	player:Kick("⛔ Premium only game!\n📊 Get premium to run this script here.\n💳 Buy Premium: " .. DYHUBTHEBEST)
 	return
 end
