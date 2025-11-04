@@ -397,6 +397,12 @@ return {
         Day = 2,
         Key = "DYHUB-S5VQ7-KEY2DAY"
     },
+    ["Secanesseon69"] = {
+        Tag = "seca._",
+        Time = nil,
+        Day = 10,
+        Key = "DYHUB-YP4A3-KEY10DAY"
+    },
     
     -- ====================== Booster ==============================
     ["gugageme_brs"] = {
