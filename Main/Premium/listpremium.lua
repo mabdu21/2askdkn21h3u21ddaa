@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 647
+-- DYHUB-PREMIUM.lua | 648.3
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -357,6 +357,12 @@ return {
         Day = nil,
         Key = "DYHUB-P9KA6-E4VQ5-N7BA5-K5GA6-LIFETIME"
     },
+    ["TTMEE11"] = {
+        Tag = "pineappl_e.",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-U6QB8-E4VQ5-PA9K8-K5GA6-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -385,11 +391,11 @@ return {
         Day = 14,
         Key = "DYHUB-M6BA3-KEY14DAY"
     },
-    ["TTMEE11"] = {
-        Tag = "pineappl_e.",
+    ["oTANZOo"] = {
+        Tag = "imtanz",
         Time = nil,
         Day = 2,
-        Key = "DYHUB-N7NA4-KEY2DAY"
+        Key = "DYHUB-S5VQ7-KEY2DAY"
     },
     
     -- ====================== Booster ==============================
