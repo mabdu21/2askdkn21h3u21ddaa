@@ -431,11 +431,17 @@ return {
     },
 
     -- ====================== Giveaway =============================
+    ["killzxec"] = {
+        Tag = "merai191_dx",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-FT6UW-KEY7DAY" -- giveaway 
+    },
     ["Leyathepoly_tongan"] = {
         Tag = "tamilafr",
         Time = nil,
         Day = 7,
-        Key = "DYHUB-FT6UW-KEY7DAY" -- giveaway 
+        Key = "DYHUB-JAOQ6-KEY7DAY" -- giveaway 
     },
     ["DEADRAILSPLAYER543"] = {
         Tag = "sio04_4_98466",
