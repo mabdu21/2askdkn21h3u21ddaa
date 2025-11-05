@@ -431,8 +431,8 @@ return {
     },
 
     -- ====================== Giveaway =============================
-    ["killzxec"] = {
-        Tag = "merai191_dx",
+    ["Leyathepoly_tongan"] = {
+        Tag = "tamilafr",
         Time = nil,
         Day = 7,
         Key = "DYHUB-FT6UW-KEY7DAY" -- giveaway 
