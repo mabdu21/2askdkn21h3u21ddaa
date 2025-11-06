@@ -345,7 +345,7 @@ return {
         Day = nil,
         Key = "DYHUB-P9MA7-E4VQ5-N7BA5-DK8M5-LIFETIME"
     },
-    ["IssueSupported2"] = {
+    ["Max_Jrrrrrr"] = {
         Tag = "schedule2the",
         Time = "Lifetime",
         Day = nil,
