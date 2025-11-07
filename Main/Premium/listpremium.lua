@@ -403,6 +403,12 @@ return {
         Day = 10,
         Key = "DYHUB-YP4A3-KEY10DAY"
     },
+    ["Cavalry_OnTop1"] = {
+        Tag = "dev_999x",
+        Time = nil,
+        Day = 1,
+        Key = "DYHUB-JA7N5-KEY1DAY"
+    },
     
     -- ====================== Booster ==============================
     ["gugageme_brs"] = {
