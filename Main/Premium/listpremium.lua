@@ -363,6 +363,12 @@ return {
         Day = nil,
         Key = "DYHUB-U6QB8-E4VQ5-PA9K8-K5GA6-LIFETIME"
     },
+    ["BaconKing12912"] = {
+        Tag = "trollgespeices1_antifurry",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-U6QB8-E4VQ1-DA5BQ-K5GA6-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
