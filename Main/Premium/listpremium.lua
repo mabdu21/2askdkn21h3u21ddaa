@@ -447,6 +447,12 @@ return {
         Day = 24,
         Key = "DYHUB-MKA3Q-KEYBOOSTER"
     },
+    ["Alexd100bru"] = {
+        Tag = "olivia_not_fors.",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-L9MA6-KEYBOOSTER"
+    },
 
     -- ====================== Giveaway =============================
     ["killzxec"] = {
