@@ -363,7 +363,7 @@ return {
         Day = nil,
         Key = "DYHUB-U6QB8-E4VQ5-PA9K8-K5GA6-LIFETIME"
     },
-    ["BaconKing12912"] = {
+    ["WSGPLAYER123"] = {
         Tag = "trollgespeices1_antifurry",
         Time = "Lifetime",
         Day = nil,
