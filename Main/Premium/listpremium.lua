@@ -453,6 +453,12 @@ return {
         Day = 14,
         Key = "DYHUB-L9MA6-KEYBOOSTER"
     },
+    ["Catlinns"] = {
+        Tag = "japonbaligi",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-K7NA5-KEYBOOSTER"
+    },
 
     -- ====================== Giveaway =============================
     ["killzxec"] = {
