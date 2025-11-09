@@ -403,7 +403,7 @@ return {
         Day = 2,
         Key = "DYHUB-S5VQ7-KEY2DAY"
     },
-    ["Secanesseon69"] = {
+    ["SecaIsGod21"] = {
         Tag = "seca._",
         Time = nil,
         Day = 10,
