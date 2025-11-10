@@ -403,11 +403,11 @@ return {
         Day = 2,
         Key = "DYHUB-S5VQ7-KEY2DAY"
     },
-    ["SecaIsGod21"] = {
+    ["roblox_user_7789134494"] = {
         Tag = "seca._",
         Time = nil,
-        Day = 10,
-        Key = "DYHUB-YP4A3-KEY10DAY"
+        Day = 34,
+        Key = "DYHUB-YP4A3-KEY34DAY"
     },
     ["Cavalry_OnTop1"] = {
         Tag = "dev_999x",
