@@ -369,6 +369,12 @@ return {
         Day = nil,
         Key = "DYHUB-U6QB8-E4VQ1-DA5BQ-K5GA6-LIFETIME"
     },
+    ["WEQWES7"] = {
+        Tag = "unsuccessful_dude",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-J7NA4-E4VQ1-S4VQ5-D4CQ5-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
