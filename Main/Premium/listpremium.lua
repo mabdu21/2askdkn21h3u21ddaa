@@ -375,6 +375,12 @@ return {
         Day = nil,
         Key = "DYHUB-J7NA4-E4VQ1-S4VQ5-D4CQ5-LIFETIME"
     },
+    ["Nakamana1"] = {
+        Tag = "arssyss",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-J7NA4-S5BQ6-MKY7A-O8NA4-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
