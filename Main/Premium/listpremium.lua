@@ -427,8 +427,8 @@ return {
         Day = 34,
         Key = "DYHUB-YP4A3-KEY34DAY"
     },
-    ["Cavalry_OnTop1"] = {
-        Tag = "dev_999x",
+    ["nsjsjsj"] = {
+        Tag = "jsjsjs",
         Time = nil,
         Day = 1,
         Key = "DYHUB-JA7N5-KEY1DAY"
