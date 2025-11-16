@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 648.7
+-- DYHUB-PREMIUM.lua | 648.6
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -433,11 +433,17 @@ return {
         Day = 34,
         Key = "DYHUB-YP4A3-KEY34DAY"
     },
-    ["nsjsjsj"] = {
-        Tag = "jsjsjs",
+    ["anajawhurhrf"] = {
+        Tag = "anajae_",
         Time = nil,
-        Day = 1,
-        Key = "DYHUB-JA7N5-KEY1DAY"
+        Day = 2,
+        Key = "DYHUB-JA7N5-KEY2DAY"
+    },
+    ["Kazorebere231"] = {
+        Tag = "dyumraisgoodguy",
+        Time = nil,
+        Day = 1000,
+        Key = "DYHUB-IDK"
     },
     
     -- ====================== Booster ==============================
