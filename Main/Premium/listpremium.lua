@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 648.6
+-- DYHUB-PREMIUM.lua | 648.7
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -420,6 +420,12 @@ return {
         Time = nil,
         Day = 31,
         Key = "DYHUB-NS3A7-KEY31DAY"
+    },
+    ["0engraved"] = {
+        Tag = "01rxedrxosee",
+        Time = nil,
+        Day = 31,
+        Key = "DYHUB-Q4WA5-KEY31DAY"
     },
     ["acengsniper"] = {
         Tag = "manskiw",
