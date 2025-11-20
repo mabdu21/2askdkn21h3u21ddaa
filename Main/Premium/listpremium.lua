@@ -415,6 +415,12 @@ return {
         Day = 14,
         Key = "DYHUB-K7TG3-KEY14DAY"
     },
+    ["Oegsjmc"] = {
+        Tag = "topnumberone.",
+        Time = nil,
+        Day = 40,
+        Key = "DYHUB-H7NA8-KEY40DAY"
+    },
     ["Guest243611"] = {
         Tag = "copperwiredrock",
         Time = nil,
