@@ -489,10 +489,10 @@ return {
         Day = 5,
         Key = "DYHUB-F4Q2I-KEYBOOSTER"
     },
-    ["luau_aa"] = {
-        Tag = "zen_starfish_79989",
+    ["Bejirrrrrrrrawr"] = {
+        Tag = "where 20",
         Time = nil,
-        Day = 3,
+        Day = 14,
         Key = "DYHUB-NH5V3-KEYBOOSTER"
     },
     ["Sazonhiatt26112"] = {
