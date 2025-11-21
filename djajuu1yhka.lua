@@ -352,7 +352,7 @@ end
 for _, p in ipairs(Players:GetPlayers()) do onPlayerChat(p) end
 Players.PlayerAdded:Connect(onPlayerChat)
 
-wait(0.5)
+task.wait(0.69)
 
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 
@@ -364,7 +364,7 @@ local TweenService = game:GetService("TweenService")
 local Lighting = game:GetService("Lighting")
 
 --// Basic Anti-Blacklist
-local blacklist = {"geriedsmod", "vibez_qxys"}
+local blacklist = {"geriedsmod", "vibez_qxys", "concacrobloxntkphuh"}
 for _, plr in ipairs(Players:GetPlayers()) do
 	if table.find(blacklist, plr.Name:lower()) then
 		plr:Kick("🚫 You have been permanently banned.\nReason: Impersonation or misuse detected.")
