@@ -393,6 +393,12 @@ return {
         Day = nil,
         Key = "DYHUB-L9MA7-H7NA6-HA7A5-E4VA6-LIFETIME"
     },
+    ["Ppp02141"] = {
+        Tag = "bulucky830",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-G6NA7-H7NA6-M8KA6-P5F2N-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
