@@ -141,7 +141,7 @@ return {
         Day = nil,
         Key = "DYHUB-JUYV2-A7OIQ-MJ42P-L8KQW-GD4A3-LIFETIME"
     },
-    ["gokusuperblu384"] = {
+    ["NeoMitsui"] = {
         Tag = "silent_erro",
         Time = "Lifetime",
         Day = nil,
