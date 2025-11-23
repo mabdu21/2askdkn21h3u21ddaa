@@ -213,7 +213,7 @@ return {
         Day = nil,
         Key = "DYHUB-Y5RA2-U6TW1-O8WUA-G6QT8-M8NQ5-LIFETIME"
     },
-    ["doremon0258"] = {
+    ["Tancm025896"] = {
         Tag = "tantran7258",
         Time = "Lifetime",
         Day = nil,
