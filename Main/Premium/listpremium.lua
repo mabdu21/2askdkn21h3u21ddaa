@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 648.7
+-- DYHUB-PREMIUM.lua | 648.9
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -398,6 +398,12 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-G6NA7-H7NA6-M8KA6-P5F2N-LIFETIME"
+    },
+    ["syahidhc"] = {
+        Tag = "syahidhc",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-B6NA7-H7NA6-M8KA6-P5F2N-LIFETIME"
     },
     
     -- ===================== YOUTUBE =============================
