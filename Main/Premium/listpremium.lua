@@ -405,6 +405,12 @@ return {
         Day = nil,
         Key = "DYHUB-B6NA7-H7NA6-M8KA6-P5F2N-LIFETIME"
     },
+    ["accountac7"] = {
+        Tag = "zeroless2",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-V5L7A-H7NA6-M8KA6-P5F2N-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -469,11 +475,11 @@ return {
         Day = 34,
         Key = "DYHUB-YP4A3-KEY34DAY"
     },
-    ["anajawhurhrf"] = {
-        Tag = "anajae_",
+    ["IAKGaming9"] = {
+        Tag = "wizz_789",
         Time = nil,
-        Day = 2,
-        Key = "DYHUB-JA7N5-KEY2DAY"
+        Day = 7,
+        Key = "DYHUB-JA7N5-KEY7DAY"
     },
     ["Kazorebere231"] = {
         Tag = "dyumraisgoodguy",
