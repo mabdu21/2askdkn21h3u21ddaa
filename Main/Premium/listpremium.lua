@@ -411,6 +411,12 @@ return {
         Day = nil,
         Key = "DYHUB-V5L7A-H7NA6-M8KA6-P5F2N-LIFETIME"
     },
+    ["Fail4Me"] = {
+        Tag = "smi.fi",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-V5L7A-H7NA6-EIA73-P5F2N-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -445,11 +451,11 @@ return {
         Day = 31,
         Key = "DYHUB-NS3A7-KEY31DAY"
     },
-    ["intintolie6"] = {
-        Tag = "gloarhhs",
+    ["Monka12207"] = {
+        Tag = "momo_21116",
         Time = nil,
-        Day = 2,
-        Key = "DYHUB-T5V6M-KEY2DAY"
+        Day = 7,
+        Key = "DYHUB-T5V6M-KEY7DAY"
     },
     ["0engraved"] = {
         Tag = "01rxedrxosee",
