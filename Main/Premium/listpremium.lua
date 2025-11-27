@@ -433,6 +433,12 @@ return {
     },
     
     -- ====================== Buyer ==============================
+    ["hatdovs"] = {
+        Tag = "ethan94760",
+        Time = nil,
+        Day = 5,
+        Key = "DYHUB-K7NA5-KEY5DAY"
+    },
     ["ChanomAroiMakMak"] = {
         Tag = "piekai0424",
         Time = nil,
