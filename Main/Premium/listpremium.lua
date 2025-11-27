@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 648.9
+-- DYHUB-PREMIUM.lua | 648.10
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -542,6 +542,12 @@ return {
         Time = nil,
         Day = 14,
         Key = "DYHUB-K7NA5-KEYBOOSTER"
+    },
+    ["Axe23cap"] = {
+        Tag = "axe23cap",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-K7NF5-KEYBOOSTER"
     },
 
     -- ====================== Giveaway =============================
