@@ -448,8 +448,14 @@ return {
     ["Oegsjmc"] = {
         Tag = "topnumberone.",
         Time = nil,
-        Day = 40,
-        Key = "DYHUB-H7NA8-KEY40DAY"
+        Day = 177,
+        Key = "DYHUB-SNOWY-KEYHELPER"
+    },
+    ["sosomysoso"] = {
+        Tag = "dafik34_84007",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-LUNNY-KEY7DAY"
     },
     ["Guest243611"] = {
         Tag = "copperwiredrock",
