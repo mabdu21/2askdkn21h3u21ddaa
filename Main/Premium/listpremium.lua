@@ -500,7 +500,7 @@ return {
         Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME"
     },
     -- ====================== PAYMENT =============================
-    ["monyegeming24"] = {
+    ["monyegaming24"] = {
         Tag = "whitecat1_",
         Time = nil,
         Day = 7,
@@ -517,5 +517,11 @@ return {
         Time = nil,
         Day = 7,
         Key = "DYHUB-F4J8L-TRIALHELPER"
+    },
+    ["heavenssag1"] = {
+        Tag = "vestode",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-K6VP5-TRIALHELPER"
     },
 }
