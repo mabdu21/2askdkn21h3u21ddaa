@@ -1,4 +1,4 @@
--- DYHUB-PREMIUM.lua | 648.10
+-- Rebuild | 6720
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = {
@@ -6,30 +6,6 @@ return {
         Time = nil,
         Day = 99999999,
         Key = "DYHUB-OWNER"
-    },
-    ["Vo_y69gREwj"] = {
-        Tag = "DYHUB01",
-        Time = nil,
-        Day = 99999999,
-        Key = "DYHUB-DYHUB01-ADMIN"
-    },
-    ["dyumradyumra"] = {
-        Tag = "KUY",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-KUY-SIGMA"
-    },
-    ["II11I111I1I"] = {
-        Tag = "KUY",
-        Time = nil,
-        Day = 555555,
-        Key = "DYHUB-KUY-SIGMA1"
-    },
-    ["Kyn8s"] = {
-        Tag = "kyn8s",
-        Time = nil,
-        Day = 8888888,
-        Key = "DYHUB-KYN8S-SUPPORT"
     },
     ["55555555555555555455"] = {
         Tag = "oszq_",
@@ -43,35 +19,11 @@ return {
         Day = nil,
         Key = "DYHUB-FREE-UNLIMITED"
     },
-    ["Dentbuzo423"] = {
-        Tag = "oszq_",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "oszq"
-    },
     ["Hanehxo91"] = {
         Tag = "Free",
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-FREE-UNLIMITED"
-    },
-    ["1234563210"] = {
-        Tag = "oszq_",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "DYHUB-PUSSY-888"
-    },
-    ["182735417"] = {
-        Tag = "oszq_",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "DYHUB-DICK-888"
-    },
-    ["Charlotte_x2go"] = {
-        Tag = "kkkk",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "DYHUB-hhhh-888"
     },
     ["fivooooo"] = {
         Tag = "nano_1010.",
@@ -357,12 +309,6 @@ return {
         Day = nil,
         Key = "DYHUB-P9KA6-E4VQ5-N7BA5-K5GA6-LIFETIME"
     },
-    ["TTMEE11"] = {
-        Tag = "pineappl_e.",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "DYHUB-U6QB8-E4VQ5-PA9K8-K5GA6-LIFETIME"
-    },
     ["BaconKing12912"] = {
         Tag = "trollgespeices1_antifurry",
         Time = "Lifetime",
@@ -380,12 +326,6 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-J7NA4-S5BQ6-MKY7A-O8NA4-LIFETIME"
-    },
-    ["basekillerx18"] = {
-        Tag = "yuuwu_",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "DYHUB-J7NA4-H7NA6-MKY7A-Y7NA5-LIFETIME"
     },
     ["a2i_lowercaseispw"] = {
         Tag = "h3nry_g4m1ng",
@@ -417,6 +357,30 @@ return {
         Day = nil,
         Key = "DYHUB-V5L7A-H7NA6-EIA73-P5F2N-LIFETIME"
     },
+    ["0engraved"] = {
+        Tag = "01rxedrxosee",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-LAZY"
+    },
+    ["vortex_260"] = {
+        Tag = "vortex_260",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-V9L0A-H7NA6-EIA73-P5F2N-LIFETIME"
+    },
+    ["TTMEE11"] = {
+        Tag = "pineappl_e.",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-U6QB8-E4VQ5-PA9K8-K5GA6-LIFETIME"
+    },
+    ["basekillerx18"] = {
+        Tag = "yuuwu_",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-J7NA4-H7NA6-MKY7A-Y7NA5-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
@@ -433,18 +397,6 @@ return {
     },
     
     -- ====================== Buyer ==============================
-    ["hatdovs"] = {
-        Tag = "ethan94760",
-        Time = nil,
-        Day = 5,
-        Key = "DYHUB-K7NA5-KEY5DAY"
-    },
-    ["ChanomAroiMakMak"] = {
-        Tag = "piekai0424",
-        Time = nil,
-        Day = 14,
-        Key = "DYHUB-K7TG3-KEY14DAY"
-    },
     ["Oegsjmc"] = {
         Tag = "topnumberone.",
         Time = nil,
@@ -454,26 +406,8 @@ return {
     ["sosomysoso"] = {
         Tag = "dafik34_84007",
         Time = nil,
-        Day = 7,
+        Day = 14,
         Key = "DYHUB-LUNNY-KEY7DAY"
-    },
-    ["Guest243611"] = {
-        Tag = "copperwiredrock",
-        Time = nil,
-        Day = 31,
-        Key = "DYHUB-NS3A7-KEY31DAY"
-    },
-    ["Monka12207"] = {
-        Tag = "momo_21116",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-T5V6M-KEY7DAY"
-    },
-    ["0engraved"] = {
-        Tag = "01rxedrxosee",
-        Time = nil,
-        Day = 31,
-        Key = "DYHUB-Q4WA5-KEY31DAY"
     },
     ["acengsniper"] = {
         Tag = "manskiw",
@@ -481,23 +415,11 @@ return {
         Day = 14,
         Key = "DYHUB-M6BA3-KEY14DAY"
     },
-    ["marktii093114"] = {
-        Tag = "bastepanon",
-        Time = nil,
-        Day = 3,
-        Key = "DYHUB-S5VQ7-KEY3DAY"
-    },
     ["roblox_user_7789134494"] = {
         Tag = "seca._",
         Time = nil,
         Day = 34,
         Key = "DYHUB-YP4A3-KEY34DAY"
-    },
-    ["IAKGaming9"] = {
-        Tag = "wizz_789",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-JA7N5-KEY7DAY"
     },
     ["Kazorebere231"] = {
         Tag = "dyumraisgoodguy",
@@ -507,30 +429,6 @@ return {
     },
     
     -- ====================== Booster ==============================
-    ["gugageme_brs"] = {
-        Tag = "piadocas2020",
-        Time = nil,
-        Day = 14,
-        Key = "DYHUB-P9QUA-DRE5R-T4UA8-O7ETA-R5Q0W-KEYBOOSTER"
-    },
-    ["Shanksbigfan19"] = {
-        Tag = "yukiithenoob",
-        Time = nil,
-        Day = 14,
-        Key = "DYHUB-JA7NQ-KEYBOOSTER"
-    },
-    ["gugageme_brs"] = {
-        Tag = "piadocas2020",
-        Time = nil,
-        Day = 5,
-        Key = "DYHUB-F4Q2I-KEYBOOSTER"
-    },
-    ["Bejirrrrrrrrawr"] = {
-        Tag = "where 20",
-        Time = nil,
-        Day = 14,
-        Key = "DYHUB-NH5V3-KEYBOOSTER"
-    },
     ["Sazonhiatt26112"] = {
         Tag = "basmysad",
         Time = nil,
@@ -555,50 +453,14 @@ return {
         Day = 14,
         Key = "DYHUB-K7NF5-KEYBOOSTER"
     },
+    ["BVIWWF"] = {
+        Tag = "smi.fi",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-F9Q2I-KEYBOOSTER"
+    },
 
     -- ====================== Giveaway =============================
-    ["killzxec"] = {
-        Tag = "merai191_dx",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-FT6UW-KEY7DAY" -- giveaway 
-    },
-    ["Leyathepoly_tongan"] = {
-        Tag = "tamilafr",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-JAOQ6-KEY7DAY" -- giveaway 
-    },
-    ["DEADRAILSPLAYER543"] = {
-        Tag = "sio04_4_98466",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-K7NA5-KEY7DAY" -- giveaway 
-    },
-    ["theapexx4"] = {
-        Tag = "frist2550",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-VA4QS-KEY7DAY"
-    },
-    ["theapexx4"] = {
-        Tag = "frist2550",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-VA4QS-KEY7DAY"
-    },
-    ["KajeBerkshire"] = {
-        Tag = "yourmysteryy",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-M7NA4-KEY7DAY"
-    },
-    ["rshyamqdsy90"] = {
-        Tag = "oldsasuke.",
-        Time = nil,
-        Day = 7,
-        Key = "DYHUB-P8KA1-G5T1A-KEY7DAY"
-    },
     ["Solvrynnn2"] = {
         Tag = "solvrynnn",
         Time = nil,
@@ -630,5 +492,11 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-D4QF3-TQ6HL-LQ8V4-BA5GQ-LIFETIME"
+    },
+    ["GODxGSP"] = {
+        Tag = "k7nzz_",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME"
     },
 }
