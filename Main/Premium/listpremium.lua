@@ -524,4 +524,10 @@ return {
         Day = 7,
         Key = "DYHUB-K6VP5-TRIALHELPER"
     },
+    ["Zeus15792"] = {
+        Tag = "bajjoss",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-J6MA5-TRIALHELPER"
+    },
 }
