@@ -499,4 +499,23 @@ return {
         Day = nil,
         Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME"
     },
+    -- ====================== PAYMENT =============================
+    ["monyegeming23"] = {
+        Tag = "whitecat1_",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-K6VA5-TRIALHELPER"
+    },
+    ["parbal_god"] = {
+        Tag = "gorill_guy",
+        Time = nil,
+        Day = 14,
+        Key = "DYHUB-F4VA5-HELPER"
+    },
+    ["pipahaha13"] = {
+        Tag = "lingabool",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-F4J8L-TRIALHELPER"
+    },
 }
