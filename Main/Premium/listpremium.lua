@@ -57,7 +57,7 @@ return {
         Day = nil,
         Key = "DYHUB-4FJ8K-M1N2P-Q7RST-VWXYZ-U6L8F-LIFETIME"
     },
-    ["itz_Lxx71"] = {
+    ["PauGross0_910"] = {
         Tag = "lxxx7.",
         Time = "Lifetime",
         Day = nil,
@@ -224,12 +224,6 @@ return {
         Time = "Lifetime",
         Day = nil,
         Key = "DYHUB-N7MI4-VA4CQ-M7NA4-L9MA4-C4DQ3-LIFETIME"
-    },
-    ["frizette91"] = {
-        Tag = "egorov_zhenya",
-        Time = "Lifetime",
-        Day = nil,
-        Key = "DYHUB-P1V3-BAX5T-NA7QE-MAK7Q-BCVS7-LIFETIME"
     },
     ["pisangkeju2129"] = {
         Tag = "kingdhoo",
@@ -530,8 +524,14 @@ return {
         Day = 7,
         Key = "DYHUB-F4J8L-TRIALHELPER"
     },
-    ["heavenssag1"] = {
+    ["emmijked123"] = {
         Tag = "vestode",
+        Time = nil,
+        Day = 7,
+        Key = "DYHUB-K6V95-TRIALHELPER"
+    },
+    ["heavenssag1"] = {
+        Tag = "alex_41899",
         Time = nil,
         Day = 7,
         Key = "DYHUB-K6VP5-TRIALHELPER"
