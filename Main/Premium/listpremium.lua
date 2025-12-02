@@ -381,6 +381,18 @@ return {
         Day = nil,
         Key = "DYHUB-J7NA4-H7NA6-MKY7A-Y7NA5-LIFETIME"
     },
+    ["mistorwowka"] = {
+        Tag = "egorov_zhenya",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-K7MA5-H7NA6-MKY7A-Y7NA5-LIFETIME"
+    },
+    ["frizette91"] = {
+        Tag = "egorov_zhenya",
+        Time = "Lifetime",
+        Day = nil,
+        Key = "DYHUB-BK0L4-H6NA7-T6BQ4-U8MA6-LIFETIME"
+    },
     
     -- ===================== YOUTUBE =============================
     ["growwltokens1"] = {
