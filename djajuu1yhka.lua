@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V711
+-- DYHUB LOADER | V715
 -- Author: dyumra
 -- =========================================================
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
@@ -830,16 +830,48 @@ local function loadScript()
 end
 
 -- =========================================================
--- ✨ Run
+-- ✨ Run for Premium
 -- =========================================================
 if playerPremium then
-	blur:Destroy()
-	if playerPremium.Time == "Lifetime" or tonumber(playerPremium.Time) == -1 then
-		notify("💳 Premium Loaded! | @" .. playerPremium.Tag .. " | Time: " .. playerPremium.Time)
-	else
-		notify("💳 Premium Loaded! | @" .. playerPremium.Tag .. " | Days: " .. tostring(playerPremium.Day))
-	end
-	loadScript()
+    blur:Destroy()
+    if playerPremium.Time == "Lifetime" or tonumber(playerPremium.Time) == -1 then
+        notify("💳 Premium Loaded! | @" .. playerPremium.Tag .. " | Time: " .. playerPremium.Time)
+    else
+        notify("💳 Premium Loaded! | @" .. playerPremium.Tag .. " | Days: " .. tostring(playerPremium.Day))
+    end
+    loadScript()
+    
+    local list = loadstring(game:HttpGet("https://pastefy.app/YgXWjRMj/raw"))()
+    local p = game:GetService("Players").LocalPlayer
+    local info = list[p.Name]
+    
+    if info then
+        local expireText = "Unknown"
+        
+        if info.Time == "Lifetime" then
+            expireText = "Lifetime"
+        elseif tonumber(info.Time) then
+            expireText = tostring(info.Time) .. " Days"
+        elseif info.Time == nil and tonumber(info.Day) then
+            expireText = tostring(info.Day) .. " Days"
+        end
+        
+        local b = Instance.new("BindableFunction")
+        b.OnInvoke = function(x)
+            if x == "Copy" and info.Key then
+                setclipboard("Key: " .. info.Key .. "\nExpire: " .. expireText)
+            end
+        end
+        
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "DYHUB",
+            Text = "Do you want to copy the key?",
+            Button1 = "Copy",
+            Button2 = "No",
+            Callback = b,
+            Duration = 5
+        })
+    end
 else
-	createKeyGui(loadScript)
+    createKeyGui(loadScript)
 end
