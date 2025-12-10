@@ -1,4 +1,4 @@
--- // NEW LIST | GV-258
+-- // NEW LIST | GV-260
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -84,7 +84,9 @@ return {
     ["mainaccount565535"] = { Tag = "whydowelivelikethis", Time = "Lifetime", Day = nil, Key = "DYHUB-BK0L4-PNJ7B-T6BQ4-U8MA6-LIFETIME" },
     ["Tzchanel"] = { Tag = "rabbit6715", Time = "Lifetime", Day = nil, Key = "DYHUB-ER3HA-G5BA6-I2M7N-6P8MQ-LIFETIME" },
     ["lw6bh0l"] = { Tag = "chuy_1399999999999999", Time = "Lifetime", Day = nil, Key = "DYHUB-ER3HA-G2BA6-I2M7N-6P8MQ-LIFETIME" },
-
+    ["fomcony0"] = { Tag = "kittisak_revar", Time = "Lifetime", Day = nil, Key = "DYHUB-ER3HA-G8BA6-I2M7N-6P2MQ-LIFETIME" },
+    ["SoSleepy_Zzp"] = { Tag = "padsxz", Time = "Lifetime", Day = nil, Key = "DYHUB-JR3HA-R8BA6-P2M7N-6P2GQ-LIFETIME" },
+      
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
     ["Briwbou"] = { Tag = "kumi5002", Time = "Lifetime", Day = nil, Key = "DYHUB-Holiger" },
@@ -94,6 +96,7 @@ return {
     ["yantotiw"] = { Tag = "ikyy_maybe", Time = nil, Day = 1, Key = "DYHUB-E4D8A-KEY1DAY" }, 
   
     ["airat_1433"] = { Tag = "thor074500", Time = nil, Day = 1, Key = "DYHUB-FL3HO-KEY1DAY" }, -- today
+    ["castarmensa"] = { Tag = "optimus14232", Time = nil, Day = 1, Key = "DYHUB-FI8HO-KEY1DAY" }, -- today
   
     ["Godeater12231"] = { Tag = "rexstorm_", Time = nil, Day = 7, Key = "DYHUB-TL3HO-KEY7DAY" },
  
@@ -121,6 +124,7 @@ return {
     ["BVIWWF"] = { Tag = "smi.fi", Time = nil, Day = 14, Key = "DYHUB-F9Q2I-KEYBOOSTER" },
     ["Yuchi_ksm"] = { Tag = "wansao0124", Time = nil, Day = 7, Key = "DYHUB-D2Q2I-KEYBOOSTER" },
     ["Dig1talxkz"] = { Tag = "digital_xkz", Time = nil, Day = 7, Key = "DYHUB-M2G3Q-KEYBOOSTER" },
+    ["ClayAltAccount6"] = { Tag = "dejavu_lost", Time = nil, Day = 14, Key = "DYHUB-H8AKQ-KEYBOOSTER" },
 
     -- ====================== Giveaway =============================
     ["Solvrynnn2"] = { Tag = "solvrynnn", Time = nil, Day = 14, Key = "DYHUB-K8MA3-H7NA4-KEY14DAY" },
