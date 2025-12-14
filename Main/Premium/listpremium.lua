@@ -129,6 +129,7 @@ return {
     ["Yuchi_ksm"] = { Tag = "wansao0124", Time = nil, Day = 9, Key = "DYHUB-D2Q2I-KEYBOOSTER" },
     ["Dig1talxkz"] = { Tag = "digital_xkz", Time = nil, Day = 9, Key = "DYHUB-M2G3Q-KEYBOOSTER" },
     ["ClayAltAccount6"] = { Tag = "dejavu_lost", Time = nil, Day = 15, Key = "DYHUB-H8AKQ-KEYBOOSTER" },
+    ["SANS8_UJD"] = { Tag = "reimur_rin", Time = nil, Day = 3, Key = "DYHUB-D2Q9I-KEYBOOSTER" },
 
     -- ====================== Giveaway =============================
     ["Solvrynnn2"] = { Tag = "solvrynnn", Time = nil, Day = 15, Key = "DYHUB-K8MA3-H7NA4-KEY14DAY" },
