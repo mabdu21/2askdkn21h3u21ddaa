@@ -118,7 +118,7 @@ return {
     -- ====================== Booster ==============================
     ["Sazonhiatt26112"] = { Tag = "basmysad", Time = nil, Day = 25, Key = "DYHUB-MKA3Q-KEYBOOSTER" },
     ["ARTURE210"] = { Tag = "qronzai_", Time = nil, Day = 15, Key = "DYHUB-H6APQ-KEYBOOSTER" },
-    ["ZanID25"] = { Tag = "justtforfunnn", Time = nil, Day = 14, Key = "DYHUB-H9MM6-KEYBOOSTER" },
+    ["ZanID25"] = { Tag = "justtforfunnn", Time = nil, Day = 20, Key = "DYHUB-H9MM6-KEYBOOSTER" },
     ["BingoEscapes"] = { Tag = "kxnzozar", Time = nil, Day = 9, Key = "DYHUB-P1MA6-KEYBOOSTER" },
     ["Kindreth_OB0b92S"] = { Tag = "yai2thosewyoknow", Time = nil, Day = 29, Key = "DYHUB-MKA2Q-KEYBOOSTER" },
     ["Alexd100bru"] = { Tag = "olivia_not_fors.", Time = nil, Day = 15, Key = "DYHUB-L9MA6-KEYBOOSTER" },
@@ -130,6 +130,7 @@ return {
     ["Dig1talxkz"] = { Tag = "digital_xkz", Time = nil, Day = 9, Key = "DYHUB-M2G3Q-KEYBOOSTER" },
     ["ClayAltAccount6"] = { Tag = "dejavu_lost", Time = nil, Day = 15, Key = "DYHUB-H8AKQ-KEYBOOSTER" },
     ["SANS8_UJD"] = { Tag = "reimur_rin", Time = nil, Day = 3, Key = "DYHUB-D2Q9I-KEYBOOSTER" },
+    ["soletmegoo"] = { Tag = "_____p2", Time = nil, Day = 14, Key = "DYHUB-MKA9Q-KEYBOOSTER" },
 
     -- ====================== Giveaway =============================
     ["Solvrynnn2"] = { Tag = "solvrynnn", Time = nil, Day = 15, Key = "DYHUB-K8MA3-H7NA4-KEY14DAY" },
