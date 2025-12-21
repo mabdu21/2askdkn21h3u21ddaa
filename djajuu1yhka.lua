@@ -633,7 +633,7 @@ end
 -- 💾 Load Premium List
 -- =========================================================
 local success, premiumUsers = pcall(function()
-	local code = game:HttpGet("https://pastefy.app/YgXWjRMj/raw")
+	local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua")
 	local func = loadstring(code)
 	return func and func() or {}
 end)
