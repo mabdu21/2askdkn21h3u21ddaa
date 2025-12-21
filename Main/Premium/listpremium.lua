@@ -87,7 +87,7 @@ return {
     ["Tonubaby01"] = { Tag = "kittisak_revar", Time = "Lifetime", Day = nil, Key = "DYHUB-ER3HA-G8BA6-I2M7N-6P2MQ-LIFETIME" },
     ["SoSleepy_Zzp"] = { Tag = "padsxz", Time = "Lifetime", Day = nil, Key = "DYHUB-JR3HA-R8BA6-P2M7N-6P2GQ-LIFETIME" },
     ["artilegag1"] = { Tag = "artileeyyy", Time = "Lifetime", Day = nil, Key = "DYHUB-NR3HA-R8BA6-P2M7N-6P2GQ-LIFETIME" },
-    ["gottidyce5656"] = { Tag = "sososucu", Time = "Lifetime", Day = nil, Key = "DYHUB-NR9HA-R8BA6-P2M7N-6P2GQ-LIFETIME" },
+    ["Gottidyce5656"] = { Tag = "sososucu", Time = "Lifetime", Day = nil, Key = "DYHUB-NR9HA-R8BA6-P2M7N-6P2GQ-LIFETIME" },
       
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
