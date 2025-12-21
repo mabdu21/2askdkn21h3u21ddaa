@@ -132,7 +132,8 @@ return {
     ["ClayAltAccount6"] = { Tag = "dejavu_lost", Time = nil, Day = 15, Key = "DYHUB-H8AKQ-KEYBOOSTER" },
     ["SANS8_UJD"] = { Tag = "reimur_rin", Time = nil, Day = 3, Key = "DYHUB-D2Q9I-KEYBOOSTER" },
     ["soletmegoo"] = { Tag = "_____p2", Time = nil, Day = 14, Key = "DYHUB-MKA9Q-KEYBOOSTER" },
-
+    ["balle0704"] = { Tag = "beton.zip", Time = nil, Day = 7, Key = "DYHUB-SKA9Q-KEYBOOSTER" },
+    
     -- ====================== Giveaway =============================
     ["Solvrynnn2"] = { Tag = "solvrynnn", Time = nil, Day = 15, Key = "DYHUB-K8MA3-H7NA4-KEY14DAY" },
     ["Pipahaha13"] = { Tag = "electitous142", Time = nil, Day = 39, Key = "DYHUB-E4Q5W-H7NA4-KEY38DAY" },
