@@ -92,7 +92,7 @@ return {
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
     ["Briwbou"] = { Tag = "kumi5002", Time = "Lifetime", Day = nil, Key = "DYHUB-Holiger" },
-    ["growwltokens11"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-ALT" },
+    ["growwltoken11"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-ALT" },
   
     -- ====================== Buyer (Trial / Short-term) =============================
     ["dzibak211122"] = { Tag = "patryk211122", Time = nil, Day = 2, Key = "DYHUB-E1P8A-KEY1DAY" }, 
