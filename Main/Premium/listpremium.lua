@@ -119,6 +119,7 @@ return {
     ["gtyyuirtywh"] = { Tag = "yetiyet95yt", Time = nil, Day = 25, Key = "DYHUB-L8MRG-KEY24DAY" },
       
     -- ====================== Booster ==============================
+    ["MEGAMONSTRIK666FGF"] = { Tag = "terrufy", Time = nil, Day = 14, Key = "DYHUB-MKA3Q-KEYBOOSTER" },
     ["Sazonhiatt26112"] = { Tag = "basmysad", Time = nil, Day = 25, Key = "DYHUB-MKA3Q-KEYBOOSTER" },
     ["ARTURE210"] = { Tag = "qronzai_", Time = nil, Day = 15, Key = "DYHUB-H6APQ-KEYBOOSTER" },
     ["ZanID25"] = { Tag = "justtforfunnn", Time = nil, Day = 20, Key = "DYHUB-H9MM6-KEYBOOSTER" },
