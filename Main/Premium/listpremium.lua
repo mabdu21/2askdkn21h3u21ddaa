@@ -1,4 +1,4 @@
--- // NEW LIST | GV-269
+-- // NEW LIST | GV-270
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -91,6 +91,7 @@ return {
     ["Secanesseon88"] = { Tag = "secaisgod_", Time = "Lifetime", Day = nil, Key = "DYHUB-NR9OA-R8PA6-P2M7N-6P2GQ-LIFETIME" },
     ["SecaIsGod21"] = { Tag = "secaisgod_", Time = "Lifetime", Day = nil, Key = "DYHUB-NR9PA-R8PA6-P2M7N-6P2GQ-LIFETIME" },
     ["Zenithiannn"] = { Tag = "rroyco_", Time = "Lifetime", Day = nil, Key = "DYHUB-NR9PA-R7PA6-P2M7N-6P9GQ-LIFETIME" },
+    ["ifkjtvb"] = { Tag = "scp06469", Time = "Lifetime", Day = nil, Key = "DYHUB-NS5PA-R2PA6-P2M7N-6P9GQ-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -121,6 +122,7 @@ return {
     ["gtyyuirtywh"] = { Tag = "yetiyet95yt", Time = nil, Day = 25, Key = "DYHUB-L8MRG-KEY24DAY" },
       
     -- ====================== Booster ==============================
+    ["andrew_e108"] = { Tag = "andrewsigma345", Time = nil, Day = 14, Key = "DYHUB-MLA3Q-KEYBOOSTER" },
     ["joohnddooee"] = { Tag = "terrufy", Time = nil, Day = 14, Key = "DYHUB-MKA3Q-KEYBOOSTER" },
     ["Sazonhiatt26112"] = { Tag = "basmysad", Time = nil, Day = 25, Key = "DYHUB-MKA3Q-KEYBOOSTER" },
     ["ARTURE210"] = { Tag = "qronzai_", Time = nil, Day = 15, Key = "DYHUB-H6APQ-KEYBOOSTER" },
