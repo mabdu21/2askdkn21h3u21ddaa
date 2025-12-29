@@ -1,4 +1,4 @@
--- // NEW LIST | GV-271
+-- // NEW LIST | GV-275
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -92,6 +92,9 @@ return {
     ["SecaIsGod21"] = { Tag = "secaisgod_", Time = "Lifetime", Day = nil, Key = "DYHUB-NR9PA-R8PA6-P2M7N-6P2GQ-LIFETIME" },
     ["Zenithiannn"] = { Tag = "rroyco_", Time = "Lifetime", Day = nil, Key = "DYHUB-NR9PA-R7PA6-P2M7N-6P9GQ-LIFETIME" },
     ["ifkjtvb"] = { Tag = "scp06469", Time = "Lifetime", Day = nil, Key = "DYHUB-NS5PA-R2PA6-P2M7N-6P9GQ-LIFETIME" },
+    ["marktii093114"] = { Tag = "bastepanon", Time = "Lifetime", Day = nil, Key = "DYHUB-NS9PA-R6PA6-P2M7N-6J9GQ-LIFETIME" },
+    ["ANJELHD12345"] = { Tag = "nose._._.", Time = "Lifetime", Day = nil, Key = "DYHUB-NS7PA-R6PA6-P2M7N-6J9GQ-LIFETIME" },
+    ["HungryAdito"] = { Tag = "hungryadito", Time = "Lifetime", Day = nil, Key = "DYHUB-NS0PA-R6PA6-P2M7N-6J9GQ-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -147,7 +150,17 @@ return {
     ["Pipahaha13"] = { Tag = "electitous142", Time = nil, Day = 39, Key = "DYHUB-E4Q5W-H7NA4-KEY38DAY" },
     ["WindShootCSGO"] = { Tag = "doquagningg", Time = nil, Day = 39, Key = "DYHUB-A4CQ5-H7NA4-KEY38DAY" },
     ["kikoman714"] = { Tag = "fanluser", Time = nil, Day = 39, Key = "DYHUB-P9MA6-N6HQ5-KEY38DAY" },
-
+    
+    ["ytalo1500"] = { Tag = "ytalo__", Time = nil, Day = 14, Key = "DYHUB-T9MA6-N6HQ5-GIVEAWAY" },
+    ["justinrCIJ8269"] = { Tag = "keiii0906", Time = nil, Day = 14, Key = "DYHUB-K9MA6-N6HQ5-GIVEAWAY" },
+    ["Parbal_god"] = { Tag = "gorill_guy", Time = nil, Day = 30, Key = "DYHUB-H9MA6-N6HQ5-GIVEAWAY" },
+    ["johnnn2013"] = { Tag = "sunni_destroyer", Time = nil, Day = 30, Key = "DYHUB-M9MA6-N6HQ5-GIVEAWAY" },
+    ["farull6"] = { Tag = "jstnewflf_55559", Time = "Lifetime", Day = nil, Key = "DYHUB-F9MA6-N6HQ5-GIVEAWAY" },
+    ["ehejshehehs1"] = { Tag = "firejason1fi1", Time = nil, Day = 14, Key = "DYHUB-E9RA6-N6HQ5-GIVEAWAY" },
+    ["topoyoo3"] = { Tag = "afdangimang0507", Time = nil, Day = 14, Key = "DYHUB-T9HA6-N6HQ5-GIVEAWAY" },
+    ["uhhMeSksm"] = { Tag = "sksmcutg", Time = nil, Day = 30, Key = "DYHUB-P9MA6-N6OQ5-GIVEAWAY" },
+    ["roblox"] = { Tag = "roblox", Time = nil, Day = 39, Key = "DYHUB-D6MA6-N6HQ5-GIVEAWAY" },
+    
     -- ====================== BUY TH =============================
     ["NoN_oj1"] = { Tag = "xeqes", Time = "Lifetime", Day = nil, Key = "DYHUB-D4QF3-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
     ["GODxGSP"] = { Tag = "k7nzz_", Time = "Lifetime", Day = nil, Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
