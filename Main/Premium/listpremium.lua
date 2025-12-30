@@ -1,4 +1,4 @@
--- // NEW LIST | GV-277
+-- // NEW LIST | GV-278
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -142,7 +142,7 @@ return {
     ["Dig1talxkz"] = { Tag = "digital_xkz", Time = nil, Day = 9, Key = "DYHUB-M2G3Q-KEYBOOSTER" },
     ["ClayAltAccount6"] = { Tag = "dejavu_lost", Time = nil, Day = 15, Key = "DYHUB-H8AKQ-KEYBOOSTER" },
     ["SANS8_UJD"] = { Tag = "reimur_rin", Time = nil, Day = 3, Key = "DYHUB-D2Q9I-KEYBOOSTER" },
-    ["soletmegoo"] = { Tag = "_____p2", Time = nil, Day = 14, Key = "DYHUB-MKA9Q-KEYBOOSTER" },
+    ["reilin_26"] = { Tag = "_____p2", Time = nil, Day = 14, Key = "DYHUB-MKA9Q-KEYBOOSTER" },
     ["balle0704"] = { Tag = "beton.zip", Time = nil, Day = 7, Key = "DYHUB-SKA9Q-KEYBOOSTER" },
     
     -- ====================== Giveaway =============================
