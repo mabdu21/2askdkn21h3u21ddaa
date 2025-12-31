@@ -1,4 +1,4 @@
--- // NEW LIST | GV-278
+-- // NEW LIST | GV-279
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -126,6 +126,7 @@ return {
     ["gtyyuirtywh"] = { Tag = "yetiyet95yt", Time = nil, Day = 25, Key = "DYHUB-L8MRG-KEY24DAY" },
       
     -- ====================== Booster ==============================
+    ["s1ckcvlt"] = { Tag = "jeje", Time = nil, Day = 14, Key = "DYHUB-MPO3Q-KEYBOOSTER" },
     ["andrew_e108"] = { Tag = "andrewsigma345", Time = nil, Day = 14, Key = "DYHUB-MLA3Q-KEYBOOSTER" },
     ["joohnddooee"] = { Tag = "terrufy", Time = nil, Day = 14, Key = "DYHUB-MKA3Q-KEYBOOSTER" },
     ["Sazonhiatt26112"] = { Tag = "basmysad", Time = nil, Day = 25, Key = "DYHUB-MKA3Q-KEYBOOSTER" },
