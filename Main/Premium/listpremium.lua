@@ -96,6 +96,7 @@ return {
     ["ANJELHD12345"] = { Tag = "nose._._.", Time = "Lifetime", Day = nil, Key = "DYHUB-NS7PA-R6PA6-P2M7N-6J9GQ-LIFETIME" },
     ["HungryAdito"] = { Tag = "hungryadito", Time = "Lifetime", Day = nil, Key = "DYHUB-NS0PA-R6PA6-P2M7N-6J9GQ-LIFETIME" },
     ["XxjackthekolaXx"] = { Tag = "davinhanslie_87731", Time = "Lifetime", Day = nil, Key = "DYHUB-NS9KL-R6PA9-P2M7N-6J9GQ-LIFETIME" },
+    ["Yessir_9273"] = { Tag = "wowzer_wowzer", Time = "Lifetime", Day = nil, Key = "DYHUB-NS9KP-R6PA9-P2M7N-6J9GQ-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
