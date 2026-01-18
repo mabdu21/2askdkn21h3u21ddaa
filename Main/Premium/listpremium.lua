@@ -1,11 +1,11 @@
--- // NEW LIST | GV-278
+-- // NEW LIST | GV-279
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
     ["55555555555555555455"] = { Tag = "oszq_", Time = nil, Day = 111, Key = "DYHUB-nigga" },
     ["Go_Ertadx4"] = { Tag = "Free", Time = "Lifetime", Day = nil, Key = "DYHUB-FREE-UNLIMITED" },
     ["Hanehxo91"] = { Tag = "Free", Time = "Lifetime", Day = nil, Key = "DYHUB-FREE-UNLIMITED" },
-    ["fivooooo"] = { Tag = "nano_1010.", Time = "Lifetime", Day = nil, Key = "DYHUB-NANO-LIFETIME" },
+    ["zorecrx_2060"] = { Tag = "nano_1010.", Time = "Lifetime", Day = nil, Key = "DYHUB-NANO-LIFETIME" },
 
     -- ====================== Buyer ================================
     ["kagefym"] = { Tag = "itspect", Time = "Lifetime", Day = nil, Key = "DYHUB-ZXCVB-NMLKJ-HGFDS-APOIU-YTREW-LIFETIME" },
