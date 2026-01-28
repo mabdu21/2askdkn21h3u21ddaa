@@ -97,7 +97,7 @@ return {
     ["HungryAdito"] = { Tag = "hungryadito", Time = "Lifetime", Day = nil, Key = "DYHUB-NS0PA-R6PA6-P2M7N-6J9GQ-LIFETIME" },
     ["XxjackthekolaXx"] = { Tag = "davinhanslie_87731", Time = "Lifetime", Day = nil, Key = "DYHUB-NS9KL-R6PA9-P2M7N-6J9GQ-LIFETIME" },
     ["Yessir_9273"] = { Tag = "wowzer_wowzer", Time = "Lifetime", Day = nil, Key = "DYHUB-NS9KP-R6PA9-P2M7N-6J9GQ-LIFETIME" },
-    ["Chokun30"] = { Tag = "Chokun30", Time = "Lifetime", Day = nil, Key = "DYHUB-NG9KL-R6PA9-P2M9N-6J9GQ-LIFETIME" },
+    ["chokun30us"] = { Tag = "chok2391", Time = "Lifetime", Day = nil, Key = "DYHUB-NG9KL-R6PA9-P2M9N-6J9GQ-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
