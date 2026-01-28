@@ -1,4 +1,4 @@
--- // NEW LIST | GV-279
+-- // NEW LIST | GV-277
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -156,6 +156,8 @@ return {
     ["Pipahaha13"] = { Tag = "electitous142", Time = nil, Day = 39, Key = "DYHUB-E4Q5W-H7NA4-KEY38DAY" },
     ["WindShootCSGO"] = { Tag = "doquagningg", Time = nil, Day = 39, Key = "DYHUB-A4CQ5-H7NA4-KEY38DAY" },
     ["kikoman714"] = { Tag = "fanluser", Time = nil, Day = 39, Key = "DYHUB-P9MA6-N6HQ5-KEY38DAY" },
+    
+    ["ChuBinyeuBread"] = { Tag = "gojo_senpai9115", Time = nil, Day = 3, Key = "DYHUB-HPMA6-N6HQ6-KEY3DAY" },
 
     ["christopherbumitokfc"] = { Tag = "hailsin", Time = nil, Day = 14, Key = "DYHUB-T9PA6-N6HQ5-GIVEAWAY" },
     ["ytalo1500"] = { Tag = "ytalo__", Time = nil, Day = 14, Key = "DYHUB-T9MA6-N6HQ5-GIVEAWAY" },
