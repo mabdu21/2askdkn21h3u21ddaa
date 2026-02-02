@@ -44,7 +44,7 @@ return {
     ["Minirval"] = { Tag = "kama.z", Time = "Lifetime", Day = nil, Key = "DYHUB-XRA3Q-BA6G1-GS6B7-ML8OQ5-CA3Q8-LIFETIME" },
     ["IdgNF23"] = { Tag = "theonlybeamer", Time = "Lifetime", Day = nil, Key = "DYHUB-QA9X2-TM6F4-RL8C3-NZ1Y7-LIFETIME" },
     ["dsny15xnyf23"] = { Tag = "saraheyo4247", Time = "Lifetime", Day = nil, Key = "DYHUB-VG5G2-NAY6G-F4CQ5-UQ8N6-LIFETIME" },
-    ["thehyxon"] = { Tag = "h1nrq", Time = "Lifetime", Day = nil, Key = "DYHUB-M8KA9-FA4CQ-JA7NQ-N7BA5-LIFETIME" },
+    ["thehyxoncheater"] = { Tag = "h1nrq", Time = "Lifetime", Day = nil, Key = "DYHUB-M8KA9-FA4CQ-JA7NQ-N7BA5-LIFETIME" },
     ["silverkizz"] = { Tag = "ryzeedddd", Time = "Lifetime", Day = nil, Key = "DYHUB-K8MA7-FA4CQ-JA7NQ-N7BA5-LIFETIME" },
     ["Arinchai_81"] = { Tag = "mai_kub55", Time = "Lifetime", Day = nil, Key = "DYHUB-M7NA5-FA4CQ-JA7NQ-N7BA5-LIFETIME" },
     ["KunzaThai"] = { Tag = "tui1558", Time = "Lifetime", Day = nil, Key = "DYHUB-FA4CQ-JA7NQ-N7BA5-DK8M5-LIFETIME" },
