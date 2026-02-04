@@ -1,4 +1,4 @@
--- // NEW LIST | GV-279
+-- // NEW LIST | GV-280
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -99,6 +99,7 @@ return {
     ["Yessir_9273"] = { Tag = "wowzer_wowzer", Time = "Lifetime", Day = nil, Key = "DYHUB-NS9KP-R6PA9-P2M7N-6J9GQ-LIFETIME" },
     ["chokun30us"] = { Tag = "chok2391", Time = "Lifetime", Day = nil, Key = "DYHUB-NG9KL-R6PA9-P2M9N-6J9GQ-LIFETIME" },
     ["KanatoKaito"] = { Tag = "novatester7005", Time = "Lifetime", Day = nil, Key = "DYHUB-NL9KL-R6PA9-P2M9N-6J9OQ-LIFETIME" },
+    ["flespos83"] = { Tag = "flespos83", Time = "Lifetime", Day = nil, Key = "DYHUB-PL9KL-R6PA9-P2M9N-6J9OQ-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
