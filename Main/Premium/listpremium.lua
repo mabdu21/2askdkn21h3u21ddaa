@@ -172,6 +172,7 @@ return {
     ["ehejshehehs1"] = { Tag = "firejason1fi1", Time = nil, Day = 14, Key = "DYHUB-E9RA6-N6HQ5-GIVEAWAY" },
     ["topoyoo3"] = { Tag = "afdangimang0507", Time = nil, Day = 14, Key = "DYHUB-T9HA6-N6HQ5-GIVEAWAY" },
     ["uhhMeSksm"] = { Tag = "sksmcutg", Time = nil, Day = 30, Key = "DYHUB-P9MA6-N6OQ5-GIVEAWAY" },
+    ["SimpsonErin8"] = { Tag = "SimpsonErin8", Time = nil, Day = 9, Key = "DYHUB-P8MA6-N0OQ5-GIVEAWAY" },
     ["roblox"] = { Tag = "roblox", Time = nil, Day = 39, Key = "DYHUB-D6MA6-N6HQ5-GIVEAWAY" },
     
     -- ====================== BUY TH =============================
