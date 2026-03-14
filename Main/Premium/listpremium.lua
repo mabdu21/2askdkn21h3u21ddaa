@@ -7,6 +7,7 @@ return {
     ["Hanehxo91"] = { Tag = "Free", Time = "Lifetime", Day = nil, Key = "DYHUB-FREE-UNLIMITED" },
     ["XxToxicProxX200550"] = { Tag = "nano_1010.", Time = "Lifetime", Day = nil, Key = "DYHUB-NANO-LIFETIME" },
     ["Today_0029"] = { Tag = "Sandy", Time = "Lifetime", Day = nil, Key = "DYHUB-SAN" },
+    ["top_two7"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
 
     -- ====================== Buyer ================================
     ["kagefym"] = { Tag = "itspect", Time = "Lifetime", Day = nil, Key = "DYHUB-ZXCVB-NMLKJ-HGFDS-APOIU-YTREW-LIFETIME" },
