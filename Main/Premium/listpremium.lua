@@ -1,4 +1,4 @@
--- // NEW LIST | GV-283
+-- // NEW LIST | GV-285
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -110,6 +110,7 @@ return {
   
     -- ====================== Buyer (Trial / Short-term) =============================
     ["dzibak211122"] = { Tag = "patryk211122", Time = nil, Day = 2, Key = "DYHUB-E1P8A-KEY1DAY" }, 
+    ["EnesTalha123197"] = { Tag = "EnesTalha123197", Time = nil, Day = 14, Key = "DYHUB-E9J8A-KEY14DAY" }, 
     ["yantotiw"] = { Tag = "ikyy_maybe", Time = nil, Day = 3, Key = "DYHUB-E4D8A-KEY1DAY" }, 
     ["DANZY259"] = { Tag = "kenbaik", Time = nil, Day = 3, Key = "DYHUB-E4J8A-KEY3DAY" }, 
 
