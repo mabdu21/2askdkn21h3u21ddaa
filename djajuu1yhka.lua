@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V730
+-- DYHUB LOADER | V735
 -- Author: dyumra
 -- =========================================================
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
@@ -709,6 +709,7 @@ local gameLists = {
 
     PremiumVersion = {
         allowedGamesByCreatorId = { 
+            [33548380] = {name = "Forsaken", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fosaken.lua"},
             [16911831] = {name = "Guts & Blackpowder", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/GAB.lua"},
             [660479131] = {name = "Fish a Brainrot", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/FaB.lua"},  
             [36097751] = {name = "Steal A Fish", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Saf.lua"},  
@@ -763,7 +764,6 @@ local gameLists = {
             ["133487110685834"] = {name = "4KING CUTIE", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/4KING"},
             ["104965156633249"] = {name = "Poop", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Poop"},
             ["228181322"] = {name = "Dinosaur Simulator", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/dinosaursimulator.lua"},
-            ["18687417158"] = {name = "Forsaken", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fosaken.lua"},
             ["87039211657390"] = {name = "Arise Crossover", url = "https://raw.githubusercontent.com/EtherbyteHub/MAIN/refs/heads/main/Dantes"},
             ["93774312410805"] = {name = "Anime RNG TD", url = "https://raw.githubusercontent.com/dyumra/Dupe-Anime-Rails/refs/heads/main/ARTD.lua"},
             ["6938803436"] = {name = "Anime Dimensions Simulator", url = "https://raw.githubusercontent.com/Yanwanlnwza/SmellLikeHacker/main/Animedimensions.lua"},
