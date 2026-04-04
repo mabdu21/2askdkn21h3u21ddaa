@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V737
+-- DYHUB LOADER | V738
 -- Author: dyumra
 -- =========================================================
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
@@ -376,7 +376,7 @@ local blur = Instance.new("BlurEffect", Lighting)
 blur.Size = 15
 
 --// Key System
-local VALID_KEY = "reyosgnik"
+local VALID_KEY = "cuzdyhub"
 
 local function notify(text)
 	pcall(function()
