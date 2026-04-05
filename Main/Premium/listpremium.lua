@@ -1,4 +1,4 @@
--- // NEW LIST | GV-285
+-- // NEW LIST | GV-286
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -158,6 +158,7 @@ return {
     ["balle0704"] = { Tag = "beton.zip", Time = nil, Day = 7, Key = "DYHUB-SKA9Q-KEYBOOSTER" },
     ["player19127"] = { Tag = "nooby_19127", Time = nil, Day = 3, Key = "DYHUB-V6NA4-KEYBOOSTER" },
     ["kayetzyyyy"] = { Tag = "widlan", Time = nil, Day = 14, Key = "DYHUB-MKO9Q-KEYBOOSTER" },
+    ["gugageme_brs"] = { Tag = "gugageme_brs", Time = nil, Day = 14, Key = "DYHUB-MKU9Q-KEYBOOSTER" },
     
     -- ====================== Giveaway =============================
     ["Solvrynnn2"] = { Tag = "solvrynnn", Time = nil, Day = 15, Key = "DYHUB-K8MA3-H7NA4-KEY14DAY" },
