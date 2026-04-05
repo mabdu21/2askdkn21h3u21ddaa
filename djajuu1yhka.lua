@@ -1,5 +1,5 @@
 -- =========================================================
--- DYHUB LOADER | V739
+-- DYHUB LOADER | V7391
 -- Author: dyumra
 -- =========================================================
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
@@ -651,6 +651,7 @@ end
 local gameLists = {
     FreeVersion = {
         allowedGamesByCreatorId = {
+            [35151686] = {name = "Get Fat to Splash", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/bgdhd.lua"}, 
             [35251154] = {name = "Driving Legends", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Bbn.lua"}, 
             [11987919] = {name = "Taxi Boss", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/TexiBoss.lua"},
             [6556072] = {name = "A Universal Time", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/AUUUT.lua"},
