@@ -66,7 +66,7 @@ return {
     ["0engraved"] = { Tag = "01rxedrxosee", Time = "Lifetime", Day = nil, Key = "DYHUB-LAZY" },
     ["loyd3132"] = { Tag = "vortex_260", Time = "Lifetime", Day = nil, Key = "DYHUB-V9L0A-H7NA6-EIA73-P5F2N-LIFETIME" },
     ["TTMEE11"] = { Tag = "pineappl_e.", Time = "Lifetime", Day = nil, Key = "DYHUB-U6QB8-E4VQ5-PA9K8-K5GA6-LIFETIME" },
-    ["deathkillerx18"] = { Tag = "yuuwu_", Time = "Lifetime", Day = nil, Key = "DYHUB-J7NA4-H7NA6-MKY7A-Y7NA5-LIFETIME" },
+    ["ghoulunknown02"] = { Tag = "yuuwu_", Time = "Lifetime", Day = nil, Key = "DYHUB-J7NA4-H7NA6-MKY7A-Y7NA5-LIFETIME" },
     ["gra_nth"] = { Tag = "granthur", Time = "Lifetime", Day = nil, Key = "DYHUB-U7NP4-H7NA6-MKY7A-Y7NA5-LIFETIME" },
     ["BloodyM4Y4"] = { Tag = "bober_official_bksf", Time = "Lifetime", Day = nil, Key = "DYHUB-U7NP4-D4V5P-MKY7A-Y7NA5-LIFETIME" },
     ["killstreakplayer4"] = { Tag = "mr_guy0986", Time = "Lifetime", Day = nil, Key = "DYHUB-B1M7A-L8MAG-Y50A6-P9MA6-LIFETIME" },
