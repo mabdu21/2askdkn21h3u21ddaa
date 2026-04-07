@@ -167,7 +167,8 @@ return {
     ["kikoman714"] = { Tag = "fanluser", Time = nil, Day = 39, Key = "DYHUB-P9MA6-N6HQ5-KEY38DAY" },
     
     ["ChuBinyeuBread"] = { Tag = "gojo_senpai9115", Time = nil, Day = 3, Key = "DYHUB-HPMA6-N6HQ6-KEY3DAY" },
-
+    ["Altacc0182928"] = { Tag = "riceball1233348881", Time = nil, Day = 5, Key = "DYHUB-TR5A6-N6HQ5-GIVEAWAY" },
+    
     ["christopherbumitokfc"] = { Tag = "hailsin", Time = nil, Day = 14, Key = "DYHUB-T9PA6-N6HQ5-GIVEAWAY" },
     ["ytalo1500"] = { Tag = "ytalo__", Time = nil, Day = 14, Key = "DYHUB-T9MA6-N6HQ5-GIVEAWAY" },
     ["Zyxnn_18"] = { Tag = "keiii0906", Time = nil, Day = 14, Key = "DYHUB-K9MA6-N6HQ5-GIVEAWAY" },
