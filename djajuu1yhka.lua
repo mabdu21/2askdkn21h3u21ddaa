@@ -1,7 +1,99 @@
--- =========================================================
--- DYHUB LOADER | V7392
--- Author: dyumra
--- =========================================================
+if getgenv().DYHUB_Loader then
+    warn("Loader already running!")
+    return
+end
+
+repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game.GameId ~= 0
+
+task.spawn(function()
+    local mt = getrawmetatable(game)
+    if not mt then return end
+
+    setreadonly(mt, false)
+
+    local oldNamecall = mt.__namecall
+    local oldKick
+
+    -- hook Kick (กัน Local Kick เท่านั้น)
+    oldKick = hookfunction(game.Players.LocalPlayer.Kick, function(...)
+        if true then
+            warn("[AC] Blocked Kick attempt")
+            return
+        end
+        return oldKick(...)
+    end)
+
+    -- keywords ขั้นสูง
+    local blacklist = {"anti","cheat","kick","ban","detect","flag","log","report","ac","secure","check","verify","validation","validate","scan","monitor","watch","track","guard","shield","protection","protect","security","safety","integrity","auth","authentication","authorize","logger","logging","logdata","webhook","discordhook","httplog","remotelog","hook","hooklog","hookdata","hookevent","hookcheat","logcheat","cheatlog","reporter","reportlog","ticket","tickets","supportticket","mod","moderation","adminlog","stafflog","analytics","metrics","metriclog","tracker","tracking","tracklog","eventlog","datalog","datatrack","flagged","flaglog","detectlog","detectionlog","http","https","requestlog","postlog","apilog","api","endpoint","database","db","datastore","storelog","save","savelog","audit","auditlog","journal","history","historylog","monitorlog","watchlog","suspicious","exploit","tamper","abuse","violation","illegal","servercheck","clientcheck","sanity","heartbeat","pingcheck","sync","hidden","core","internal","system","service","handler","manager","controller","module","main","init","acb","anticheat","acsys","sec","prot","guarded"}
+
+    local function isSuspicious(remote, method, args)
+        local name = tostring(remote):lower()
+
+        -- เช็คชื่อ
+        for _, v in ipairs(blacklist) do
+            if name:find(v) then
+                return true
+            end
+        end
+
+        -- เช็ค argument (บางเกมส่ง string มาตรวจ)
+        for _, v in ipairs(args) do
+            if typeof(v) == "string" then
+                local l = v:lower()
+                for _, b in ipairs(blacklist) do
+                    if l:find(b) then
+                        return true
+                    end
+                end
+            end
+        end
+
+        return false
+    end
+
+    mt.__namecall = newcclosure(function(self, ...)
+        local method = getnamecallmethod()
+        local args = {...}
+
+        if Settings.Auto.AC then
+            if method == "FireServer" or method == "InvokeServer" then
+                if isSuspicious(self, method, args) then
+                    warn("[AC] Blocked Remote:", self)
+                    return nil
+                end
+            end
+        end
+
+        return oldNamecall(self, ...)
+    end)
+
+    setreadonly(mt, true)
+end)
+
+function missing(t, f, fallback)
+	if type(f) == t then return f end
+	return fallback
+end
+
+cloneref = missing("function", cloneref, function(...) return ... end)
+getgc = missing("function", getgc or get_gc_objects)
+getconnections = missing("function", getconnections or get_signal_cons)
+
+Services = setmetatable({}, {
+	__index = function(self, name)
+		local success, cache = pcall(function()
+			return cloneref(game:GetService(name))
+		end)
+		if success then
+			rawset(self, name, cache)
+			return cache
+		else
+			error("Invalid Service: " .. tostring(name))
+		end
+	end
+})
+
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
 local prefix = "."
 local cmdtest = "h"
@@ -386,7 +478,7 @@ local function notify(text)
 			Duration = 4
 		})
 	end)
-	print("[DYHUB Notify]", text)
+	print("[DYHUB] Notify: ", text)
 end
 
 local function clickTween(btn)
@@ -398,6 +490,8 @@ local function clickTween(btn)
 	tween1.Completed:Wait()
 	tween2:Play()
 end
+
+getgenv().DYHUB_Loader = true
 
 --// Function to create Key GUI
 local function createKeyGui(onCorrectKey)
@@ -662,6 +756,7 @@ local gameLists = {
             [35888785] = {name = "Prospecting", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Prospecting.lua"},
             [35786254] = {name = "Mines", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Mine.lua"},
             [35815576] = {name = "Schedule 🥔", url = "https://pastebin.com/raw/gCSmFnbb"},
+	        [719390069] = {name = "Be a Lucky Block", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/luckyblock.txt"},
 	        [483027661] = {name = "Bite by Night", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Bbbn.lua"},
 	        [635601940] = {name = "Bite by Night", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Bbbn.lua"},
             [34761390] = {name = "Protect The House From Monsters", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/protect.lua"}, 
@@ -751,7 +846,7 @@ local gameLists = {
             [5693735] = {name = "Evade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/djsjjwsjsnjajevaddddeeeeeeddeee.txt"},
             [12013007] = {name = "The Strongest Battleground", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/TSB.lua"},
 	        [1002185259] = {name = "Sailor Piece", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SPD.lua"},
-	        [719390069] = {name = "Be a Lucky Block", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/luckyblock.txt"},
+	        [959433345] = {name = "Survive the Apocalypse", url = "https://raw.githubusercontent.com/mabdu21/Hahahahahxhshnshbuefibeeewiyehhxhss/refs/heads/main/defffffffftufffff.lua"},
             [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Jajuajsnahajabladeeejajabaalll.lua"},
         },
 
