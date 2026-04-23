@@ -1,4 +1,4 @@
--- // NEW LIST | GV-297
+-- // NEW LIST | GV-298
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -188,7 +188,8 @@ return {
     -- ====================== BUY TH =============================
     ["kguorkkai"] = { Tag = "xeqes", Time = "Lifetime", Day = nil, Key = "DYHUB-D4QF3-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
     ["GODxGSP"] = { Tag = "k7nzz_", Time = "Lifetime", Day = nil, Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
-
+    ["McdonaldCassidy02"] = { Tag = "Hellomn", Time = "Lifetime", Day = nil, Key = "DYHUB-LQ8V4-BBN" },
+    
     -- ====================== PAYMENT =============================
     ["Oegsjmc"] = { Tag = "topnumberone.", Time = nil, Day = 177, Key = "DYHUB-SNOWY-KEYHELPER" },
     ["monyegaming24"] = { Tag = "whitecat1_", Time = nil, Day = 8, Key = "DYHUB-K6VA5-TRIALHELPER" },
