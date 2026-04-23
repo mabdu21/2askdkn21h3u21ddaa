@@ -1,4 +1,4 @@
--- // NEW LIST | GV-295
+-- // NEW LIST | GV-297
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -183,10 +183,10 @@ return {
     ["topoyoo3"] = { Tag = "afdangimang0507", Time = nil, Day = 14, Key = "DYHUB-T9HA6-N6HQ5-GIVEAWAY" },
     ["uhhMeSksm"] = { Tag = "sksmcutg", Time = nil, Day = 30, Key = "DYHUB-P9MA6-N6OQ5-GIVEAWAY" },
     ["SimpsonErin8"] = { Tag = "SimpsonErin8", Time = nil, Day = 9, Key = "DYHUB-P8MA6-N0OQ5-GIVEAWAY" },
-    ["roblox"] = { Tag = "roblox", Time = nil, Day = 39, Key = "DYHUB-D6MA6-N6HQ5-GIVEAWAY" },
+    ["Rulerema"] = { Tag = "boozzon", Time = nil, Day = 7, Key = "DYHUB-D6MA6-N6HQ5-GIVEAWAY" },
     
     -- ====================== BUY TH =============================
-    ["NoN_oj1"] = { Tag = "xeqes", Time = "Lifetime", Day = nil, Key = "DYHUB-D4QF3-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
+    ["kguorkkai"] = { Tag = "xeqes", Time = "Lifetime", Day = nil, Key = "DYHUB-D4QF3-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
     ["GODxGSP"] = { Tag = "k7nzz_", Time = "Lifetime", Day = nil, Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
 
     -- ====================== PAYMENT =============================
