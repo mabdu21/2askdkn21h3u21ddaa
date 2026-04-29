@@ -855,7 +855,7 @@ if playerPremium then
     end
     loadScript()
     
-    local list = loadstring(game:HttpGet("https://pastefy.app/YgXWjRMj/raw"))()
+    local list = loadstring(game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua"))()
     local p = game:GetService("Players").LocalPlayer
     local info = list[p.Name]
     
