@@ -1,4 +1,4 @@
--- V2
+-- V3
 
 if getgenv().DYHUB_Loader then
     warn("Loader already running!")
@@ -674,7 +674,7 @@ local gameLists = {
 	        [635601940] = {name = "Bite by Night", url = "https://raw.githubusercontent.com/mabdu21/Hahahahahxhshnshbuefibeeewiyehhxhss/refs/heads/main/d1.lua"},
             [34761390] = {name = "Protect The House From Monsters", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/protect.lua"}, 
             [8818124] = {name = "Violence District", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/addon.lua.txt"},
-            [6022628] = {name = "ST : Blockade Battlefront", url = "https://pastefy.app/X5nY9zvC/raw"},
+            [6022628] = {name = "ST : Blockade Battlefront", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/ydhuabdad.lua"},
             [12398672] = {name = "Ink Game", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/inkgame.lua"},
         },
 
