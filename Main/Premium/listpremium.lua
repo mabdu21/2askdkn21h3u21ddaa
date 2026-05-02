@@ -1,4 +1,4 @@
--- // NEW LIST | GV-304
+-- // NEW LIST | GV-305
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -106,6 +106,7 @@ return {
     ["KOOQQDFDSAS"] = { Tag = "shadow_75505", Time = "Lifetime", Day = nil, Key = "DYHUB-AO7KL-R5T49-P2M9K-6HE2Q-LIFETIME" },
     ["sanskilledking"] = { Tag = "truegodofdestruction", Time = "Lifetime", Day = nil, Key = "DYHUB-UO7KL-R5T49-P4M9K-6HE2Q-LIFETIME" },
     ["bajjosgameplay"] = { Tag = "bajjoss", Time = "Lifetime", Day = nil, Key = "DYHUB-U47KL-R5T4H-POM6K-6HG2Q-LIFETIME" },
+    ["SKibiidiaura"] = { Tag = "humanhunan", Time = "Lifetime", Day = nil, Key = "DYHUB-S4GKL-R5T4H-POM7K-6HG2Q-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
