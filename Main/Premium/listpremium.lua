@@ -105,6 +105,7 @@ return {
     ["maon_moan"] = { Tag = "vepro00929", Time = "Lifetime", Day = nil, Key = "DYHUB-FL9KL-R5PA9-P2M9N-6JSOQ-LIFETIME" },
     ["KOOQQDFDSAS"] = { Tag = "shadow_75505", Time = "Lifetime", Day = nil, Key = "DYHUB-AO7KL-R5T49-P2M9K-6HE2Q-LIFETIME" },
     ["sanskilledking"] = { Tag = "truegodofdestruction", Time = "Lifetime", Day = nil, Key = "DYHUB-UO7KL-R5T49-P4M9K-6HE2Q-LIFETIME" },
+    ["bajjosgameplay"] = { Tag = "bajjoss", Time = "Lifetime", Day = nil, Key = "DYHUB-U47KL-R5T4H-POM6K-6HG2Q-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
