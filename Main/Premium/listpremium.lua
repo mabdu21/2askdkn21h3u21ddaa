@@ -107,6 +107,7 @@ return {
     ["sanskilledking"] = { Tag = "truegodofdestruction", Time = "Lifetime", Day = nil, Key = "DYHUB-UO7KL-R5T49-P4M9K-6HE2Q-LIFETIME" },
     ["bajjosgameplay"] = { Tag = "bajjoss", Time = "Lifetime", Day = nil, Key = "DYHUB-U47KL-R5T4H-POM6K-6HG2Q-LIFETIME" },
     ["SKibiidiaura"] = { Tag = "humanhunan", Time = "Lifetime", Day = nil, Key = "DYHUB-S4GKL-R5T4H-POM7K-6HG2Q-LIFETIME" },
+    ["slakakakakakak179"] = { Tag = "scp06469", Time = "Lifetime", Day = nil, Key = "DYHUB-P8GKL-R5T4H-POM7K-6HG2Q-LIFETIME" },
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
