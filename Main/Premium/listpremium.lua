@@ -137,8 +137,6 @@ return {
     ["fogman223114"] = { Tag = "vigil7007", Time = nil, Day = 3, Key = "DYHUB-G8O7L-KEY3DAY" },
     ["Bob_Smartpants"] = { Tag = "bob_smartpants1", Time = nil, Day = 3, Key = "DYHUB-G4H1L-KEY3DAY" },
 
-    ["Darskay_123"] = { Tag = "darksky87", Time = nil, Day = 14, Key = "DYHUB-D3R1P-KEY14DAY" },
-    
     ["sosomysoso"] = { Tag = "dafik34_84007", Time = nil, Day = 15, Key = "DYHUB-LUNNY-KEY7DAY" },
     ["acengsniper"] = { Tag = "manskiw", Time = nil, Day = 15, Key = "DYHUB-M6BA3-KEY14DAY" },
     ["Its_MortalFTW"] = { Tag = "knaya.", Time = nil, Day = 10, Key = "DYHUB-T5BA3-KEY7DAY" },
