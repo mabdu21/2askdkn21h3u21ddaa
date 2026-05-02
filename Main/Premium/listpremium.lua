@@ -1,4 +1,4 @@
--- // NEW LIST | GV-305
+-- // NEW LIST | GV-307
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -121,7 +121,8 @@ return {
     ["DANZY259"] = { Tag = "kenbaik", Time = nil, Day = 3, Key = "DYHUB-E4J8A-KEY3DAY" }, 
     ["2CCameron"] = { Tag = "cam3531395", Time = nil, Day = 3, Key = "DYHUB-H4I6A-KEY3DAY" }, 
     
-    ["The_Baconx83"] = { Tag = "Popcat", Time = nil, Day = 1, Key = "DYHUB-FK8HO-KEY1DAY" }, -- today
+    ["zizipk"] = { Tag = "trucv4421g", Time = nil, Day = 1, Key = "DYHUB-FK8HO-KEY1DAY" }, -- today 2026
+    
     ["airat_1433"] = { Tag = "thor074500", Time = nil, Day = 2, Key = "DYHUB-FL3HO-KEY1DAY" }, -- today
     ["akakakakaka201"] = { Tag = "optimus14232", Time = nil, Day = 3, Key = "DYHUB-FI8HO-KEY1DAY" }, -- today
     ["astro_alt113"] = { Tag = "uttvmainer_xd", Time = nil, Day = 7, Key = "DYHUB-D18HO-KEY7DAY" }, -- today
