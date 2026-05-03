@@ -4,7 +4,7 @@ local KEY_LIST_URLS = {
     "https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/STBBList.lua"
 }
 
-local SCRIPT_URL = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/ydhuabdad.lua"
+local SCRIPT_URL = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/dcddfef834abb14ec934230d4211daaadf3a552d/ydhuabdad.lua"
 
 --// SERVICES
 local Players = game:GetService("Players")
