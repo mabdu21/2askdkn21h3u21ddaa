@@ -1,122 +1,151 @@
---// CONFIG
-local KEY_LIST_URLS = {
+--// CONFIG : v021
+local URLS = {
     "https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua",
     "https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/STBBList.lua"
 }
 
-local SCRIPT_URL = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/dcddfef834abb14ec934230d4211daaadf3a552d/ydhuabdad.lua"
+local MAIN_SCRIPT = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/dcddfef834abb14ec934230d4211daaadf3a552d/ydhuabdad.lua"
 
 --// SERVICES
 local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
+local HttpService = game:GetService("HttpService")
+local LP = Players.LocalPlayer
 
---// GET KEY
-local INPUT_KEY = rawget(_G, "key") or key
+--// KEY
+local KEY = tostring(rawget(_G,"key") or key or ""):gsub("^%s+",""):gsub("%s+$","")
 
---// FUNCTION: Kick
-local function kickPlayer(reason)
-    warn("[KICK]:", reason)
-    LocalPlayer:Kick(reason)
-end
-
---// CHECK KEY
-if not INPUT_KEY or INPUT_KEY == "" then
-    kickPlayer("Access denied: No authentication key provided.")
-    return
-end
-
-if string.lower(INPUT_KEY) == "free" then
-    task.wait(2)
-    kickPlayer("Access denied: Complimentary access does not exist.")
-    return
-end
-
---// LOAD KEY LIST
-local response
-local usedURL
-
-for i, url in ipairs(KEY_LIST_URLS) do
-    local success, result = pcall(function()
-        return game:HttpGet(url)
+--// KICK
+local function Kick(msg)
+    warn("[AUTH]",msg)
+    pcall(function()
+        LP:Kick(msg)
     end)
+end
 
-    if success and result and result ~= "" then
-        print("[INFO] Loaded key list from URL #" .. i)
-        response = result
-        usedURL = url
-        break
+--// BASIC CHECK
+if KEY == "" then
+    return Kick("Authentication failed : No key provided.")
+end
+
+if KEY:lower() == "free" then
+    return Kick("Authentication failed : Invalid plan.")
+end
+
+--// HTTP GET
+local function Get(url,retry)
+    retry = retry or 3
+
+    for i=1,retry do
+        local s,r = pcall(function()
+            return game:HttpGet(url)
+        end)
+
+        if s and type(r) == "string" and r ~= "" then
+            return r
+        end
+
+        task.wait(0.75)
+    end
+end
+
+--// LOAD DATABASE
+local DB
+local USED_URL
+
+for _,url in ipairs(URLS) do
+    local data = Get(url,5)
+
+    if data then
+        local s,r = pcall(function()
+            return loadstring(data)()
+        end)
+
+        if s and type(r) == "table" then
+            DB = r
+            USED_URL = url
+            break
+        else
+            warn("[AUTH] Invalid database :",url)
+        end
     else
-        warn("[WARN] Failed to load URL #" .. i)
+        warn("[AUTH] Failed :",url)
     end
 end
 
-if not response then
-    kickPlayer("Unable to verify credentials (all sources failed).")
-    return
+if not DB then
+    return Kick("Authentication server unavailable.")
 end
 
---// CONVERT TO TABLE
-local keyData
-local ok, err = pcall(function()
-    keyData = loadstring(response)()
+print("[AUTH] Loaded DB from :",USED_URL)
+
+--// FIND USER
+local function FindUser()
+    local names = {
+        LP.Name,
+        LP.Name:lower(),
+        LP.DisplayName,
+        LP.DisplayName:lower()
+    }
+
+    for user,data in pairs(DB) do
+        local n = tostring(user)
+
+        for _,v in ipairs(names) do
+            if n == v or n:lower() == v then
+                if type(data) == "table" then
+                    return data
+                end
+            end
+        end
+    end
+end
+
+local UserData = FindUser()
+
+if not UserData then
+    warn("[AUTH] User not found :",LP.Name)
+
+    -- debug names
+    local count = 0
+    for n in pairs(DB) do
+        count += 1
+        if count <= 5 then
+            print("[DB USER]",n)
+        end
+    end
+
+    return Kick("Authentication failed : User not registered.")
+end
+
+--// KEY CHECK
+local ServerKey = tostring(UserData.Key or ""):gsub("^%s+",""):gsub("%s+$","")
+
+if ServerKey == "" then
+    return Kick("Authentication failed : Missing server key.")
+end
+
+if ServerKey ~= KEY then
+    warn("[AUTH] Wrong Key")
+    warn("INPUT :",KEY)
+    warn("SERVER :",ServerKey)
+
+    return Kick("Authentication failed : Invalid key.")
+end
+
+print("[AUTH] Success :",LP.Name)
+
+--// LOAD MAIN
+local MainContent = Get(MAIN_SCRIPT,5)
+
+if not MainContent then
+    return Kick("Failed to download main script.")
+end
+
+local s,e = pcall(function()
+    loadstring(MainContent)()
 end)
 
-if not ok then
-    warn("[ERROR] loadstring failed:", err)
-    kickPlayer("Credential verification failed (bad server response).")
-    return
-end
-
-if type(keyData) ~= "table" then
-    kickPlayer("Credential verification failed (data is not table).")
-    return
-end
-
---// FIND USER (case-insensitive)
-local playerName = string.lower(LocalPlayer.Name)
-local userData
-
-for name, data in pairs(keyData) do
-    if string.lower(name) == playerName then
-        userData = data
-        break
-    end
-end
-
-print("[DEBUG] Player:", LocalPlayer.Name)
-print("[DEBUG] Input Key:", INPUT_KEY)
-print("[DEBUG] Data Found:", userData)
-
-if not userData then
-    kickPlayer("Access denied: Your account is not authorized.")
-    return
-end
-
---// CHECK KEY
-if not userData.Key then
-    kickPlayer("Access denied: Key field missing in database.")
-    return
-end
-
-if tostring(userData.Key) ~= tostring(INPUT_KEY) then
-    kickPlayer("Access denied: Invalid authentication key.")
-    return
-end
-
-print("[SUCCESS] Authentication passed!")
-
---// LOAD MAIN SCRIPT
-local scriptSuccess, scriptErr = pcall(function()
-    local content = game:HttpGet(SCRIPT_URL)
-    
-    if not content or content == "" then
-        error("Empty script content")
-    end
-    
-    loadstring(content)()
-end)
-
-if not scriptSuccess then
-    warn("[ERROR] Script load failed:", scriptErr)
-    kickPlayer("Execution failed: Unable to load main script.")
+if not s then
+    warn("[MAIN ERROR]",e)
+    return Kick("Main script execution failed.")
 end
