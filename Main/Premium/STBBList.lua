@@ -10,5 +10,6 @@ return {
     ["boplsman"] = { Tag = "therandom9", Key = "DYHUB-J5D1K-STBB" },
     ["alt1lr"] = { Tag = "astro.lynxs", Key = "DYHUB-J4D2K-STBB" },
     ["Huggy123481"] = { Tag = "justin20120701", Key = "DYHUB-Q4D2K-STBB" },
-    ["seek_good9"] = { Tag = "seek_good67", Key = "DYHUB-T3D2K-STBB" }
+    ["seek_good9"] = { Tag = "seek_good67", Key = "DYHUB-T3D2K-STBB" },
+    ["hoanggamer200"] = { Tag = "hoang9886", Key = "DYHUB-T1A2K-STBB" },
 }
