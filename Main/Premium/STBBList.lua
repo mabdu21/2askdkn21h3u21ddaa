@@ -13,4 +13,5 @@ return {
     ["seek_good9"] = { Tag = "seek_good67", Key = "DYHUB-T3D2K-STBB" },
     ["hoanggamer200"] = { Tag = "hoang9886", Key = "DYHUB-T1A2K-STBB" },
     ["yucan2021"] = { Tag = "yucan2026", Key = "DYHUB-Z1A2K-STBB" },
+    ["adammdmmkj229"] = { Tag = "anan.tima_32322", Key = "DYHUB-Z1A5K-STBB" },
 }
