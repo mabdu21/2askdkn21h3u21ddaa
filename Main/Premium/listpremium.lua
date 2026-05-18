@@ -1,4 +1,4 @@
--- // NEW LIST | GV-310
+-- // NEW LIST | GV-311
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -118,6 +118,7 @@ return {
     ["growwltoken11"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-ALT" },
   
     -- ====================== Buyer (Trial / Short-term) =============================
+    ["justnormalacc62"] = { Tag = "justzephry1098", Time = nil, Day = 2, Key = "DYHUB-G8P1L-KEY2DAY" },
     ["dzibak211122"] = { Tag = "patryk211122", Time = nil, Day = 2, Key = "DYHUB-E1P8A-KEY1DAY" }, 
     ["EnesTalha123197"] = { Tag = "EnesTalha123197", Time = nil, Day = 14, Key = "DYHUB-E9J8A-KEY14DAY" }, 
     ["yantotiw"] = { Tag = "ikyy_maybe", Time = nil, Day = 3, Key = "DYHUB-E4D8A-KEY1DAY" }, 
