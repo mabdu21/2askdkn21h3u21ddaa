@@ -65,10 +65,10 @@ for _,url in ipairs(URLS) do
             USED_URL = url
             break
         else
-            warn("[AUTH] Invalid database :",url)
+            warn("[AUTH] Invalid database")
         end
     else
-        warn("[AUTH] Failed :",url)
+        warn("[AUTH] Failed")
     end
 end
 
@@ -76,7 +76,7 @@ if not DB then
     return Kick("Authentication server unavailable.")
 end
 
-print("[AUTH] Loaded DB from :",USED_URL)
+print("[AUTH] Loaded DB from : LINK")
 
 --// FIND USER
 local function FindUser()
@@ -110,7 +110,7 @@ if not UserData then
     for n in pairs(DB) do
         count += 1
         if count <= 5 then
-            print("[DB USER]",n)
+            print("[DB USER]")
         end
     end
 
