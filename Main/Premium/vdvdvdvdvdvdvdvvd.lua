@@ -142,7 +142,7 @@ if not UserData then
         count += 1
 
         if count <= 5 then
-            print("DB USER :",n)
+            print("DB USER :")
         end
     end
 
