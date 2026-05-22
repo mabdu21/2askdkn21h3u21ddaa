@@ -1,4 +1,4 @@
---// CONFIG
+--// CONFIG v2222
 local URLS = {
     "https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua"
 }
@@ -7,6 +7,7 @@ local MAIN_SCRIPT = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-
 
 --// SERVICES
 local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
 local HttpService = game:GetService("HttpService")
 local LP = Players.LocalPlayer
 
@@ -14,7 +15,18 @@ local LP = Players.LocalPlayer
 local LoadString = loadstring or load
 
 if not LoadString then
-    return warn("Executor doesn't support loadstring")
+    return
+end
+
+--// NOTIFY
+local function Notify(title,text,duration)
+    pcall(function()
+        StarterGui:SetCore("SendNotification",{
+            Title = title or "SYSTEM",
+            Text = text or "",
+            Duration = duration or 5
+        })
+    end)
 end
 
 --// SAFE HTTP
@@ -55,12 +67,20 @@ end
 local KEY = tostring(rawget(_G,"key") or key or ""):gsub("^%s+",""):gsub("%s+$","")
 
 if KEY == "" then
-    warn("No key detected")
+    Notify(
+        "AUTHENTICATION FAILED",
+        "No key detected.",
+        8
+    )
     return
 end
 
 if KEY:lower() == "free" then
-    warn("Free plan blocked")
+    Notify(
+        "ACCESS DENIED",
+        "Free plan is not allowed.",
+        8
+    )
     return
 end
 
@@ -83,6 +103,12 @@ end
 local DB
 local USED_URL
 
+Notify(
+    "INITIALIZING",
+    "Connecting to authentication server...",
+    5
+)
+
 for _,url in ipairs(URLS) do
     local data = Get(url,5)
 
@@ -94,21 +120,38 @@ for _,url in ipairs(URLS) do
         if s and type(r) == "table" then
             DB = r
             USED_URL = url
+
+            Notify(
+                "DATABASE CONNECTED",
+                "Premium database loaded successfully.",
+                5
+            )
+
             break
         else
-            warn("Invalid DB :")
+            Notify(
+                "DATABASE ERROR",
+                "Invalid database structure detected.",
+                8
+            )
         end
     else
-        warn("Failed URL :")
+        Notify(
+            "CONNECTION FAILED",
+            "Unable to fetch authentication database.",
+            8
+        )
     end
 end
 
 if not DB then
-    warn("Database unavailable")
+    Notify(
+        "FATAL ERROR",
+        "Authentication database unavailable.",
+        10
+    )
     return
 end
-
-print("Loaded DB :")
 
 --// FIND USER
 local function FindUser()
@@ -135,16 +178,11 @@ end
 local UserData = FindUser()
 
 if not UserData then
-    warn("User not registered :",LP.Name)
-
-    local count = 0
-    for n in pairs(DB) do
-        count += 1
-
-        if count <= 5 then
-            print("DB USER :")
-        end
-    end
+    Notify(
+        "USER NOT REGISTERED",
+        "Username : "..LP.Name,
+        10
+    )
 
     return
 end
@@ -153,24 +191,46 @@ end
 local ServerKey = tostring(UserData.Key or ""):gsub("^%s+",""):gsub("%s+$","")
 
 if ServerKey == "" then
-    warn("Missing server key")
+    Notify(
+        "AUTHENTICATION ERROR",
+        "Server key missing.",
+        8
+    )
     return
 end
 
 if ServerKey ~= KEY then
-    warn("Wrong key")
-    warn("INPUT :",KEY)
-    warn("SERVER : NIL")
+    Notify(
+        "WRONG KEY",
+        "Your Key : "..KEY,
+        10
+    )
+
     return
 end
 
-print("Authentication success :",LP.Name)
+Notify(
+    "AUTHENTICATION SUCCESS",
+    "Welcome "..LP.Name..
+    "\nKey : "..KEY,
+    10
+)
 
 --// LOAD MAIN
+Notify(
+    "LOADING",
+    "Downloading main script...",
+    5
+)
+
 local MainContent = Get(MAIN_SCRIPT,5)
 
 if not MainContent then
-    warn("Failed to download main script")
+    Notify(
+        "DOWNLOAD FAILED",
+        "Unable to download main script.",
+        8
+    )
     return
 end
 
@@ -179,8 +239,17 @@ local s,e = pcall(function()
 end)
 
 if not s then
-    warn("Main script error :")
+    Notify(
+        "RUNTIME ERROR",
+        "Main script execution failed.",
+        10
+    )
+
     return
 end
 
-print("Script loaded successfully")
+Notify(
+    "SCRIPT LOADED",
+    "Premium script loaded successfully.",
+    8
+)
