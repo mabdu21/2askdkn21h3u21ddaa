@@ -96,10 +96,10 @@ for _,url in ipairs(URLS) do
             USED_URL = url
             break
         else
-            warn("Invalid DB :",url)
+            warn("Invalid DB :")
         end
     else
-        warn("Failed URL :",url)
+        warn("Failed URL :")
     end
 end
 
@@ -108,7 +108,7 @@ if not DB then
     return
 end
 
-print("Loaded DB :",USED_URL)
+print("Loaded DB :")
 
 --// FIND USER
 local function FindUser()
@@ -160,7 +160,7 @@ end
 if ServerKey ~= KEY then
     warn("Wrong key")
     warn("INPUT :",KEY)
-    warn("SERVER :",ServerKey)
+    warn("SERVER : NIL")
     return
 end
 
@@ -179,7 +179,7 @@ local s,e = pcall(function()
 end)
 
 if not s then
-    warn("Main script error :",e)
+    warn("Main script error :")
     return
 end
 
