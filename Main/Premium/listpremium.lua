@@ -141,6 +141,6 @@ return {
     ["parbal_god"] = { Tag = "gorill_guy", Time = nil, Day = 15, Key = "DYHUB-F4VA5-HELPER" },
     ["pipahaha13"] = { Tag = "lingabool", Time = nil, Day = 8, Key = "DYHUB-F4J8L-TRIALHELPER" },
     ["heavenssag1"] = { Tag = "vestode", Time = nil, Day = 9, Key = "DYHUB-K6VP5-TRIALHELPER" },
-    ["ILO576"] = { Tag = "vestode", Time = nil, Day = 8, Key = "DYHUB-K6V95-TRIALHELPER" },
+    ["ILOM576"] = { Tag = "vestode", Time = nil, Day = 8, Key = "DYHUB-K6V95-TRIALHELPER" },
     ["zeus15792"] = { Tag = "bajjoss", Time = nil, Day = 8, Key = "DYHUB-J6MA5-TRIALHELPER" },
 }
