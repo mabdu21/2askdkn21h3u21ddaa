@@ -8,43 +8,101 @@ local MAIN_SCRIPT = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-
 
 --// SERVICES
 local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
 local HttpService = game:GetService("HttpService")
+
 local LP = Players.LocalPlayer
 
---// KEY
-local KEY = tostring(rawget(_G,"key") or key or ""):gsub("^%s+",""):gsub("%s+$","")
+--// SAFE LOADSTRING
+local LoadString = loadstring or load
 
---// KICK
-local function Kick(msg)
-    warn("[AUTH]",msg)
+if not LoadString then
+    return
+end
+
+--// NOTIFY
+local function Notify(title,text,duration)
     pcall(function()
-        LP:Kick(msg)
+        StarterGui:SetCore("SendNotification",{
+            Title = title or "SYSTEM",
+            Text = text or "",
+            Duration = duration or 5
+        })
     end)
 end
 
+--// SAFE HTTP
+local function HttpGet(url)
+    local body
+
+    -- game:HttpGet
+    pcall(function()
+        body = game:HttpGet(url)
+    end)
+
+    if type(body) == "string" and body ~= "" then
+        return body
+    end
+
+    -- request fallback
+    local req =
+        request or
+        http_request or
+        syn and syn.request or
+        fluxus and fluxus.request
+
+    if req then
+        local s,r = pcall(function()
+            return req({
+                Url = url,
+                Method = "GET"
+            })
+        end)
+
+        if s and r and r.Body then
+            return r.Body
+        end
+    end
+end
+
+--// KEY
+local KEY = tostring(
+    rawget(_G,"key") or key or ""
+):gsub("^%s+",""):gsub("%s+$","")
+
 --// BASIC CHECK
 if KEY == "" then
-    return Kick("Authentication failed : No key provided.")
+    Notify(
+        "AUTHENTICATION FAILED",
+        "No key detected.",
+        8
+    )
+
+    return
 end
 
 if KEY:lower() == "free" then
-    return Kick("Authentication failed : Invalid plan.")
+    Notify(
+        "ACCESS DENIED",
+        "Free plan is not allowed.",
+        8
+    )
+
+    return
 end
 
---// HTTP GET
+--// RETRY GET
 local function Get(url,retry)
-    retry = retry or 3
+    retry = retry or 5
 
-    for i=1,retry do
-        local s,r = pcall(function()
-            return game:HttpGet(url)
-        end)
+    for i = 1,retry do
+        local data = HttpGet(url)
 
-        if s and type(r) == "string" and r ~= "" then
-            return r
+        if type(data) == "string" and data ~= "" then
+            return data
         end
 
-        task.wait(0.75)
+        task.wait(1)
     end
 end
 
@@ -52,31 +110,58 @@ end
 local DB
 local USED_URL
 
+Notify(
+    "INITIALIZING",
+    "Connecting to authentication server...",
+    5
+)
+
 for _,url in ipairs(URLS) do
     local data = Get(url,5)
 
     if data then
         local s,r = pcall(function()
-            return loadstring(data)()
+            return LoadString(data)()
         end)
 
         if s and type(r) == "table" then
             DB = r
             USED_URL = url
+
+            Notify(
+                "DATABASE CONNECTED",
+                "Premium database loaded successfully.",
+                5
+            )
+
             break
         else
-            warn("[AUTH] Invalid database")
+            Notify(
+                "DATABASE ERROR",
+                "Invalid database structure detected.",
+                8
+            )
         end
     else
-        warn("[AUTH] Failed")
+        Notify(
+            "CONNECTION FAILED",
+            "Unable to fetch authentication database.",
+            8
+        )
     end
 end
 
 if not DB then
-    return Kick("Authentication server unavailable.")
+    Notify(
+        "FATAL ERROR",
+        "Authentication database unavailable.",
+        10
+    )
+
+    return
 end
 
-print("[AUTH] Loaded DB from : LINK")
+print("[AUTH] Loaded DB from :", USED_URL)
 
 --// FIND USER
 local function FindUser()
@@ -88,10 +173,10 @@ local function FindUser()
     }
 
     for user,data in pairs(DB) do
-        local n = tostring(user)
+        local dbName = tostring(user)
 
         for _,v in ipairs(names) do
-            if n == v or n:lower() == v then
+            if dbName == v or dbName:lower() == v then
                 if type(data) == "table" then
                     return data
                 end
@@ -103,49 +188,90 @@ end
 local UserData = FindUser()
 
 if not UserData then
-    warn("[AUTH] User not found :",LP.Name)
+    Notify(
+        "USER NOT REGISTERED",
+        "Username : "..LP.Name,
+        10
+    )
 
-    -- debug names
-    local count = 0
-    for n in pairs(DB) do
-        count += 1
-        if count <= 5 then
-            print("[DB USER] nil")
-        end
-    end
-
-    return Kick("Authentication failed : User not registered.")
+    return
 end
 
---// KEY CHECK
-local ServerKey = tostring(UserData.Key or ""):gsub("^%s+",""):gsub("%s+$","")
+--// CHECK KEY
+local ServerKey = tostring(
+    UserData.Key or ""
+):gsub("^%s+",""):gsub("%s+$","")
 
 if ServerKey == "" then
-    return Kick("Authentication failed : Missing server key.")
+    Notify(
+        "AUTHENTICATION ERROR",
+        "Server key missing.",
+        8
+    )
+
+    return
 end
 
 if ServerKey ~= KEY then
+    Notify(
+        "WRONG KEY",
+        "Your Key : "..KEY,
+        10
+    )
+
     warn("[AUTH] Wrong Key")
     warn("INPUT :",KEY)
-    warn("SERVER : nil")
+    warn("SERVER :",ServerKey)
 
-    return Kick("Authentication failed : Invalid key.")
+    return
 end
+
+Notify(
+    "AUTHENTICATION SUCCESS",
+    "Welcome "..LP.Name..
+    "\nKey : "..KEY,
+    10
+)
 
 print("[AUTH] Success :",LP.Name)
 
 --// LOAD MAIN
+Notify(
+    "LOADING",
+    "Downloading main script...",
+    5
+)
+
 local MainContent = Get(MAIN_SCRIPT,5)
 
 if not MainContent then
-    return Kick("Failed to download main script.")
+    Notify(
+        "DOWNLOAD FAILED",
+        "Unable to download main script.",
+        8
+    )
+
+    return
 end
 
 local s,e = pcall(function()
-    loadstring(MainContent)()
+    LoadString(MainContent)()
 end)
 
 if not s then
-    warn("[MAIN ERROR]")
-    return Kick("Main script execution failed.")
+    warn("[MAIN ERROR]",e)
+
+    Notify(
+        "RUNTIME ERROR",
+        "Main script execution failed.",
+        10
+    )
+
+    return
 end
+
+Notify(
+    "SCRIPT LOADED",
+    "Premium script loaded successfully.",
+    8
+)
