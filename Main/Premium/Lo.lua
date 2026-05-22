@@ -110,7 +110,7 @@ if not UserData then
     for n in pairs(DB) do
         count += 1
         if count <= 5 then
-            print("[DB USER]")
+            print("[DB USER] nil")
         end
     end
 
@@ -127,7 +127,7 @@ end
 if ServerKey ~= KEY then
     warn("[AUTH] Wrong Key")
     warn("INPUT :",KEY)
-    warn("SERVER :",ServerKey)
+    warn("SERVER : nil")
 
     return Kick("Authentication failed : Invalid key.")
 end
@@ -146,6 +146,6 @@ local s,e = pcall(function()
 end)
 
 if not s then
-    warn("[MAIN ERROR]",e)
+    warn("[MAIN ERROR]")
     return Kick("Main script execution failed.")
 end
