@@ -1,4 +1,4 @@
--- // NEW LIST | GV-314
+-- // NEW LIST | GV-315
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -115,6 +115,7 @@ return {
     ["seek_good9"] = { Tag = "seek_good67", Time = "Lifetime", Day = nil, Key = "DYHUB-P4AKL-J6T4H-POL7K-6HG2Q-LIFETIME" },
     ["King_leopard156"] = { Tag = "agoti1099", Time = "Lifetime", Day = nil, Key = "DYHUB-FK4HO-LIFETIME" }, -- today 2026
     ["Teambacon_364"] = { Tag = "ilikeburgers1334", Time = "Lifetime", Day = nil, Key = "DYHUB-GK7HP-LIFETIME" }, -- today 2026
+    ["Kinito181925"] = { Tag = "mario180883", Time = "Lifetime", Day = nil, Key = "DYHUB-AU7WP-LIFETIME" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -123,6 +124,7 @@ return {
     ["growwltoken11"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-ALT" },
   
     -- ====================== Buyer (Trial / Short-term) =============================
+    ["zane76560"] = { Tag = "teguhdc1029", Time = nil, Day = 1, Key = "DYHUB-R4VA5-KEY1DAY" },
       
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
