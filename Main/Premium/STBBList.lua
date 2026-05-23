@@ -15,4 +15,5 @@ return {
     ["yucan2021"] = { Tag = "yucan2026", Key = "DYHUB-Z1A2K-STBB" },
     ["adammdmmkj229"] = { Tag = "anan.tima_32322", Key = "DYHUB-Z1A5K-STBB" },
     ["LordRed12344"] = { Tag = "devilred404", Key = "DYHUB-D1B5K-STBB" },
+    ["zizipk"] = { Tag = "trucv4421g", Key = "DYHUB-D1S2K-STBB" },
 }
