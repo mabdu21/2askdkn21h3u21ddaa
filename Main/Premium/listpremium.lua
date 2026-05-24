@@ -1,4 +1,4 @@
--- // NEW LIST | GV-315
+-- // NEW LIST | GV-316
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -125,7 +125,8 @@ return {
   
     -- ====================== Buyer (Trial / Short-term) =============================
     ["zane76560"] = { Tag = "teguhdc1029", Time = nil, Day = 1, Key = "DYHUB-R4VA5-KEY1DAY" },
-      
+    ["zizipk"] = { Tag = "trucv4421g", Time = nil, Day = 1, Key = "DYHUB-H4VA2-KEY1DAY" },
+    
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
     ["yhilarylov"] = { Tag = "ydiniz", Time = nil, Day = 5, Key = "DYHUB-F4VA5-BOOSTER" },
