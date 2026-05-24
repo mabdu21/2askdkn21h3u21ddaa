@@ -1,4 +1,4 @@
--- // NEW LIST | GV-319
+-- // NEW LIST | GV-318
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -118,6 +118,7 @@ return {
     ["Kinito181925"] = { Tag = "mario180883", Time = "Lifetime", Day = nil, Key = "DYHUB-AU7WP-LIFETIME" }, -- today 2026
     ["Rulerema"] = { Tag = "boozzon", Time = "Lifetime", Day = nil, Key = "DYHUB-RU7VP-LIFETIME" }, -- today 2026
     ["workingtoneg"] = { Tag = "napatrapeezx", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-LIFETIME" }, -- today 2026
+    ["yhilarylov"] = { Tag = "ydiniz", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-GK7HP-LIFETIME" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -131,7 +132,6 @@ return {
     
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
-    ["yhilarylov"] = { Tag = "ydiniz", Time = nil, Day = 5, Key = "DYHUB-F4VA5-BOOSTER" },
     -- ====================== Giveaway =============================
     
     -- ====================== BUY TH =============================
