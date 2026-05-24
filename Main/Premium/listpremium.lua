@@ -1,4 +1,4 @@
--- // NEW LIST | GV-318
+-- // NEW LIST | GV-319
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -117,6 +117,7 @@ return {
     ["Teambacon_364"] = { Tag = "ilikeburgers1334", Time = "Lifetime", Day = nil, Key = "DYHUB-GK7HP-LIFETIME" }, -- today 2026
     ["Kinito181925"] = { Tag = "mario180883", Time = "Lifetime", Day = nil, Key = "DYHUB-AU7WP-LIFETIME" }, -- today 2026
     ["Rulerema"] = { Tag = "boozzon", Time = "Lifetime", Day = nil, Key = "DYHUB-RU7VP-LIFETIME" }, -- today 2026
+    ["workingtoneg"] = { Tag = "napatrapeezx", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-LIFETIME" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
