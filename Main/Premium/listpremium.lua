@@ -1,4 +1,4 @@
--- // NEW LIST | GV-319.5
+-- // NEW LIST | GV-318
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -119,6 +119,7 @@ return {
     ["Rulerema"] = { Tag = "boozzon", Time = "Lifetime", Day = nil, Key = "DYHUB-RU7VP-LIFETIME" }, -- today 2026
     ["workingtoneg"] = { Tag = "napatrapeezx", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-LIFETIME" }, -- today 2026
     ["yhilarylov"] = { Tag = "ydiniz", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-GK7HP-LIFETIME" }, -- today 2026
+    ["zkguit10"] = { Tag = "ewertonx.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW3VP-G9MHP-LIFETIME" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -142,6 +143,7 @@ return {
     ["Ultra_Joke"] = { Tag = "kpzztv024674", Time = "Lifetime", Day = nil, Key = "DYHUB-NQ8F3-TP6HL-FW8V4-BA5GQ-LIFETIME" },
     
     -- ====================== PAYMENT =============================
+    ["emmijked123"] = { Tag = "alex_41899", Time = nil, Day = 67, Key = "DYHUB-ADMINKEY" },
     ["Oegsjmc"] = { Tag = "topnumberone.", Time = nil, Day = 177, Key = "DYHUB-SNOWY-KEYHELPER" },
     ["monyegaming24"] = { Tag = "whitecat1_", Time = nil, Day = 8, Key = "DYHUB-K6VA5-TRIALHELPER" },
     ["parbal_god"] = { Tag = "gorill_guy", Time = nil, Day = 15, Key = "DYHUB-F4VA5-HELPER" },
