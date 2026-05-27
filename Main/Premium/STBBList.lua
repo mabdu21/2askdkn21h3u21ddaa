@@ -16,4 +16,5 @@ return {
     ["adammdmmkj229"] = { Tag = "anan.tima_32322", Key = "DYHUB-Z1A5K-STBB" },
     ["LordRed12344"] = { Tag = "devilred404", Key = "DYHUB-D1B5K-STBB" },
     ["SRCSHOP_9317292"] = { Tag = "mysteriousguy0349", Key = "DYHUB-D1S2K-STBB" }, -- 1 day
+    ["zamilio12"] = { Tag = "zamilio.", Key = "DYHUB-D5A2K-STBB" }, -- 1 day
 }
