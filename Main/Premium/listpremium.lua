@@ -1,4 +1,4 @@
--- // NEW LIST | GV-318
+-- // NEW LIST | GV-319
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -15,7 +15,7 @@ return {
     -- ====================== Buyer ================================
     ["kagefym"] = { Tag = "itspect", Time = "Lifetime", Day = nil, Key = "DYHUB-ZXCVB-NMLKJ-HGFDS-APOIU-YTREW-LIFETIME" },
     ["Yavib_Aga"] = { Tag = "yavib", Time = "Lifetime", Day = nil, Key = "DYHUB-8JY5A-Q3RTW-IK7OL-FRJL2-IPL7W-LIFETIME" },
-    ["10k_langsa"] = { Tag = "idkkkkk0813", Time = "Lifetime", Day = nil, Key = "DYHUB-QWERT-YUIOP-ASDFG-HJKLZ-XCVBN-LIFETIME" },
+    ["YMH012"] = { Tag = "idkkkkk0813", Time = "Lifetime", Day = nil, Key = "DYHUB-QWERT-YUIOP-ASDFG-HJKLZ-XCVBN-LIFETIME" },
     ["MeowyBee"] = { Tag = "meowybee", Time = "Lifetime", Day = nil, Key = "DYHUB-4FJ8K-M1N2P-Q7RST-VWXYZ-U6L8F-LIFETIME" },
     ["PauGross0_910"] = { Tag = "lxxx7.", Time = "Lifetime", Day = nil, Key = "DYHUB-ST6IW-0K7WG-L8TWG-2GR5L-MN5O1-LIFETIME" },
     ["stealbf9"] = { Tag = "nzmdlz_97886", Time = "Lifetime", Day = nil, Key = "DYHUB-3WTAB-KU6AG-P9WBA-OI5SA-YEGSY-LIFETIME" },
