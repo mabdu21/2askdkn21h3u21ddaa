@@ -1,9 +1,8 @@
--- V7
-
+-- V555 | rebuild
 if getgenv().DYHUB_Loader then
-    warn("Loader already running!")
     return
 end
+getgenv().DYHUB_Loader = true
 
 repeat task.wait() until game:IsLoaded()
 
@@ -387,250 +386,696 @@ local function notify(text)
 	pcall(function()
 		StarterGui:SetCore("SendNotification", {
 			Title = "DYHUB",
-			Text = text,
-			Duration = 4
+			Text = tostring(text or ""),
+			Duration = 3
 		})
 	end)
-	print("[DYHUB] Notify: ", text)
 end
 
-local function clickTween(btn)
-	local original = btn.BackgroundColor3
-	local tweenInfo = TweenInfo.new(0.15, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
-	local tween1 = TweenService:Create(btn, tweenInfo, {BackgroundColor3 = original:lerp(Color3.fromRGB(40,40,40),0.5)})
-	local tween2 = TweenService:Create(btn, tweenInfo, {BackgroundColor3 = original})
-	tween1:Play()
-	tween1.Completed:Wait()
-	tween2:Play()
+local GET_KEY_LINK_URL = "https://direct-link.net/4825256/RSiwc6QNLX0v"
+local GET_KEY_DISCORD_URL = "https://discord.com/invite/jWNDPNMmyB"
+local DYHUB_ICON = "rbxassetid://104487529937663"
+
+local function new(class, props, parent)
+	local obj = Instance.new(class)
+	for k, v in pairs(props or {}) do
+		pcall(function()
+			obj[k] = v
+		end)
+	end
+	obj.Parent = parent
+	return obj
+end
+
+local function corner(parent, radius)
+	return new("UICorner", {CornerRadius = UDim.new(0, radius or 18)}, parent)
+end
+
+local function stroke(parent, color, transparency, thickness)
+	return new("UIStroke", {
+		ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+		Color = color or Color3.fromRGB(86, 86, 96),
+		Transparency = transparency or 0.45,
+		Thickness = thickness or 1
+	}, parent)
+end
+
+local function gradient(parent, c1, c2, rot)
+	return new("UIGradient", {
+		Color = ColorSequence.new({
+			ColorSequenceKeypoint.new(0, c1),
+			ColorSequenceKeypoint.new(1, c2)
+		}),
+		Rotation = rot or 90
+	}, parent)
+end
+
+local function tween(obj, info, props)
+	if not obj or not obj.Parent then return nil end
+	local ok, tw = pcall(function()
+		local t = TweenService:Create(obj, info, props)
+		t:Play()
+		return t
+	end)
+	return ok and tw or nil
+end
+
+local function safeCopy(text)
+	local ok = false
+	pcall(function()
+		if setclipboard then
+			setclipboard(text)
+			ok = true
+		end
+	end)
+	return ok
+end
+
+local function clickTween(btn, accent)
+	if not btn or not btn.Parent then return end
+	accent = accent or Color3.fromRGB(235, 235, 242)
+	btn.ClipsDescendants = true
+
+	local scale = btn:FindFirstChild("DYHUB_ScaleFX")
+	if not scale then
+		scale = Instance.new("UIScale")
+		scale.Name = "DYHUB_ScaleFX"
+		scale.Scale = 1
+		scale.Parent = btn
+	end
+
+	local ripple = Instance.new("Frame")
+	ripple.Name = "DYHUB_Ripple"
+	ripple.AnchorPoint = Vector2.new(0.5, 0.5)
+	ripple.Position = UDim2.fromScale(0.5, 0.5)
+	ripple.Size = UDim2.fromOffset(0, 0)
+	ripple.BackgroundColor3 = accent
+	ripple.BackgroundTransparency = 0.62
+	ripple.BorderSizePixel = 0
+	ripple.ZIndex = (btn.ZIndex or 1) + 6
+	ripple.Parent = btn
+	corner(ripple, 999)
+
+	tween(scale, TweenInfo.new(0.07, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Scale = 0.975})
+	task.delay(0.08, function()
+		if scale and scale.Parent then
+			tween(scale, TweenInfo.new(0.14, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Scale = 1})
+		end
+	end)
+
+	local tw = tween(ripple, TweenInfo.new(0.36, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+		Size = UDim2.new(1.7, 0, 2.7, 0),
+		BackgroundTransparency = 1
+	})
+	if tw then
+		tw.Completed:Connect(function()
+			if ripple then ripple:Destroy() end
+		end)
+	else
+		ripple:Destroy()
+	end
 end
 
 getgenv().DYHUB_Loader = true
 
 --// Function to create Key GUI
 local function createKeyGui(onCorrectKey)
-	local keyGui = Instance.new("ScreenGui")
-	keyGui.Name = "DYHUB | Access Key"
-	keyGui.ResetOnSpawn = false
-	keyGui.Parent = player:WaitForChild("PlayerGui")
+	local PlayerGui = player:WaitForChild("PlayerGui")
+	local UIS = game:GetService("UserInputService")
+	local cam = workspace.CurrentCamera
+	local running = true
+	local submitting = false
+	local minimized = false
+	local linkModal = nil
 
-	keyGui.Destroying:Connect(function() blur:Destroy() end)
+	pcall(function()
+		local old = PlayerGui:FindFirstChild("DYHUB_Modern_Access")
+		if old then old:Destroy() end
+	end)
 
-	local bg = Instance.new("Frame", keyGui)
-	bg.Size = UDim2.new(1, 0, 1, 0)
-	bg.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-	bg.BackgroundTransparency = 0.7
-	bg.ZIndex = 1000
+	local function clamp(n, mn, mx)
+		if n < mn then return mn end
+		if n > mx then return mx end
+		return n
+	end
 
-	local frame = Instance.new("Frame", keyGui)
-	frame.Size = UDim2.new(0, 350, 0, 210)
-	frame.Position = UDim2.new(0.5, -175, 0.5, -105)
-	frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-	frame.ZIndex = 1001
-	Instance.new("UICorner", frame).CornerRadius = UDim.new(0, 20)
+	local viewport = cam and cam.ViewportSize or Vector2.new(500, 650)
+	local cardW = clamp(math.floor(viewport.X * 0.9), 326, 500)
+	local cardH = clamp(math.floor(viewport.Y * 0.62), 350, 410)
+	local compact = viewport.X < 390
 
-	local title = Instance.new("TextLabel", frame)
-	title.Size = UDim2.new(1, 0, 0, 25)
-	title.Position = UDim2.new(0, 0, 0, 20)
-	title.BackgroundTransparency = 1
-	title.Text = "Access Key Required"
-	title.TextColor3 = Color3.fromRGB(255, 255, 255)
-	title.Font = Enum.Font.GothamBold
-	title.TextScaled = true
-	title.ZIndex = 1002
+	local keyGui = new("ScreenGui", {
+		Name = "DYHUB_Modern_Access",
+		ResetOnSpawn = false,
+		IgnoreGuiInset = true,
+		DisplayOrder = 999999,
+		ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	}, PlayerGui)
 
-	local subtitle = Instance.new("TextLabel", frame)
-	subtitle.Size = UDim2.new(1, -40, 0, 30)
-	subtitle.Position = UDim2.new(0, 20, 0, 45)
-	subtitle.BackgroundTransparency = 1
-	subtitle.Text = "Enter your access key below to continue"
-	subtitle.TextColor3 = Color3.fromRGB(180, 180, 180)
-	subtitle.Font = Enum.Font.Gotham
-	subtitle.TextSize = 16
-	subtitle.ZIndex = 1002
+	keyGui.Destroying:Connect(function()
+		running = false
+		pcall(function()
+			if blur then blur:Destroy() end
+		end)
+	end)
 
-	local keyBox = Instance.new("TextBox", frame)
-	keyBox.Size = UDim2.new(1, -40, 0, 40)
-	keyBox.Position = UDim2.new(0, 20, 0, 75)
-	keyBox.PlaceholderText = "Enter key here..."
-	keyBox.Text = ""
-	keyBox.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-	keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-	keyBox.Font = Enum.Font.GothamSemibold
-	keyBox.TextSize = 20
-	keyBox.ClearTextOnFocus = false
-	keyBox.ZIndex = 1002
-	Instance.new("UICorner", keyBox).CornerRadius = UDim.new(0, 15)
+	local bg = new("Frame", {
+		Name = "Dim_Background",
+		Size = UDim2.fromScale(1, 1),
+		BackgroundColor3 = Color3.fromRGB(6, 6, 8),
+		BackgroundTransparency = 0.07,
+		BorderSizePixel = 0,
+		ZIndex = 1000
+	}, keyGui)
+	gradient(bg, Color3.fromRGB(6, 6, 8), Color3.fromRGB(32, 32, 36), 35)
 
-	local submitBtn = Instance.new("TextButton", frame)
-	submitBtn.Size = UDim2.new(1, -40, 0, 40)
-	submitBtn.Position = UDim2.new(0, 20, 0, 120)
-	submitBtn.Text = "Submit"
-	submitBtn.BackgroundColor3 = Color3.fromRGB(255, 85, 85)
-	submitBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	submitBtn.Font = Enum.Font.GothamBold
-	submitBtn.TextSize = 22
-	submitBtn.ZIndex = 1002
-	Instance.new("UICorner", submitBtn).CornerRadius = UDim.new(0, 15)
+	local glow = new("Frame", {
+		Name = "Soft_Glow",
+		AnchorPoint = Vector2.new(0.5, 0.5),
+		Position = UDim2.fromScale(0.5, 0.5),
+		Size = UDim2.fromOffset(cardW + 48, cardH + 48),
+		BackgroundColor3 = Color3.fromRGB(78, 78, 88),
+		BackgroundTransparency = 0.84,
+		BorderSizePixel = 0,
+		ZIndex = 1001
+	}, keyGui)
+	corner(glow, 40)
 
-	local getKeyBtn = Instance.new("TextButton", frame)
-	getKeyBtn.Size = UDim2.new(1, -40, 0, 40)
-	getKeyBtn.Position = UDim2.new(0, 20, 0, 165)
-	getKeyBtn.Text = "Get Key"
-	getKeyBtn.BackgroundColor3 = Color3.fromRGB(70, 130, 255)
-	getKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	getKeyBtn.Font = Enum.Font.GothamBold
-	getKeyBtn.TextSize = 23
-	getKeyBtn.ZIndex = 1002
-	Instance.new("UICorner", getKeyBtn).CornerRadius = UDim.new(0, 15)
+	local frame = new("Frame", {
+		Name = "Mac_Code_Frame",
+		AnchorPoint = Vector2.new(0.5, 0.5),
+		Position = UDim2.fromScale(0.5, 0.5),
+		Size = UDim2.fromOffset(cardW, cardH),
+		BackgroundColor3 = Color3.fromRGB(18, 18, 21),
+		BorderSizePixel = 0,
+		ZIndex = 1002,
+		ClipsDescendants = true
+	}, keyGui)
+	corner(frame, 30)
+	stroke(frame, Color3.fromRGB(132, 132, 145), 0.58, 1)
+	gradient(frame, Color3.fromRGB(30, 30, 34), Color3.fromRGB(11, 11, 13), 90)
 
-	submitBtn.MouseButton1Click:Connect(function()
-		clickTween(submitBtn)
-		local enteredKey = keyBox.Text:lower():gsub("%s+", "")
-		if enteredKey == VALID_KEY:lower() then
-			notify("✅ Correct Key! Loading...")
+	local topbar = new("Frame", {
+		Name = "Mac_Topbar_NoDrag",
+		Size = UDim2.new(1, 0, 0, 48),
+		BackgroundColor3 = Color3.fromRGB(10, 10, 15),
+		BackgroundTransparency = 0.02,
+		BorderSizePixel = 0,
+		ZIndex = 1004
+	}, frame)
+	corner(topbar, 30)
+	stroke(topbar, Color3.fromRGB(132, 132, 145), 0.58, 1)
 
-			local guiTween = TweenService:Create(frame, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-				Size = UDim2.new(0, 0, 0, 0),
-				Position = UDim2.new(0.5, 0, 0.5, 0),
-				BackgroundTransparency = 1
-			})
-			guiTween:Play()
-			guiTween.Completed:Wait()
+	local body = new("Frame", {
+		Name = "Body",
+		Size = UDim2.new(1, 0, 1, -48),
+		Position = UDim2.fromOffset(0, 48),
+		BackgroundTransparency = 1,
+		ZIndex = 1005
+	}, frame)
 
-			keyGui:Destroy()
-			blur:Destroy()
-			notify("🔑 Access Granted! Free Version | DYHUB")
+	local titleBarText = new("TextLabel", {
+		Size = UDim2.new(1, -126, 1, 0),
+		Position = UDim2.fromOffset(104, 0),
+		BackgroundTransparency = 1,
+		Text = "dyhub@access:~/key",
+		TextColor3 = Color3.fromRGB(184, 184, 193),
+		Font = Enum.Font.GothamMedium,
+		TextSize = 13,
+		TextXAlignment = Enum.TextXAlignment.Left,
+		ZIndex = 1005
+	}, topbar)
 
-			local imageGui = Instance.new("ScreenGui")
-			imageGui.Name = "DYHUB | Icon"
-			imageGui.ResetOnSpawn = false
-			imageGui.Parent = player:WaitForChild("PlayerGui")
+	local function makeMacButton(x, color, label)
+		local b = new("TextButton", {
+			Size = UDim2.fromOffset(14, 14),
+			Position = UDim2.fromOffset(x, 17),
+			BackgroundColor3 = color,
+			BorderSizePixel = 0,
+			Text = "",
+			AutoButtonColor = false,
+			ZIndex = 1006
+		}, topbar)
+		b:SetAttribute("Tip", label)
+		corner(b, 999)
+		return b
+	end
 
-			local image = Instance.new("ImageLabel", imageGui)
-			image.Size = UDim2.new(0, 200, 0, 200)
-			image.Position = UDim2.new(0.5, -100, 0.5, -100)
-			image.BackgroundTransparency = 1
-			image.Image = "rbxassetid://104487529937663"
-			image.AnchorPoint = Vector2.new(0.5, 0.5)
-			image.ZIndex = 1000
-			Instance.new("UICorner", image).CornerRadius = UDim.new(0, 15)
+	local closeBtn = makeMacButton(18, Color3.fromRGB(255, 95, 86), "close")
+	local minBtn = makeMacButton(40, Color3.fromRGB(255, 189, 46), "minimize")
+	local keyBtnTop = makeMacButton(62, Color3.fromRGB(39, 201, 63), "get key")
 
-			local rotateTween = TweenService:Create(image, TweenInfo.new(1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-				Size = UDim2.new(0, 400, 0, 400),
-				Rotation = 360,
-				Position = UDim2.new(0.5, 0, 0.5, 0)
-			})
-			rotateTween:Play()
-			rotateTween.Completed:Wait()
+	local innerPanel = new("Frame", {
+		Name = "Rounded_Code_Panel",
+		Size = UDim2.new(1, -28, 1, -22),
+		Position = UDim2.fromOffset(14, 10),
+		BackgroundColor3 = Color3.fromRGB(11, 11, 13),
+		BackgroundTransparency = 0.08,
+		BorderSizePixel = 0,
+		ClipsDescendants = true,
+		ZIndex = 1005
+	}, body)
+	corner(innerPanel, 24)
+	stroke(innerPanel, Color3.fromRGB(68, 68, 78), 0.62, 1)
 
-			local fadeTween = TweenService:Create(image, TweenInfo.new(0.5), {ImageTransparency = 1})
-			fadeTween:Play()
-			fadeTween.Completed:Wait()
+	local iconMask = new("Frame", {
+		Size = UDim2.fromOffset(compact and 64 or 76, compact and 64 or 76),
+		Position = UDim2.fromOffset(22, 22),
+		BackgroundColor3 = Color3.fromRGB(31, 31, 36),
+		BorderSizePixel = 0,
+		ClipsDescendants = true,
+		ZIndex = 1006
+	}, innerPanel)
+	corner(iconMask, 24)
+	stroke(iconMask, Color3.fromRGB(132, 132, 145), 0.55, 1)
+	gradient(iconMask, Color3.fromRGB(52, 52, 58), Color3.fromRGB(18, 18, 21), 120)
 
-			imageGui:Destroy()
+	local icon = new("ImageLabel", {
+		Size = UDim2.new(1, -12, 1, -12),
+		Position = UDim2.fromScale(0.5, 0.5),
+		AnchorPoint = Vector2.new(0.5, 0.5),
+		BackgroundTransparency = 1,
+		Image = DYHUB_ICON,
+		ZIndex = 1007,
+		ClipsDescendants = true
+	}, iconMask)
+	corner(icon, 20)
 
-			if onCorrectKey then onCorrectKey() end
+	local title = new("TextLabel", {
+		Name = "Animated_Title",
+		Size = UDim2.new(1, compact and -108 or -126, 0, 34),
+		Position = UDim2.fromOffset(compact and 96 or 112, 25),
+		BackgroundTransparency = 1,
+		Text = "DYHUB ACCESS",
+		TextColor3 = Color3.fromRGB(244, 244, 247),
+		Font = Enum.Font.GothamBlack,
+		TextSize = compact and 22 or 27,
+		TextXAlignment = Enum.TextXAlignment.Left,
+		ZIndex = 1007
+	}, innerPanel)
+
+	local sub = new("TextLabel", {
+		Size = UDim2.new(1, compact and -108 or -126, 0, 22),
+		Position = UDim2.fromOffset(compact and 98 or 114, 59),
+		BackgroundTransparency = 1,
+		Text = "macOS style • dsc.gg/dyhub",
+		TextColor3 = Color3.fromRGB(150, 150, 160),
+		Font = Enum.Font.GothamMedium,
+		TextSize = compact and 10 or 13,
+		TextXAlignment = Enum.TextXAlignment.Left,
+		ZIndex = 1007
+	}, innerPanel)
+
+	local codeLine = new("TextLabel", {
+		Name = "Status_Line",
+		Size = UDim2.new(1, -44, 0, 28),
+		Position = UDim2.fromOffset(22, compact and 104 or 118),
+		BackgroundTransparency = 1,
+		Text = "> status = waiting_for_key",
+		TextColor3 = Color3.fromRGB(172, 172, 182),
+		Font = Enum.Font.Code,
+		TextSize = compact and 12 or 14,
+		TextXAlignment = Enum.TextXAlignment.Left,
+		ZIndex = 1007
+	}, innerPanel)
+
+	local keyBox = new("TextBox", {
+		Name = "KeyBox",
+		Size = UDim2.new(1, -44, 0, 48),
+		Position = UDim2.fromOffset(22, compact and 140 or 154),
+		BackgroundColor3 = Color3.fromRGB(15, 15, 18),
+		BorderSizePixel = 0,
+		Text = "",
+		PlaceholderText = "paste key here...",
+		PlaceholderColor3 = Color3.fromRGB(108, 108, 118),
+		TextColor3 = Color3.fromRGB(245, 245, 248),
+		Font = Enum.Font.GothamSemibold,
+		TextSize = 17,
+		ClearTextOnFocus = false,
+		ZIndex = 1007
+	}, innerPanel)
+	corner(keyBox, 18)
+	stroke(keyBox, Color3.fromRGB(80, 80, 92), 0.42, 1)
+
+	local submitBtn = new("TextButton", {
+		Name = "Unlock_Button",
+		Size = UDim2.new(0.5, -27, 0, 48),
+		Position = UDim2.fromOffset(22, compact and 203 or 220),
+		BackgroundColor3 = Color3.fromRGB(235, 235, 241),
+		BorderSizePixel = 0,
+		Text = "Unlock",
+		TextColor3 = Color3.fromRGB(17, 17, 20),
+		Font = Enum.Font.GothamBlack,
+		TextSize = 17,
+		AutoButtonColor = false,
+		ZIndex = 1007
+	}, innerPanel)
+	corner(submitBtn, 18)
+
+	local getKeyBtn = new("TextButton", {
+		Name = "Get_Key_Button",
+		Size = UDim2.new(0.5, -27, 0, 48),
+		Position = UDim2.new(0.5, 5, 0, compact and 203 or 220),
+		BackgroundColor3 = Color3.fromRGB(42, 42, 49),
+		BorderSizePixel = 0,
+		Text = "Get Key",
+		TextColor3 = Color3.fromRGB(232, 232, 238),
+		Font = Enum.Font.GothamBold,
+		TextSize = 16,
+		AutoButtonColor = false,
+		ZIndex = 1007
+	}, innerPanel)
+	corner(getKeyBtn, 18)
+	stroke(getKeyBtn, Color3.fromRGB(112, 112, 124), 0.44, 1)
+
+	local hint = new("TextLabel", {
+		Size = UDim2.new(1, -44, 0, 24),
+		Position = UDim2.new(0, 22, 1, -34),
+		BackgroundTransparency = 1,
+		Text = "Tip: green mac button opens Get Key menu",
+		TextColor3 = Color3.fromRGB(116, 116, 126),
+		Font = Enum.Font.GothamMedium,
+		TextSize = compact and 10 or 12,
+		TextXAlignment = Enum.TextXAlignment.Center,
+		ZIndex = 1007
+	}, innerPanel)
+
+	local function hover(btn, normal, over)
+		if UIS.TouchEnabled then return end
+		btn.MouseEnter:Connect(function()
+			tween(btn, TweenInfo.new(0.16, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = over})
+		end)
+		btn.MouseLeave:Connect(function()
+			tween(btn, TweenInfo.new(0.16, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {BackgroundColor3 = normal})
+		end)
+	end
+	hover(submitBtn, Color3.fromRGB(235, 235, 241), Color3.fromRGB(255, 255, 255))
+	hover(getKeyBtn, Color3.fromRGB(42, 42, 49), Color3.fromRGB(58, 58, 66))
+
+	local function setBodyVisible(v)
+		body.Visible = v
+		glow.Visible = v
+	end
+
+	local function openGetKeyModal()
+		if linkModal and linkModal.Parent then
+			linkModal:Destroy()
+			linkModal = nil
+			return
+		end
+
+		local modalBg = new("Frame", {
+			Name = "Get_Key_Modal",
+			Size = UDim2.fromScale(1, 1),
+			BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+			BackgroundTransparency = 0.44,
+			BorderSizePixel = 0,
+			ZIndex = 3000
+		}, keyGui)
+		linkModal = modalBg
+
+		local modalW = clamp(math.floor(viewport.X * 0.88), 316, 460)
+		local modal = new("Frame", {
+			AnchorPoint = Vector2.new(0.5, 0.5),
+			Position = UDim2.fromScale(0.5, 0.5),
+			Size = UDim2.fromOffset(modalW, 238),
+			BackgroundColor3 = Color3.fromRGB(17, 17, 20),
+			BorderSizePixel = 0,
+			ClipsDescendants = true,
+			ZIndex = 3001
+		}, modalBg)
+		corner(modal, 28)
+		stroke(modal, Color3.fromRGB(130, 130, 145), 0.55, 1)
+		gradient(modal, Color3.fromRGB(31, 31, 36), Color3.fromRGB(12, 12, 14), 90)
+
+		local mt = new("TextLabel", {
+			Size = UDim2.new(1, -64, 0, 38),
+			Position = UDim2.fromOffset(24, 18),
+			BackgroundTransparency = 1,
+			Text = "Choose Get Key Method",
+			TextColor3 = Color3.fromRGB(244, 244, 248),
+			Font = Enum.Font.GothamBlack,
+			TextSize = compact and 18 or 21,
+			TextXAlignment = Enum.TextXAlignment.Left,
+			ZIndex = 3002
+		}, modal)
+
+		local closeModal = new("TextButton", {
+			Size = UDim2.fromOffset(34, 34),
+			Position = UDim2.new(1, -46, 0, 20),
+			BackgroundColor3 = Color3.fromRGB(43, 43, 50),
+			BorderSizePixel = 0,
+			Text = "×",
+			TextColor3 = Color3.fromRGB(235, 235, 242),
+			Font = Enum.Font.GothamBlack,
+			TextSize = 22,
+			AutoButtonColor = false,
+			ZIndex = 3002
+		}, modal)
+		corner(closeModal, 999)
+
+		local function optionRow(y, titleText, descText, copyText)
+			local row = new("Frame", {
+				Size = UDim2.new(1, -36, 0, 62),
+				Position = UDim2.fromOffset(18, y),
+				BackgroundColor3 = Color3.fromRGB(23, 23, 27),
+				BorderSizePixel = 0,
+				ZIndex = 3002
+			}, modal)
+			corner(row, 18)
+			stroke(row, Color3.fromRGB(74, 74, 84), 0.62, 1)
+
+			new("TextLabel", {
+				Size = UDim2.new(1, -126, 0, 24),
+				Position = UDim2.fromOffset(16, 9),
+				BackgroundTransparency = 1,
+				Text = titleText,
+				TextColor3 = Color3.fromRGB(235, 235, 240),
+				Font = Enum.Font.GothamBold,
+				TextSize = compact and 13 or 15,
+				TextXAlignment = Enum.TextXAlignment.Left,
+				ZIndex = 3003
+			}, row)
+
+			new("TextLabel", {
+				Size = UDim2.new(1, -126, 0, 20),
+				Position = UDim2.fromOffset(16, 33),
+				BackgroundTransparency = 1,
+				Text = descText,
+				TextColor3 = Color3.fromRGB(135, 135, 146),
+				Font = Enum.Font.GothamMedium,
+				TextSize = compact and 10 or 12,
+				TextXAlignment = Enum.TextXAlignment.Left,
+				ZIndex = 3003
+			}, row)
+
+			local copyBtn = new("TextButton", {
+				Size = UDim2.fromOffset(86, 38),
+				Position = UDim2.new(1, -100, 0.5, -19),
+				BackgroundColor3 = Color3.fromRGB(235, 235, 241),
+				BorderSizePixel = 0,
+				Text = "Copy",
+				TextColor3 = Color3.fromRGB(17, 17, 20),
+				Font = Enum.Font.GothamBlack,
+				TextSize = 14,
+				AutoButtonColor = false,
+				ZIndex = 3003
+			}, row)
+			corner(copyBtn, 14)
+			copyBtn.Activated:Connect(function()
+				clickTween(copyBtn, Color3.fromRGB(25, 25, 28))
+				if safeCopy(copyText) then
+					codeLine.Text = "> copied_key_method = true"
+					notify("Copied to clipboard.")
+				else
+					notify("Clipboard is not supported here.")
+				end
+			end)
+			return row
+		end
+
+		optionRow(70, "Get Key from Discord", "copy official Discord invite", GET_KEY_DISCORD_URL)
+		optionRow(140, "Get Key from Link", "copy direct key link", GET_KEY_LINK_URL)
+
+		closeModal.Activated:Connect(function()
+			clickTween(closeModal, Color3.fromRGB(235, 235, 242))
+			if linkModal then linkModal:Destroy() end
+			linkModal = nil
+		end)
+
+		modal.Size = UDim2.fromOffset(modalW - 26, 218)
+		modal.BackgroundTransparency = 1
+		tween(modal, TweenInfo.new(0.24, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+			Size = UDim2.fromOffset(modalW, 238),
+			BackgroundTransparency = 0
+		})
+	end
+
+	closeBtn.Activated:Connect(function()
+		clickTween(closeBtn, Color3.fromRGB(255, 255, 255))
+		running = false
+		keyGui:Destroy()
+	end)
+
+	minBtn.Activated:Connect(function()
+		clickTween(minBtn, Color3.fromRGB(255, 255, 255))
+		minimized = not minimized
+		if minimized then
+			if linkModal then linkModal:Destroy(); linkModal = nil end
+			setBodyVisible(false)
+			titleBarText.Text = "DYHUB minimized"
+			tween(frame, TweenInfo.new(0.22, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.fromOffset(cardW, 48)})
 		else
-			notify("❌ Incorrect Key! Try again.")
-			local flash = TweenService:Create(keyBox, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(255,70,70)})
-			flash:Play()
-			flash.Completed:Wait()
-			TweenService:Create(keyBox, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(70,70,70)}):Play()
+			setBodyVisible(true)
+			titleBarText.Text = "dyhub@access:~/key"
+			tween(frame, TweenInfo.new(0.24, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.fromOffset(cardW, cardH)})
 		end
 	end)
 
-	getKeyBtn.MouseButton1Click:Connect(function()
-		clickTween(getKeyBtn)
+	keyBtnTop.Activated:Connect(function()
+		clickTween(keyBtnTop, Color3.fromRGB(255, 255, 255))
+		if minimized then
+			minimized = false
+			setBodyVisible(true)
+			titleBarText.Text = "dyhub@access:~/key"
+			tween(frame, TweenInfo.new(0.22, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.fromOffset(cardW, cardH)})
+		end
+		openGetKeyModal()
+	end)
 
-		local linkGui = Instance.new("ScreenGui")
-		linkGui.Name = "DYHUB | Link"
-		linkGui.ResetOnSpawn = false
-		linkGui.Parent = player:WaitForChild("PlayerGui")
+	getKeyBtn.Activated:Connect(function()
+		clickTween(getKeyBtn, Color3.fromRGB(255, 255, 255))
+		openGetKeyModal()
+	end)
 
-		-- Background
-		local bg2 = Instance.new("Frame", linkGui)
-		bg2.Size = UDim2.new(1,0,1,0)
-		bg2.BackgroundColor3 = Color3.fromRGB(20,20,20)
-		bg2.BackgroundTransparency = 1
+	task.spawn(function()
+		local lines = {
+			"> status = waiting_for_key",
+			"> ui.theme = mac_dark_code",
+			"> mobile = supported",
+			"> animations = optimized"
+		}
+		local n = 1
+		while running and keyGui and keyGui.Parent do
+			task.wait(2.4)
+			if not running or not (codeLine and codeLine.Parent) then break end
+			n = (n % #lines) + 1
+			tween(codeLine, TweenInfo.new(0.16), {TextTransparency = 1})
+			task.wait(0.17)
+			if not running or not (codeLine and codeLine.Parent) then break end
+			codeLine.Text = lines[n]
+			tween(codeLine, TweenInfo.new(0.2), {TextTransparency = 0})
+		end
+	end)
 
-		local frame2 = Instance.new("Frame", linkGui)
-		frame2.Size = UDim2.new(0,350,0,210)
-		frame2.Position = UDim2.new(0.5,-175,0.5,-105)
-		frame2.BackgroundColor3 = Color3.fromRGB(40,40,40)
-		Instance.new("UICorner", frame2).CornerRadius = UDim.new(0,20)
+	task.spawn(function()
+		while running and keyGui and keyGui.Parent and title and title.Parent do
+			tween(title, TweenInfo.new(1.25, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Position = UDim2.fromOffset((compact and 100 or 118), 25)})
+			task.wait(1.25)
+			if not running or not (keyGui and keyGui.Parent and title and title.Parent) then break end
+			tween(title, TweenInfo.new(1.25, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Position = UDim2.fromOffset((compact and 96 or 112), 25)})
+			task.wait(1.25)
+		end
+	end)
 
-		local title2 = Instance.new("TextLabel", frame2)
-		title2.Size = UDim2.new(1,0,0,25)
-		title2.Position = UDim2.new(0,0,0,20)
-		title2.BackgroundTransparency = 1
-		title2.Text = "Choose Discord Link"
-		title2.TextColor3 = Color3.fromRGB(255,255,255)
-		title2.Font = Enum.Font.GothamBold
-		title2.TextScaled = true
+	frame.Size = UDim2.fromOffset(cardW - 28, cardH - 28)
+	frame.BackgroundTransparency = 1
+	glow.BackgroundTransparency = 1
+	tween(frame, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+		Size = UDim2.fromOffset(cardW, cardH),
+		BackgroundTransparency = 0
+	})
+	tween(glow, TweenInfo.new(0.38), {BackgroundTransparency = 0.84})
 
-		local title67 = Instance.new("TextLabel", frame2)
-		title67.Size = UDim2.new(1,0,0,8)
-		title67.Position = UDim2.new(0,0,0,52)
-		title67.BackgroundTransparency = 1
-		title67.Text = "Get Access Key from Discord to unlock"
-		title67.TextColor3 = Color3.fromRGB(180, 180, 180)
-		title67.Font = Enum.Font.GothamBold
-        title67.TextSize = 16
-	    title67.ZIndex = 1002
+	submitBtn.Activated:Connect(function()
+		if submitting then return end
+		submitting = true
+		clickTween(submitBtn, Color3.fromRGB(25, 25, 28))
+		local enteredKey = tostring(keyBox.Text or ""):lower():gsub("%s+", "")
+		if enteredKey == VALID_KEY:lower() then
+			codeLine.Text = "> access_granted = true"
+			notify("Access granted. Loading...")
 
-		local fullBtn = Instance.new("TextButton", frame2)
-		fullBtn.Size = UDim2.new(1, -40, 0, 40)
-		fullBtn.Position = UDim2.new(0, 20, 0, 70)
-		fullBtn.Text = "Link Discord [Full]"
-		fullBtn.BackgroundColor3 = Color3.fromRGB(70,130,255)
-		fullBtn.TextColor3 = Color3.fromRGB(255,255,255)
-		fullBtn.Font = Enum.Font.GothamBold
-		fullBtn.TextSize = 18
-		Instance.new("UICorner", fullBtn).CornerRadius = UDim.new(0,15)
+			local okStroke = keyBox:FindFirstChildOfClass("UIStroke")
+			if okStroke then
+				tween(okStroke, TweenInfo.new(0.18), {Color = Color3.fromRGB(70, 210, 118), Transparency = 0.2})
+			end
 
-		local shortBtn = Instance.new("TextButton", frame2)
-		shortBtn.Size = UDim2.new(1, -40, 0, 40)
-		shortBtn.Position = UDim2.new(0, 20, 0, 118)
-		shortBtn.Text = "Link Discord [Short]"
-		shortBtn.BackgroundColor3 = Color3.fromRGB(70,130,255)
-		shortBtn.TextColor3 = Color3.fromRGB(255,255,255)
-		shortBtn.Font = Enum.Font.GothamBold
-		shortBtn.TextSize = 18
-		Instance.new("UICorner", shortBtn).CornerRadius = UDim.new(0,15)
+			task.wait(0.28)
+			tween(frame, TweenInfo.new(0.28, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {
+				Size = UDim2.fromOffset(0, 0),
+				BackgroundTransparency = 1
+			})
+			tween(bg, TweenInfo.new(0.3), {BackgroundTransparency = 1})
+			tween(glow, TweenInfo.new(0.24), {BackgroundTransparency = 1})
+			task.wait(0.31)
 
-		local backBtn = Instance.new("TextButton", frame2)
-		backBtn.Size = UDim2.new(1, -40, 0, 40)
-		backBtn.Position = UDim2.new(0, 20, 0, 165)
-		backBtn.Text = "Back"
-		backBtn.BackgroundColor3 = Color3.fromRGB(255,85,85)
-		backBtn.TextColor3 = Color3.fromRGB(255,255,255)
-		backBtn.Font = Enum.Font.GothamBold
-		backBtn.TextSize = 18
-		Instance.new("UICorner", backBtn).CornerRadius = UDim.new(0,15)
-
-		-- Full Button Logic
-		fullBtn.MouseButton1Click:Connect(function()
-			clickTween(fullBtn)
+			keyGui:Destroy()
 			pcall(function()
-				setclipboard("https://discord.com/invite/jWNDPNMmyB")
+				if blur then blur:Destroy() end
 			end)
-			notify("🔗 Full Discord Link copied to clipboard!")
-		end)
+			notify("DYHUB loaded.")
 
-		-- Short Button Logic
-		shortBtn.MouseButton1Click:Connect(function()
-			clickTween(shortBtn)
-			pcall(function()
-				setclipboard("https://dsc.gg/dyhub")
-			end)
-			notify("🔗 Short Discord Link copied to clipboard!")
-		end)
+			local imageGui = new("ScreenGui", {
+				Name = "DYHUB_Icon_Splash",
+				ResetOnSpawn = false,
+				IgnoreGuiInset = true,
+				DisplayOrder = 999999
+			}, PlayerGui)
 
-		-- Back Button Logic
-		backBtn.MouseButton1Click:Connect(function()
-			clickTween(backBtn)
-			linkGui:Destroy()
-		end)
+			local splashMask = new("Frame", {
+				Size = UDim2.fromOffset(96, 96),
+				Position = UDim2.fromScale(0.5, 0.5),
+				AnchorPoint = Vector2.new(0.5, 0.5),
+				BackgroundColor3 = Color3.fromRGB(18, 18, 22),
+				BorderSizePixel = 0,
+				ClipsDescendants = true,
+				ZIndex = 2000
+			}, imageGui)
+			corner(splashMask, 28)
+
+			local splash = new("ImageLabel", {
+				Size = UDim2.new(1, -10, 1, -10),
+				Position = UDim2.fromScale(0.5, 0.5),
+				AnchorPoint = Vector2.new(0.5, 0.5),
+				BackgroundTransparency = 1,
+				Image = DYHUB_ICON,
+				ImageTransparency = 0,
+				Rotation = -14,
+				ZIndex = 2001
+			}, splashMask)
+			corner(splash, 22)
+
+			tween(splashMask, TweenInfo.new(0.42, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.fromOffset(178, 178)})
+			tween(splash, TweenInfo.new(0.42, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Rotation = 0})
+			task.wait(0.46)
+			tween(splashMask, TweenInfo.new(0.26), {BackgroundTransparency = 1, Size = UDim2.fromOffset(208, 208)})
+			tween(splash, TweenInfo.new(0.26), {ImageTransparency = 1})
+			task.wait(0.28)
+			imageGui:Destroy()
+
+			if onCorrectKey then
+				task.spawn(onCorrectKey)
+			end
+		else
+			codeLine.Text = "> access_denied = true"
+			notify("Incorrect key.")
+			local boxStroke = keyBox:FindFirstChildOfClass("UIStroke")
+			if boxStroke then
+				tween(boxStroke, TweenInfo.new(0.1), {Color = Color3.fromRGB(255, 88, 88), Transparency = 0.15})
+				task.delay(0.38, function()
+					if boxStroke and boxStroke.Parent then
+						tween(boxStroke, TweenInfo.new(0.16), {Color = Color3.fromRGB(80, 80, 92), Transparency = 0.42})
+					end
+				end)
+			end
+			tween(frame, TweenInfo.new(0.05), {Position = UDim2.fromScale(0.5, 0.5) + UDim2.fromOffset(-7, 0)})
+			task.wait(0.05)
+			tween(frame, TweenInfo.new(0.05), {Position = UDim2.fromScale(0.5, 0.5) + UDim2.fromOffset(7, 0)})
+			task.wait(0.05)
+			tween(frame, TweenInfo.new(0.08), {Position = UDim2.fromScale(0.5, 0.5)})
+			submitting = false
+		end
 	end)
 
 	return keyGui
@@ -646,9 +1091,9 @@ local success, premiumUsers = pcall(function()
 end)
 
 if not success then
-	notify("❌ Failed to load Premium list!")
+	notify("Failed to load required data.")
 	task.wait(3)
-	player:Kick("⚠️ Could not load Premium data.\n🔎 Change your executor to use this script.\nContact: " .. DYHUBTHEBEST)
+	notify("⚠️ Could not load Premium data.\n🔎 Change your executor to use this script.\nContact: " .. DYHUBTHEBEST)
 	return
 end
 
@@ -810,9 +1255,8 @@ local premiumGameData = AllowGameforPremiumByPlaceId[placeId] or allowedGamesfor
 local gameData = freeGameData or premiumGameData
 
 if not gameData then
-	notify("❌ This script is not supported in this game!")
-	task.wait(5)
-	print("⚠️ Script not supported here.\n📊 Please run the script in supported games.\nCheck in: " .. DYHUBTHEBEST)
+	notify("This game is not supported.")
+	task.wait(2)
 	return
 end
 
@@ -821,27 +1265,34 @@ end
 -- =========================================================
 local playerPremium = premiumUsers[player.Name]
 if premiumGameData and not playerPremium then
-	notify("⛔ You must be Premium to use this script in this game!")
+	notify("Premium is required for this game.")
 	task.wait(5)
-	player:Kick("⛔ Premium only game!\n📊 Get premium to run this script here.\n💳 Buy Premium: " .. DYHUBTHEBEST)
+	notify("⛔ Premium only game!\n📊 Get premium to run this script here.\n💳 Buy Premium: " .. DYHUBTHEBEST)
 	return
 end
 
 -- =========================================================
 -- 🚀 Script Loader
 -- =========================================================
+local loadingScript = false
 local function loadScript()
-	if gameData.url then
-		local success, err = pcall(function()
-			loadstring(game:HttpGet(gameData.url))()
+	if loadingScript then return end
+	loadingScript = true
+	if gameData and gameData.url then
+		local ok = pcall(function()
+			local src = game:HttpGet(gameData.url)
+			local fn = loadstring(src)
+			if fn then fn() end
 		end)
-		if success then
-			notify("🎮 Game: " .. gameData.name .. " | Script loaded successfully!")
+		if ok then
+			notify("Script loaded successfully.")
 		else
-			notify("❌ Failed to load script: " .. tostring(err))
+			notify("Failed to load script.")
+			loadingScript = false
 		end
 	else
-		notify("‼️ No script found for this game!")
+		notify("No script found for this game.")
+		loadingScript = false
 	end
 end
 
@@ -851,9 +1302,9 @@ end
 if playerPremium then
     blur:Destroy()
     if playerPremium.Time == "Lifetime" or tonumber(playerPremium.Time) == -1 then
-        notify("💳 Premium Loaded! | @" .. playerPremium.Tag .. " | Time: " .. playerPremium.Time)
+        notify("Premium loaded. Time: Lifetime")
     else
-        notify("💳 Premium Loaded! | @" .. playerPremium.Tag .. " | Days: " .. tostring(playerPremium.Day))
+        notify("Premium loaded. Days left: " .. tostring(playerPremium.Day or "Unknown"))
     end
     loadScript()
     
@@ -881,7 +1332,7 @@ if playerPremium then
         
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "DYHUB",
-            Text = "Do you want to copy the key?",
+            Text = "Copy your saved key?",
             Button1 = "Copy",
             Button2 = "No",
             Callback = b,
