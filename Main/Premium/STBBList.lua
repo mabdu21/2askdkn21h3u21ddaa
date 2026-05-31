@@ -15,7 +15,8 @@ return {
     ["yucan2021"] = { Tag = "yucan2026", Key = "DYHUB-Z1A2K-STBB" },
     ["adammdmmkj229"] = { Tag = "anan.tima_32322", Key = "DYHUB-Z1A5K-STBB" },
     ["LordRed12344"] = { Tag = "devilred404", Key = "DYHUB-D1B5K-STBB" },
-    ["SRCSHOP_9317292"] = { Tag = "mysteriousguy0349", Key = "DYHUB-Q3SPK-STBB" }, -- 1 day
-    ["zamilio12"] = { Tag = "zamilio.", Key = "DYHUB-D5A2K-STBB" }, -- 1 day
-    ["hohiiy3"] = { Tag = "hi.", Key = "DYHUB-C2A2K-STBB" }, -- 1 day
+    ["SRCSHOP_9317292"] = { Tag = "mysteriousguy0349", Key = "DYHUB-Q3SPK-STBB" },
+    ["zamilio12"] = { Tag = "zamilio.", Key = "DYHUB-D5A2K-STBB" },
+    ["hohiiy3"] = { Tag = "hi.", Key = "DYHUB-C2A2K-STBB" },
+    ["akatuki41"] = { Tag = "shipuv2_76065", Key = "DYHUB-N2A9K-STBB" },
 }
