@@ -120,7 +120,7 @@ return {
     ["workingtoneg"] = { Tag = "napatrapeezx", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-LIFETIME" }, -- today 2026
     ["yhilarylov"] = { Tag = "ydiniz", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-GK7HP-LIFETIME" }, -- today 2026
     ["zkguit10"] = { Tag = "ewertonx.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW3VP-G9MHP-LIFETIME" }, -- today 2026
-    ["LangstonAxlx8"] = { Tag = "aithegoat.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MHP-LIFETIME" }, -- today 2026
+    ["Aiisgppdguy"] = { Tag = "aithegoat.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MHP-LIFETIME" }, -- today 2026
     ["samurai97397"] = { Tag = "gus008364", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MOP-LIFETIME" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
