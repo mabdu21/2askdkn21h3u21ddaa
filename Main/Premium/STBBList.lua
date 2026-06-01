@@ -20,4 +20,5 @@ return {
     ["hohiiy3"] = { Tag = "hi.", Key = "DYHUB-C2A2K-STBB" },
     ["akatuki41"] = { Tag = "shipuv2_76065", Key = "DYHUB-N2A9K-STBB" },
     ["LordRaydenWoods"] = { Tag = "johndoughhyboi_real1", Key = "DYHUB-H7A2B-STBB" },
+    ["qweds3zsdf"] = { Tag = "pasha_pidorasik", Key = "DYHUB-N4A2U-STBB" },
 }
