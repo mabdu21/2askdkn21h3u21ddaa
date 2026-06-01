@@ -122,6 +122,7 @@ return {
     ["zkguit10"] = { Tag = "ewertonx.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW3VP-G9MHP-LIFETIME" }, -- today 2026
     ["Aiisgppdguy"] = { Tag = "aithegoat.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MHP-LIFETIME" }, -- today 2026
     ["samurai97397"] = { Tag = "gus008364", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MOP-LIFETIME" }, -- today 2026
+    ["dragonfliespoi"] = { Tag = "sebbythegoat2011", Time = "Lifetime", Day = nil, Key = "DYHUB-BW8VL-HSW2P-LIFETIME" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
