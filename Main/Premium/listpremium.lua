@@ -1,4 +1,4 @@
--- // NEW LIST | GV-328
+-- // NEW LIST | GV-329
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -58,7 +58,7 @@ return {
     ["mistorwowka"] = { Tag = "mistorwowka", Time = "Lifetime", Day = nil, Key = "DYHUB-P9MA7-E4VQ5-N7BA5-DK8M5-LIFETIME" },
     ["Max_Jrrrrrr"] = { Tag = "schedule2the", Time = "Lifetime", Day = nil, Key = "DYHUB-N4AF5-E4VQ5-N7BA5-DK8M5-LIFETIME" },
     ["Panakeeee"] = { Tag = "winzx0494", Time = "Lifetime", Day = nil, Key = "DYHUB-P9KA6-E4VQ5-N7BA5-K5GA6-LIFETIME" },
-    ["TheRulerOfHavkers"] = { Tag = "trollgespeices1_antifurry", Time = "Lifetime", Day = nil, Key = "DYHUB-U6QB8-E4VQ1-DA5BQ-K5GA6-LIFETIME" },
+    ["BaconKing12912"] = { Tag = "trollgespeices1_antifurry", Time = "Lifetime", Day = nil, Key = "DYHUB-U6QB8-E4VQ1-DA5BQ-K5GA6-LIFETIME" },
     ["WEQWES7"] = { Tag = "unsuccessful_dude", Time = "Lifetime", Day = nil, Key = "DYHUB-J7NA4-E4VQ1-S4VQ5-D4CQ5-LIFETIME" },
     ["Kyyyforlieee"] = { Tag = "arssyss", Time = "Lifetime", Day = nil, Key = "DYHUB-J7NA4-S5BQ6-MKY7A-O8NA4-LIFETIME" },
     ["a2i_lowercaseispw"] = { Tag = "h3nry_g4m1ng", Time = "Lifetime", Day = nil, Key = "DYHUB-L9MA7-H7NA6-HA7A5-E4VA6-LIFETIME" },
