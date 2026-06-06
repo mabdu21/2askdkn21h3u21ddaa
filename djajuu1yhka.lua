@@ -1,4 +1,4 @@
--- V556 | rebuild
+-- V578 | rebuild
 if getgenv().DYHUB_Loader then
     return
 end
@@ -392,7 +392,7 @@ local function notify(text)
 	end)
 end
 
-local GET_KEY_LINK_URL = "https://direct-link.net/4825256/RSiwc6QNLX0v"
+local GET_KEY_LINK_URL = "https://work.ink/28Au/dyhub-loader"
 local GET_KEY_DISCORD_URL = "https://discord.com/invite/jWNDPNMmyB"
 local DYHUB_ICON = "rbxassetid://104487529937663"
 
@@ -952,8 +952,8 @@ local function createKeyGui(onCorrectKey)
 		local lines = {
 			"> status = waiting_for_key",
 			"> ui.theme = mac_dark_code",
-			"> mobile = supported",
-			"> animations = optimized"
+			"> ui.animations = fixed_optimized"
+			"> py.devices = mobile_pc_supported"
 		}
 		local n = 1
 		while running and keyGui and keyGui.Parent do
@@ -1094,6 +1094,7 @@ if not success then
 	notify("Failed to load required data.")
 	task.wait(3)
 	notify("⚠️ Could not load Premium data.\n🔎 Change your executor to use this script.\nContact: " .. DYHUBTHEBEST)
+	blur:Destroy()
 	return
 end
 
@@ -1103,6 +1104,7 @@ end
 local gameLists = {
     FreeVersion = {
         allowedGamesByCreatorId = {
+	        [12249805] = {name = "Fix It Up!", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/jahahjgaxhxabbsgwh"}, 
             [1041977165] = {name = "Kick a Lucky Block", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Nig.lua"}, 
             [35151686] = {name = "Get Fat to Splash", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/bgdhd.lua"}, 
             [35251154] = {name = "Driving Legends", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Bbn.lua"}, 
@@ -1258,6 +1260,7 @@ local gameData = freeGameData or premiumGameData
 if not gameData then
 	notify("This game is not supported.")
 	task.wait(2)
+    blur:Destroy()
 	return
 end
 
@@ -1269,6 +1272,7 @@ if premiumGameData and not playerPremium then
 	notify("Premium is required for this game.")
 	task.wait(5)
 	notify("⛔ Premium only game!\n📊 Get premium to run this script here.\n💳 Buy Premium: " .. DYHUBTHEBEST)
+    blur:Destroy()
 	return
 end
 
