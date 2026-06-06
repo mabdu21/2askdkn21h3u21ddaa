@@ -1,15 +1,6 @@
 --[[
-    _____ _                 
-    / ____| |                
-    | (___ | |_ _ __ ___  ___ 
-     \___ \| __| '__/ _ \/ _ \
-     ____) | |_| | |  __/  __/
-    |_____/ \__|_|  \___|\___|
-
     Rewrited from Wind UI (Footagesus) and NatUI
     Github: https://github.com/Footagesus/WindUI
-
-	Owned by: Kirsia (DYHUB)
 
 	This User Interface is open source and for public usage.
 ]]
