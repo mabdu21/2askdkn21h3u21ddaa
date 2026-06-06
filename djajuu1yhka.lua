@@ -1,4 +1,4 @@
--- V578 | rebuild
+-- V579 | rebuild
 if getgenv().DYHUB_Loader then
     return
 end
@@ -952,7 +952,7 @@ local function createKeyGui(onCorrectKey)
 		local lines = {
 			"> status = waiting_for_key",
 			"> ui.theme = mac_dark_code",
-			"> ui.animations = fixed_optimized"
+			"> ui.animations = fixed_optimized",
 			"> py.devices = mobile_pc_supported"
 		}
 		local n = 1
