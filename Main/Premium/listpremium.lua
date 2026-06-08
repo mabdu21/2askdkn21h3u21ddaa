@@ -127,6 +127,7 @@ return {
     ["Radja_1313"] = { Tag = "radja_1313", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_Q7mZa2KxVn9LpT4sHrW8cYdFjB6AeNqU" }, -- today 2026
     ["bruh_proxd799"] = { Tag = "holas0467", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_p7mZa2KxVn9LpT4sHrW8cYdFjB6AeNqU" }, -- today 2026
     ["WeAre_Top1"] = { Tag = "devxv9", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_n7mZa2KFxVn9LpT4sHHW8cYdFjB6AeNqU" }, -- today 2026
+    ["NEWGOD_2727"] = { Tag = "newgod_2727", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_x7mZa2KFKVn9LpJ4sHHW8cPdFjB6ABNqU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
