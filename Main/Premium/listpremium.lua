@@ -1,4 +1,4 @@
--- // NEW LIST | GV-332
+-- // NEW LIST | GV-333
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -128,6 +128,7 @@ return {
     ["bruh_proxd799"] = { Tag = "holas0467", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_p7mZa2KxVn9LpT4sHrW8cYdFjB6AeNqU" }, -- today 2026
     ["WeAre_Top1"] = { Tag = "devxv9", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_n7mZa2KFxVn9LpT4sHHW8cYdFjB6AeNqU" }, -- today 2026
     ["NEWGOD_2727"] = { Tag = "newgod_2727", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_x7mZa2KFKVn9LpJ4sHHW8cPdFjB6ABNqU" }, -- today 2026
+    ["crfe"] = { Tag = "96ln", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_l7pZa2KFKVn8LpJ4sHHW8cPdFfB6ABNqU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
