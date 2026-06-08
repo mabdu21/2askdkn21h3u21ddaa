@@ -125,6 +125,7 @@ return {
     ["SebbyTheGoat2011"] = { Tag = "sebbythegoat2011", Time = "Lifetime", Day = nil, Key = "DYHUB-BW8VL-HSW2P-LIFETIME" }, -- today 2026
     ["HIBROBIBI"] = { Tag = "0u9g", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_us8YDFK1nINKsiPIeKQXkvwxHNpSmLhB" }, -- today 2026
     ["Radja_1313"] = { Tag = "radja_1313", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_Q7mZa2KxVn9LpT4sHrW8cYdFjB6AeNqU" }, -- today 2026
+    ["bruh_proxd799"] = { Tag = "holas0467", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_p7mZa2KxVn9LpT4sHrW8cYdFjB6AeNqU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
