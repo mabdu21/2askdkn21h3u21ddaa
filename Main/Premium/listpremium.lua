@@ -141,6 +141,7 @@ return {
     -- ====================== Buyer (Trial / Short-term) =============================
     ["zane76560"] = { Tag = "teguhdc1029", Time = nil, Day = 1, Key = "DYHUB-R4VA5-KEY1DAY" },
     ["ddr532G"] = { Tag = "weare8750", Time = nil, Day = 3, Key = "DYHUB_3d_m8kZa2KFKVn9LpJ4sJHW8cPdFjB6ABNqU" },
+    ["ShadowSlime201671"] = { Tag = "vxiid.kage", Time = nil, Day = 7, Key = "DYHUB_7d_s9kZa5KFKVj9LpJ4sJHW8cKdFjB6ABNqU" },
     
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
