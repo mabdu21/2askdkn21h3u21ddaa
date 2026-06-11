@@ -1,4 +1,4 @@
--- // NEW LIST | GV-334
+-- // NEW LIST | GV-335
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -139,7 +139,7 @@ return {
     ["zombiearena1020"] = { Tag = "kurothemain", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-fr" },
   
     -- ====================== Buyer (Trial / Short-term) =============================
-    ["zane76560"] = { Tag = "teguhdc1029", Time = nil, Day = 1, Key = "DYHUB-R4VA5-KEY1DAY" },
+    ["vs7ar7"] = { Tag = "zyniceguy", Time = nil, Day = 7, Key = "DYHUB_7d_G8kpI2KkKVn9Lp34sNHW8cPdBjB6ABNqU" },
     ["ddr532G"] = { Tag = "weare8750", Time = nil, Day = 3, Key = "DYHUB_3d_m8kZa2KFKVn9LpJ4sJHW8cPdFjB6ABNqU" },
     ["ShadowSlime201671"] = { Tag = "vxiid.kage", Time = nil, Day = 7, Key = "DYHUB_7d_s9kZa5KFKVj9LpJ4sJHW8cKdFjB6ABNqU" },
     
