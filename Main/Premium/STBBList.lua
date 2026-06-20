@@ -1,4 +1,4 @@
--- // NEW LIST | GV-004
+-- // NEW LIST | GV-005
 return {
     -- ====================== Admin ================================
     ["NOOB"] = { Tag = "dyumraisgoodguy", Key = "DYHUB-OWNER" },
@@ -27,4 +27,5 @@ return {
     ["Akekdbndk"] = { Tag = "rocketrunner56", Key = "DYHUB_7d_b89c519d41bht2347n43" },
     ["zamilio12"] = { Tag = "zamilio.", Key = "DYHUB_lt_l89cb19d48bht27h7n43" },
     ["nyztests"] = { Tag = "nyztests", Key = "DYHUB_lt_uf6cb19dn8bhb2kh7n49" },
+    ["hodcat_CN"] = { Tag = "catminetry", Key = "DYHUB_lt_pf6cb19dn9bhG2kh7n49" },
 }
