@@ -1,4 +1,4 @@
--- // NEW LIST | GV-347
+-- // NEW LIST | GV-3478
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -134,6 +134,7 @@ return {
     ["ii_2Hx"] = { Tag = "thenewnoncoming", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_v9pZn2KFKBn8ppJ4sHpW73cPvbfm6GBlqU" }, -- today 2026
     ["Huio5053"] = { Tag = "thenewnoncoming", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_v9pZn2KFKBn8ppJ4sHpW73cPvbfm6GBlqU" }, -- today 2026
     ["naexect031"] = { Tag = "trynagetback2u", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_k7pZk2KFKBn8LpJ4sHpW73cPdbfm6GBjqU" }, -- today 2026
+    ["unityw0rk"] = { Tag = "krazy4tats3983", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_n7fZk2KFKBn8SpL4sHbW73cPdbfm7GBjqU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -143,9 +144,6 @@ return {
     ["zombiearena1020"] = { Tag = "kurothemain", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-fr" },
   
     -- ====================== Buyer (Trial / Short-term) =============================
-    ["vs7ar7"] = { Tag = "zyniceguy", Time = nil, Day = 7, Key = "DYHUB_7d_G8kpI2KkKVn9Lp34sNHW8cPdBjB6ABNqU" },
-    ["tedtdwa"] = { Tag = "mestre_do", Time = nil, Day = 3, Key = "DYHUB_3d_j8kZa2KFKVm9LpJ4sFHW8cPdFjB6hBCqL" },
-    ["dangnoob1239"] = { Tag = "dangnoob1", Time = nil, Day = 1, Key = "DYHUB_1d_v8kZa2KFKVm9LpJ4sFHW8cPdFjB6hBCqL" },
     ["ShadowSlime201671"] = { Tag = "vxiid.kage", Time = nil, Day = 7, Key = "DYHUB_7d_s9kZa5KFKVj9LpJ4sJHW8cKdFjB6ABNqU" },
     ["st4rr0259"] = { Tag = "wralthrblx", Time = nil, Day = 7, Key = "DYHUB_7d_p9kGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
     
