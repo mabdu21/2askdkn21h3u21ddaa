@@ -1,4 +1,4 @@
--- // NEW LIST | GV-346
+-- // NEW LIST | GV-347
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -120,7 +120,7 @@ return {
     ["workingtoneg"] = { Tag = "napatrapeezx", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-LIFETIME" }, -- today 2026
     ["yhilarylov"] = { Tag = "ydiniz", Time = "Lifetime", Day = nil, Key = "DYHUB-RF3VP-GK7HP-LIFETIME" }, -- today 2026
     ["zkguit10"] = { Tag = "ewertonx.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW3VP-G9MHP-LIFETIME" }, -- today 2026
-    ["Epicmarkerfinder133"] = { Tag = "aithegoat.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MHP-LIFETIME" }, -- today 2026
+    ["AngleL20114"] = { Tag = "aithegoat.", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MHP-LIFETIME" }, -- today 2026
     ["samurai97397"] = { Tag = "gus008364", Time = "Lifetime", Day = nil, Key = "DYHUB-PW6VL-H9MOP-LIFETIME" }, -- today 2026
     ["SebbyTheGoat2011"] = { Tag = "sebbythegoat2011", Time = "Lifetime", Day = nil, Key = "DYHUB-BW8VL-HSW2P-LIFETIME" }, -- today 2026
     ["HIBROBIBI"] = { Tag = "0u9g", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_us8YDFK1nINKsiPIeKQXkvwxHNpSmLhB" }, -- today 2026
