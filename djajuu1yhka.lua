@@ -1,4 +1,4 @@
--- V584 | rebuild
+-- V585 | rebuild
 if getgenv().DYHUB_Loader then
     return
 end
@@ -1078,6 +1078,7 @@ end
 local gameLists = {
     FreeVersion = {
         allowedGamesByCreatorId = {
+		    [1062446070] = {name = "Broken Blade", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/skibidihuideanbalde.lua"}, 
 		    [432538536] = {name = "Grow A Garden 2", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/test.ajha_twy.txt.lua"}, 
 		    [32847485] = {name = "Demonology", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/dmeiemekeke.lua"}, 
 		    [4619164] = {name = "Sell Lemons", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Ls.lua.lua"}, 
