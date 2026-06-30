@@ -1,4 +1,4 @@
--- // NEW LIST | GV-006
+-- // NEW LIST | GV-007
 return {
     -- ====================== Admin ================================
     ["NOOB"] = { Tag = "dyumraisgoodguy", Key = "DYHUB-OWNER" },
@@ -32,4 +32,5 @@ return {
     ["pudamyg"] = { Tag = "divine_hogrider2321", Key = "DYHUB_lt_k14cb15dh7bhG2kh8nk3" },
     ["newuiexe1"] = { Tag = "rrbl.", Key = "DYHUB_lt_a1fcb15dh7bhG2kh8nk3" },
     ["khaogghh"] = { Tag = ".khz", Key = "DYHUB_lt_ej4cb15dh7bhG2kh8nk3" },
+    ["forkiepoo"] = { Tag = "forkiepoos", Key = "DYHUB_lt_pj4cj15dh7blG2kh7nk3" },
 }
