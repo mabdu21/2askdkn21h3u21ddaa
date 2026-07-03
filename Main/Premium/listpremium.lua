@@ -140,6 +140,8 @@ return {
     ["khaogghh"] = { Tag = ".khz", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_r3fZn2KFKBn8SpL4mHbW73cPdbtm4kBjqU" }, -- today 2026
     ["forkiepoo"] = { Tag = "forkiepoos", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a3fZn2MFKBn8SpL4mHbW73cJdbtm4kVjqU" }, -- today 2026
     ["benthuy8"] = { Tag = "truongpro_", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_n3fRn2MFKBn8SpL4mHbW73cXdbtm4kVjqU" }, -- today 2026
+    ["0343_303"] = { Tag = "wralthrblx", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_h3fZn2MFKBn8SpL5mHbW73cJjbtm4kVjqU" }, -- today 2026
+    ["Jonnreiz"] = { Tag = "jonnreiz", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_f2fRn2MFKBn3SpL4mHbW73gXdbtm4kVjqU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
