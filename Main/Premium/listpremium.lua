@@ -1,4 +1,4 @@
--- // NEW LIST | GV-359
+-- // NEW LIST | GV-360
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -142,7 +142,6 @@ return {
     ["benthuy8"] = { Tag = "truongpro_", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_n3fRn2MFKBn8SpL4mHbW73cXdbtm4kVjqU" }, -- today 2026
     ["0343_303"] = { Tag = "wralthrblx", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_h3fZn2MFKBn8SpL5mHbW73cJjbtm4kVjqU" }, -- today 2026
     ["Jonnreiz"] = { Tag = "jonnreiz", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_f2fRn2MFKBn3SpL4mHbW73gXdbtm4kVjqU" }, -- today 2026
-    ["Godeater12231"] = { Tag = "rexstorm_", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_k2fRj2MFKBc3RpL4bHbW73gXdbtm5kVjqU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -170,6 +169,7 @@ return {
     ["asd9230"] = { Tag = "naubz", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_k2fRj2MJKBc3RpL4bHbW79gXdbgm5kPjqU" },
     
     -- ====================== PAYMENT =============================
+    ["Godeater12231"] = { Tag = "rexstorm_", Time = nil, Day = 42, Key = "DYHUB_staff_k2fRj2MFKBc3RpL4bHbW73gXdbtm5kVjqU" }, -- today 2026
     ["emmijked123"] = { Tag = "alex_41899", Time = nil, Day = 67, Key = "DYHUB-ADMINKEY" },
     ["Oegsjmc"] = { Tag = "topnumberone.", Time = nil, Day = 177, Key = "DYHUB-SNOWY-KEYHELPER" },
     ["monyegaming24"] = { Tag = "whitecat1_", Time = nil, Day = 8, Key = "DYHUB-K6VA5-TRIALHELPER" },
