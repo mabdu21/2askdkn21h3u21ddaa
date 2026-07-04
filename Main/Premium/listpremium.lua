@@ -1,4 +1,4 @@
--- // NEW LIST | GV-356
+-- // NEW LIST | GV-358
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -167,6 +167,7 @@ return {
     ["tfupy"] = { Tag = "natemuhehe", Time = "Lifetime", Day = nil, Key = "DYHUB-LQ8V4-TP6HL-FW8V4-BA5GQ-LIFETIME" },
     ["Ultra_Joke"] = { Tag = "kpzztv024674", Time = "Lifetime", Day = nil, Key = "DYHUB-NQ8F3-TP6HL-FW8V4-BA5GQ-LIFETIME" },
     ["Acatus1997"] = { Tag = "kuiapxx", Time = "Lifetime", Day = nil, Key = "DYHUB-RQ8F3-TD6HL-FX7V4-BA3GQ-LIFETIME" },
+    ["asd9230"] = { Tag = "naubz", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_k2fRj2MJKBc3RpL4bHbW79gXdbgm5kPjqU" },
     
     -- ====================== PAYMENT =============================
     ["emmijked123"] = { Tag = "alex_41899", Time = nil, Day = 67, Key = "DYHUB-ADMINKEY" },
