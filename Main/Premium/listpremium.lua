@@ -1,4 +1,4 @@
--- // NEW LIST | GV-360
+-- // NEW LIST | GV-361
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -157,6 +157,7 @@ return {
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
     ["namilrara_army"] = { Tag = "namillrara", Time = nil, Day = 15, Key = "DYHUB-H4VF2-BOOSTER" },
+    ["Nhatfantasyno1"] = { Tag = "truongpro_", Time = nil, Day = 14, Key = "DYHUB_boost_e2fRp2KJKBs3RpL4pHfW79gXdbgm5kPjqU" },
     -- ====================== Giveaway =============================
     
     -- ====================== BUY TH =============================
