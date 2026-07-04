@@ -1,4 +1,4 @@
--- V589 | rebuild
+-- V590 | rebuild
 if getgenv().DYHUB_Loader then
     return
 end
@@ -1078,6 +1078,8 @@ end
 local gameLists = {
     FreeVersion = {
         allowedGamesByCreatorId = {
+	        [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Jajuajsnahajabladeeejajabaalll.lua"},
+		    [5693735] = {name = "Evade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/djsjjwsjsnjajevaddddeeeeeeddeee.txt"},
 			[425035678] = {name = "100 Days At Sea", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/s3xskiv1-100das"}, 
 	        [33548380] = {name = "Forsaken", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Fosaken.lua"},
 		    [1062446070] = {name = "Broken Blade", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/skibidihuideanbalde.lua"}, 
@@ -1188,11 +1190,9 @@ local gameLists = {
             [35102746] = {name = "Fish It", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/jhffthhffreV2fishlol.lua"},
             [35561581] = {name = "Protect the Stash", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/STS.lua"},
             [34223768] = {name = "Jump Stars", url = "https://raw.githubusercontent.com/Crazy0z/Crazy/refs/heads/main/JumpOnMyCockMobile.lua"},
-            [5693735] = {name = "Evade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/djsjjwsjsnjajevaddddeeeeeeddeee.txt"},
             [12013007] = {name = "The Strongest Battleground", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/TSB.lua"},
 	        [1002185259] = {name = "Sailor Piece", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SPD.lua"},
 	        [959433345] = {name = "Survive the Apocalypse", url = "https://raw.githubusercontent.com/mabdu21/Hahahahahxhshnshbuefibeeewiyehhxhss/refs/heads/main/defffffffftufffff.lua"},
-            [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Jajuajsnahajabladeeejajabaalll.lua"},
         },
 
         allowedGamesByPlaceId = {
