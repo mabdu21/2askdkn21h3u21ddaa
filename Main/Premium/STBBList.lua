@@ -1,9 +1,8 @@
--- // NEW LIST | GV-008
+-- // NEW LIST | GV-009
 return {
     -- ====================== Admin ================================
     ["NOOB"] = { Tag = "dyumraisgoodguy", Key = "DYHUB-OWNER" },
     ["kyku15567"] = { Tag = "kyku155673", Key = "DYHUB-A2E7L-STBB" },
-    ["Darskay_123"] = { Tag = "darksky87", Key = "DYHUB-D3R1P-STBB-KEY14DAY" },
     ["Jelly_8king1"] = { Tag = "kadensucks5", Key = "DYHUB-E3L1P-STBB" },
     ["Robuxx961"] = { Tag = "kadensuapenasumcaratranquilo0715cks5", Key = "DYHUB-KW31P-STBB" },
     ["rrczhtt"] = { Tag = "doski0189", Key = "DYHUB-S2D1P-STBB" },
@@ -35,4 +34,5 @@ return {
     ["forkiepoo"] = { Tag = "forkiepoos", Key = "DYHUB_lt_pj4cj15dh7blG2kh7nk3" },
     ["bacynguy2"] = { Tag = "flushed1", Key = "DYHUB_lt_ph4cj15dh7blG2kh7tk3" },
     ["gugageme_brs"] = { Tag = "piadocas2020", Key = "DYHUB_lt_e4kRp2MFDBn3SpL4mHhW53" },
+    ["Katakuri3797"] = { Tag = "hoilopobk", Key = "DYHUB_3d_e4kRp2MFDBn3SpL4mHhW53" },
 }
