@@ -143,6 +143,7 @@ return {
     ["Jonnreiz"] = { Tag = "jonnreiz", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_f2fRn2MFKBn3SpL4mHbW73gXdbtm4kVjqU" }, -- today 2026
     ["topmaks22856"] = { Tag = "suekiro", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6fRu2MFKBn3SpL4mHhW53gFdbtm4kVWqU" }, -- today 2026
     ["fanofcoolki4"] = { Tag = "infiniteplayer23124", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6jRu2MFKTn3SpL4gUhW53gFpbtm4kVWjU" }, -- today 2026
+    ["Katakuri3797"] = { Tag = "hoilopobk", Time = nil, Day = 3, Key = "DYHUB_3d_e4kRp2MFDBn3SpL4mHhW53" },
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
