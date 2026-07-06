@@ -34,5 +34,4 @@ return {
     ["forkiepoo"] = { Tag = "forkiepoos", Key = "DYHUB_lt_pj4cj15dh7blG2kh7nk3" },
     ["bacynguy2"] = { Tag = "flushed1", Key = "DYHUB_lt_ph4cj15dh7blG2kh7tk3" },
     ["gugageme_brs"] = { Tag = "piadocas2020", Key = "DYHUB_lt_e4kRp2MFDBn3SpL4mHhW53" },
-    ["Katakuri3797"] = { Tag = "hoilopobk", Key = "DYHUB_3d_e4kRp2MFDBn3SpL4mHhW53" },
 }
