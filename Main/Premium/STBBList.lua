@@ -1,4 +1,4 @@
--- // NEW LIST | GV-009
+-- // NEW LIST | GV-010
 return {
     -- ====================== Admin ================================
     ["NOOB"] = { Tag = "dyumraisgoodguy", Key = "DYHUB-OWNER" },
@@ -34,4 +34,5 @@ return {
     ["forkiepoo"] = { Tag = "forkiepoos", Key = "DYHUB_lt_pj4cj15dh7blG2kh7nk3" },
     ["bacynguy2"] = { Tag = "flushed1", Key = "DYHUB_lt_ph4cj15dh7blG2kh7tk3" },
     ["gugageme_brs"] = { Tag = "piadocas2020", Key = "DYHUB_lt_e4kRp2MFDBn3SpL4mHhW53" },
+    ["yucan2021"] = { Tag = "yucan2026", Key = "DYHUB_lt_a4kRr2MFJBn3SpL7mHhW53" },
 }
