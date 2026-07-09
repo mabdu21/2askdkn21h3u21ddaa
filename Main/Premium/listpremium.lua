@@ -1,9 +1,10 @@
--- // NEW LIST | GV-372
+-- // NEW LIST | GV-373
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
     ["Kazorebere231"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
     ["55555555555555555455"] = { Tag = "oszq_", Time = nil, Day = 111, Key = "DYHUB-nigga" },
+    ["wardenvacillation"] = { Tag = "universal", Time = nil, Day = 500, Key = "DYHUB_sexski4bangyoungjyounggup6ick" },
     ["handlecdn16"] = { Tag = "oszq_", Time = nil, Day = 111, Key = "nigga" },
     ["Go_Ertadx4"] = { Tag = "Free", Time = "Lifetime", Day = nil, Key = "DYHUB-FREE-UNLIMITED" },
     ["Hanehxo91"] = { Tag = "Free", Time = "Lifetime", Day = nil, Key = "DYHUB-FREE-UNLIMITED" },
