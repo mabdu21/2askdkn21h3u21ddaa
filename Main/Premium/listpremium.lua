@@ -144,7 +144,7 @@ return {
     ["topmaks22856"] = { Tag = "suekiro", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6fRu2MFKBn3SpL4mHhW53gFdbtm4kVWqU" }, -- today 2026
     ["fanofcoolki4"] = { Tag = "infiniteplayer23124", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6jRu2MFKTn3SpL4gUhW53gFpbtm4kVWjU" }, -- today 2026
     ["Pakhx1"] = { Tag = "plhisgys", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6gPu2MFKTn3IpL4gUhJ53gFpbtm7kVWjU" }, -- today 2026
-    ["aerissinia"] = { Tag = "aerissinia", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a6gPu2MfGTn3IpL4oUhJ53gFpbRt7kVOjU" }, -- today 2026
+    ["aerissinia"] = { Tag = "aerissinia", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_n6gPu2MfGTy3IpL4oUhJ53gFpbRt7kVOjU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -154,7 +154,6 @@ return {
     ["zombiearena1020"] = { Tag = "kurothemain", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-fr" },
   
     -- ====================== Buyer (Trial / Short-term) =============================
-    ["aerissinia"] = { Tag = "aerissinia", Time = nil, Day = 8, Key = "DYHUB_8d_a9kZa5KFKVj9LpJ4sJHW8cKdFjB6ABNqU" },
     ["st4rr0259"] = { Tag = "wralthrblx", Time = nil, Day = 7, Key = "DYHUB_7d_p9kGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
     ["VtAcak8"] = { Tag = "yuki_muhaha", Time = nil, Day = 150, Key = "DYHUB_150d_e4kRp2MFRBn3SpLfmHhW53" },
     ["Katakuri3797"] = { Tag = "hoilopobk", Time = nil, Day = 3, Key = "DYHUB_3d_e4kRp2MFDBn3SpL4mHhW53" },
