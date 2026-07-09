@@ -1,4 +1,4 @@
--- // NEW LIST | GV-370
+-- // NEW LIST | GV-371
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -144,7 +144,8 @@ return {
     ["topmaks22856"] = { Tag = "suekiro", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6fRu2MFKBn3SpL4mHhW53gFdbtm4kVWqU" }, -- today 2026
     ["fanofcoolki4"] = { Tag = "infiniteplayer23124", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6jRu2MFKTn3SpL4gUhW53gFpbtm4kVWjU" }, -- today 2026
     ["Pakhx1"] = { Tag = "plhisgys", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e6gPu2MFKTn3IpL4gUhJ53gFpbtm7kVWjU" }, -- today 2026
-
+    ["aerissinia"] = { Tag = "aerissinia", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a6gPu2MfGTn3IpL4oUhJ53gFpbRt7kVOjU" }, -- today 2026
+    
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-2" },
