@@ -1,4 +1,4 @@
--- // NEW LIST | GV-371
+-- // NEW LIST | GV-372
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -163,6 +163,7 @@ return {
     ["namilrara_army"] = { Tag = "namillrara", Time = nil, Day = 15, Key = "DYHUB-H4VF2-BOOSTER" },
     ["Nhatfantasyno1"] = { Tag = "truongpro_", Time = nil, Day = 14, Key = "DYHUB_boost_e2fRp2KJKBs3RpL4pHfW79gXdbgm5kPjqU" },
     ["miawrarachan"] = { Tag = "ryujinx6016", Time = nil, Day = 14, Key = "DYHUB_boost_e2fKp8KJKBs3RpL4pHfW75gXdbgm5kPjqU" },
+    ["CatBlitzMaster"] = { Tag = "ob9xz", Time = nil, Day = 5, Key = "DYHUB_boost_j2fKp8WJKPe3RyL4pHfW75gRdbgm5uNjqU" },
     
     -- ====================== Giveaway =============================
     ["VanoIsNotNoob"] = { Tag = "wizi993", Time = nil, Day = 7, Key = "DYHUB_g_7d_p9kGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
