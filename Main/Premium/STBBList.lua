@@ -37,4 +37,5 @@ return {
     ["yucan2021"] = { Tag = "yucan2026", Key = "DYHUB_lt_a4kRr2MFJBn3SpL7mHhW53" },
     ["Danzyzxu"] = { Tag = "numberslettersnscores", Key = "DYHUB_lt_e4kRd2MFWBn3SpG7uHhQ53" },
     ["ayyanH1234"] = { Tag = "regthegoat._", Key = "DYHUB_1d_e4jEd2MFWBn3StG7uHhS53" },
+    ["rekanz22"] = { Tag = "bojessinaga", Key = "DYHUB_lt_p6gPu2EfGFy3IpL4oUhJ54gFpbRt7uVOjU" },
 }
