@@ -1,4 +1,4 @@
--- // NEW LIST | GV-375
+-- // NEW LIST | GV-376
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -180,6 +180,7 @@ return {
     
     -- ====================== PAYMENT =============================
     ["Godeater12231"] = { Tag = "rexstorm_", Time = nil, Day = 42, Key = "DYHUB_staff_k2fRj2MFKBc3RpL4bHbW73gXdbtm5kVjqU" }, -- today 2026
+    ["dWDWQDQWDQDwdawda1"] = { Tag = "xurry62", Time = nil, Day = 30, Key = "DYHUB_staff_k2fRj2UFKBc3RpL5bGbW73gXdbtj5kVjqU" }, -- today 2026
     ["emmijked123"] = { Tag = "alex_41899", Time = nil, Day = 67, Key = "DYHUB-ADMINKEY" },
     ["Oegsjmc"] = { Tag = "topnumberone.", Time = nil, Day = 177, Key = "DYHUB-SNOWY-KEYHELPER" },
     ["monyegaming24"] = { Tag = "whitecat1_", Time = nil, Day = 8, Key = "DYHUB-K6VA5-TRIALHELPER" },
