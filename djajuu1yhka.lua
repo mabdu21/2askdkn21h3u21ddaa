@@ -1,4 +1,4 @@
--- V592 | rebuild
+-- V593 | rebuild
 if getgenv().DYHUB_Loader then
     return
 end
@@ -366,7 +366,7 @@ local function notify(text)
 	end)
 end
 
-local GET_KEY_LINK_URL = "https://work.ink/28Au/dyhub-loader"
+local GET_KEY_LINK_URL = "https://direct-link.net/4825256/RSiwc6QNLX0v"
 local GET_KEY_DISCORD_URL = "https://discord.com/invite/jWNDPNMmyB"
 local DYHUB_ICON = "rbxassetid://104487529937663"
 
