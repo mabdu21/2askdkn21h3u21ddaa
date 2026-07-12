@@ -1,4 +1,4 @@
--- V593 | rebuild
+-- V594 | rebuild
 if getgenv().DYHUB_Loader then
     return
 end
@@ -1078,7 +1078,7 @@ end
 local gameLists = {
     FreeVersion = {
         allowedGamesByCreatorId = {
-			[9640154] = {name = "Storage Hunters", url = "https://pastefy.app/kkyuoCl7/raw"},
+			[9640154] = {name = "Storage Hunters", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Shhhhh.lua"},
 			[344908697] = {name = "Animal Hospital", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/gui.lua"},
 	        [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Jajuajsnahajabladeeejajabaalll.lua"},
 		    [5693735] = {name = "Evade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/djsjjwsjsnjajevaddddeeeeeeddeee.txt"},
