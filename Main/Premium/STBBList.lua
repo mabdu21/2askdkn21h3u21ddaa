@@ -36,7 +36,7 @@ return {
     ["gugageme_brs"] = { Tag = "piadocas2020", Key = "DYHUB_lt_e4kRp2MFDBn3SpL4mHhW53" },
     ["yucan2021"] = { Tag = "yucan2026", Key = "DYHUB_lt_a4kRr2MFJBn3SpL7mHhW53" },
     ["Danzyzxu"] = { Tag = "numberslettersnscores", Key = "DYHUB_lt_e4kRd2MFWBn3SpG7uHhQ53" },
-    ["Warriorthewyatt"] = { Tag = "boozzball", Key = "DYHUB_1d_e4jEd2MFWBn3StG7uHhS53" },
+    ["Juan_7m7"] = { Tag = "randy0030702", Key = "DYHUB_14d_e4jEd2MFWBn3StG7uHhS53" },
     ["rekanz22"] = { Tag = "bojessinaga", Key = "DYHUB_lt_p6gPu2EfGFy3IpL4oUhJ54gFpbRt7uVOjU" },
     ["sanstvsyt"] = { Tag = "tvs_yt", Key = "DYHUB_1d_p2uPu2EfiFy3IpL4jUhJ54gFpbRt4uVOjU" },
 }
