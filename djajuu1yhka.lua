@@ -1,4 +1,4 @@
------------------------------------------------------------------------------------------[[
+-- ======================================================================[[
 
 		██████╗ ██╗   ██╗██╗   ██╗███╗   ███╗██████╗  █████╗  TM
 		██╔══██╗╚██╗ ██╔╝██║   ██║████╗ ████║██╔══██╗██╔══██╗
@@ -7,9 +7,9 @@
 		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
 		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
                    dyumra.gg | owner & founder
-							[ v1.2.4 ]
+							[ v1.2.5 ]
 
------------------------------------------------------------------------------------------]]
+-- ======================================================================]]
 if getgenv().DYHUB_Loader then
     pcall(function()
         game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -2167,6 +2167,7 @@ local gameLists = {
         allowedGamesByCreatorId = {
 			[9640154] = {name = "Storage Hunters", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Shhhhh.lua"},
 			[344908697] = {name = "Animal Hospital", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/gui.lua"},
+			[617312490] = {name = "Drain the Lake", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/dtl.lua"},
 	        [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Jajuajsnahajabladeeejajabaalll.lua"},
 		    [5693735] = {name = "Evade", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/djsjjwsjsnjajevaddddeeeeeeddeee.txt"},
 			[425035678] = {name = "100 Days At Sea", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/s3xskiv1-100das"}, 
