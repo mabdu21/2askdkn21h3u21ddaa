@@ -7,10 +7,10 @@
 --		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
 --		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
 --                    dyumra.gg | owner & founder
---                           [ v1.2.5 ]
+--                           [ v1.3.0 ]
 --
 -- ======================================================================
-if getgenv().DYHUB_Loader then
+if getgenv().DYHUB_a2Us3jUqPaje4sJwked then
     pcall(function()
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "DYHUB",
@@ -20,10 +20,10 @@ if getgenv().DYHUB_Loader then
     end)
     return
 end
-getgenv().DYHUB_Loader = true
+getgenv().DYHUB_a2Us3jUqPaje4sJwked = true
 
 repeat task.wait() until game:IsLoaded()
-
+--[[
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
 
 local prefix = "."
@@ -1417,6 +1417,8 @@ local function flashScreen(targets, power)
     end
 end
 
+--]]
+print("[DYHUB] Database Loader!")
 task.wait(0.3)
 
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
