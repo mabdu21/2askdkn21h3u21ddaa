@@ -1,4 +1,4 @@
--- // NEW LIST | GV-014
+-- // NEW LIST | GV-015
 return {
     -- ====================== Admin ================================
     ["NOOB"] = { Tag = "dyumraisgoodguy", Key = "DYHUB-OWNER" },
@@ -39,4 +39,5 @@ return {
     ["Juan_7m7"] = { Tag = "randy0030702", Key = "DYHUB_14d_e4jEd2MFWBn3StG7uHhS53" },
     ["rekanz22"] = { Tag = "bojessinaga", Key = "DYHUB_lt_p6gPu2EfGFy3IpL4oUhJ54gFpbRt7uVOjU" },
     ["sanstvsyt"] = { Tag = "tvs_yt", Key = "DYHUB_1d_p2uPu2EfiFy3IpL4jUhJ54gFpbRt4uVOjU" },
+    ["jolkolkhhj"] = { Tag = "tanxd0485", Key = "DYHUB_lt_p2uPu2EfiFy3IpL4jUhJ54gFpbRt4uVOjU" },
 }
