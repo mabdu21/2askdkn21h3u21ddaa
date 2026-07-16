@@ -7,7 +7,7 @@
 --		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
 --		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
 --                    dyumra.gg | owner & founder
---                           [ v1.3.7 ]
+--                           [ v1.3.8 ]
 --
 -- ======================================================================
 if getgenv().DYHUB_a2Us3jUqPaje4sJwked then
@@ -776,7 +776,6 @@ end
 local gameLists = {
     FreeVersion = {
         allowedGamesByCreatorId = {
-			[9640154] = {name = "Storage Hunters", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Shhhhh.lua"},
 			[344908697] = {name = "Animal Hospital", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/gui.lua"},
 			[617312490] = {name = "Drain the Lake", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/dtl.lua"},
 	        [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Jajuajsnahajabladeeejajabaalll.lua"},
@@ -853,6 +852,7 @@ local gameLists = {
 
     PremiumVersion = {
         allowedGamesByCreatorId = { 
+			[9640154] = {name = "Storage Hunters", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Shhhhh.lua"},
 			[168519468] = {name = "Anime Astral Simulator", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/s3xskiv2-aas"}, 
 			[34783288] = {name = "Anime Warriors III", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/s3xskiv3-awiii"}, 
 	        [34208109] = {name = "Anime Card Collection", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Uhalualua.lua"},
