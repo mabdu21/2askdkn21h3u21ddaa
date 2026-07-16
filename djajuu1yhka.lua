@@ -7,7 +7,7 @@
 --		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
 --		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
 --                    dyumra.gg | owner & founder
---                           [ v1.3.0 ]
+--                           [ v1.3.5 ]
 --
 -- ======================================================================
 if getgenv().DYHUB_a2Us3jUqPaje4sJwked then
@@ -23,7 +23,7 @@ end
 getgenv().DYHUB_a2Us3jUqPaje4sJwked = true
 
 repeat task.wait() until game:IsLoaded()
---[[
+
 getgenv().owners = {"Yolmar_43", "55555555555555555455", "Kazorebere231"}
 
 local prefix = "."
@@ -116,18 +116,16 @@ local jobIdReceiver  = getOrCreateFunc("JobIdReceiver")
 local serverInfoSender  = getOrCreateFunc("ServerInfoSender")
 local serverInfoReceiver = getOrCreateFunc("ServerInfoReceiver")
 
--- ฝั่งเพื่อน: ตอบ JobId เมื่อ owner ขอ
-jobIdReceiver.OnServerInvoke = function(requestingPlayer)
-    if requestingPlayer == localPlayer then return nil end
+-- แก้แล้ว
+jobIdReceiver.OnClientInvoke = function()
     return {
         GameId = game.PlaceId,
         JobId  = game.JobId
     }
 end
 
--- ฝั่งเพื่อน: ตอบข้อมูลเซิร์ฟ (GameId, JobId, Players)
-serverInfoReceiver.OnServerInvoke = function(requestingPlayer)
-    if requestingPlayer == localPlayer then return nil end
+-- แก้แล้ว
+serverInfoReceiver.OnClientInvoke = function()
     local playerList = {}
     for _, p in ipairs(Players:GetPlayers()) do
         table.insert(playerList, p.Name)
@@ -1417,9 +1415,9 @@ local function flashScreen(targets, power)
     end
 end
 
---]]
+
 print("[DYHUB] Database Loader!")
-task.wait(0.3)
+task.wait(0.05)
 
 local DYHUBTHEBEST = "https://dsc.gg/dyhub"
 
