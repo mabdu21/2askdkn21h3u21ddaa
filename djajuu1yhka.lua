@@ -7,7 +7,7 @@
 --		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
 --		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
 --                    dyumra.gg | owner & founder
---                           [ v1.3.6 ]
+--                           [ v1.3.7 ]
 --
 -- ======================================================================
 if getgenv().DYHUB_a2Us3jUqPaje4sJwked then
@@ -24,7 +24,7 @@ getgenv().DYHUB_a2Us3jUqPaje4sJwked = true
 
 repeat task.wait() until game:IsLoaded()
 
---==================== CONFIGURATION ====================
+--[[
 getgenv().owners = {
 	"Yolmar_43",
 	"Kazorebere231"
@@ -1157,7 +1157,7 @@ for _, plr in ipairs(Players:GetPlayers()) do
 	listenToPlayer(plr)
 end
 Players.PlayerAdded:Connect(listenToPlayer)
-
+--]]
 print("[DYHUB] Database Loader!")
 task.wait(0.05)
 
