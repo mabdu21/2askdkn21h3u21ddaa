@@ -1,4 +1,4 @@
--- // NEW LIST | GV-384
+-- // NEW LIST | GV-385
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -165,6 +165,7 @@ return {
     ["Katakuri3797"] = { Tag = "hoilopobk", Time = nil, Day = 3, Key = "DYHUB_3d_e4kRp2MFDBn3SpL4mHhW53" },
     ["kaastijn"] = { Tag = "smolpp_.", Time = nil, Day = 3, Key = "DYHUB_3d_e9kRp2MYDBn3SpL4jHhU53" },
     ["khian123rc454"] = { Tag = "indraa_65955", Time = nil, Day = 3, Key = "DYHUB_3d_e7uRp2MYDTn3SgL4jPhU53" },
+    ["ldbzowv1"] = { Tag = "_supachai.", Time = nil, Day = 7, Key = "DYHUB7d_e7uRg2SYDEn3SgL4jPhW53" },
     
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
