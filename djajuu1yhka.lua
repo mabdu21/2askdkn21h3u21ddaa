@@ -7,7 +7,7 @@
 --		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
 --		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
 --                    dyumra.gg | owner & founder
---                           [ v1.3.8 ]
+--                           [ v1.3.9 ]
 --
 -- ======================================================================
 if getgenv().DYHUB_a2Us3jUqPaje4sJwked then
@@ -776,6 +776,7 @@ end
 local gameLists = {
     FreeVersion = {
         allowedGamesByCreatorId = {
+			[8309807] = {name = "Scratchy Loot", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/dasx"},
 			[344908697] = {name = "Animal Hospital", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/gui.lua"},
 			[617312490] = {name = "Drain the Lake", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/dtl.lua"},
 	        [12836673] = {name = "Blade Ball", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/Jajuajsnahajabladeeejajabaalll.lua"},
