@@ -166,6 +166,7 @@ return {
     ["kaastijn"] = { Tag = "smolpp_.", Time = nil, Day = 3, Key = "DYHUB_3d_e9kRp2MYDBn3SpL4jHhU53" },
     ["khian123rc454"] = { Tag = "indraa_65955", Time = nil, Day = 3, Key = "DYHUB_3d_e7uRp2MYDTn3SgL4jPhU53" },
     ["ldbzowv1"] = { Tag = "_supachai.", Time = nil, Day = 7, Key = "DYHUB_7d_e7uRg2SYDEn3SgL4jPhW53" },
+    ["Skibidi2025114"] = { Tag = "biasaaj.", Time = nil, Day = 31, Key = "DYHUB_31d_e7uRg2SYDEn3SgL4jPhW53" },
     
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
