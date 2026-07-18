@@ -1,0 +1,6 @@
+-- // NEW LIST | GV-1
+return {
+    -- ====================== Admin ================================
+    ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
+    ["Kazorebere231"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
+}
