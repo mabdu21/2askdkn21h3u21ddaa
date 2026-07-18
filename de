@@ -7,7 +7,7 @@
 --		██████╔╝   ██║   ╚██████╔╝██║ ╚═╝ ██║██║  ██║██║  ██║
 --		╚═════╝    ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝                                                 
 --                    dyumra.gg | owner & founder
---                           [ v1.3.9+ ]
+--                           [ v1.3.9 ]
 --
 -- ======================================================================
 if getgenv().DYHUB_a2Us3jUqPaje4sJwked then
@@ -1030,131 +1030,148 @@ if not anyGameData then
 end
 
 -- =========================================================
--- 🔑 Key-Based Authentication System
+-- 💳 Access Check
 -- =========================================================
-local externalKey = getgenv().DYHUB_Key or nil
-local gameData = nil
-local requiredVersion = nil
+local playerPremium = premiumUsers[player.Name]
+local playerExtra1 = extra1Users[player.Name]
+local playerExtra2 = extra2Users[player.Name]
+local playerExtra3 = extra3Users[player.Name]
 
--- Helper function: find user in all lists by key
-local function findUserByKey(key)
-    if not key then return nil end
-    
-    for username, userData in pairs(premiumUsers) do
-        if userData.Key and userData.Key:lower() == key:lower() then
-            return {version = "Premium", username = username, data = userData}
-        end
+-- เลือก gameData ตามสิทธิ์ของผู้ใช้
+-- ลำดับ: free > premium > extra1 > extra2 > extra3
+-- ❌ Premium ไม่สามารถเข้าเกม Extra ได้ (ตามที่ต้องการ)
+local gameData
+local requiredVersion
+
+if freeGameData then
+    -- เกมอยู่ใน free list → ทุกคนเข้าถึงได้
+    gameData = freeGameData
+elseif premiumGameData then
+    if playerPremium then
+        gameData = premiumGameData
+    else
+        requiredVersion = "Premium"
     end
-    
-    for username, userData in pairs(extra1Users) do
-        if userData.Key and userData.Key:lower() == key:lower() then
-            return {version = "Single", username = username, data = userData}
-        end
+elseif extra1GameData then
+    if playerExtra1 then  -- ✅ ไม่มี playerPremium
+        gameData = extra1GameData
+    else
+        requiredVersion = "Single"
     end
-    
-    for username, userData in pairs(extra2Users) do
-        if userData.Key and userData.Key:lower() == key:lower() then
-            return {version = "Extra", username = username, data = userData}
-        end
+elseif extra2GameData then
+    if playerExtra2 then  -- ✅ ไม่มี playerPremium
+        gameData = extra2GameData
+    else
+        requiredVersion = "Extra"
     end
-    
-    for username, userData in pairs(extra3Users) do
-        if userData.Key and userData.Key:lower() == key:lower() then
-            return {version = "Product", username = username, data = userData}
-        end
+elseif extra3GameData then
+    if playerExtra3 then  -- ✅ ไม่มี playerPremium
+        gameData = extra3GameData
+    else
+        requiredVersion = "Product"
     end
-    
-    return nil
 end
 
--- =========================================================
--- 🔐 Access Control Logic
--- =========================================================
-if freeGameData then
-    -- Free game → everyone can access
-    gameData = freeGameData
-elseif externalKey then
-    -- External key provided
-    local userInfo = findUserByKey(externalKey)
-    
-    if userInfo then
-        -- Key found in database
-        if premiumGameData then
-            if userInfo.version == "Premium" then
-                gameData = premiumGameData
-            else
-                -- Wrong tier for this game
-                notify("Invalid access for this game.")
-                blur:Destroy()
-                return
-            end
-        elseif extra1GameData then
-            if userInfo.version == "Single" then
-                gameData = extra1GameData
-            else
-                notify("Invalid access for this game.")
-                blur:Destroy()
-                return
-            end
-        elseif extra2GameData then
-            if userInfo.version == "Extra" then
-                gameData = extra2GameData
-            else
-                notify("Invalid access for this game.")
-                blur:Destroy()
-                return
-            end
-        elseif extra3GameData then
-            if userInfo.version == "Product" then
-                gameData = extra3GameData
-            else
-                notify("Invalid access for this game.")
-                blur:Destroy()
-                return
-            end
-        end
-    else
-        -- Key not found
-        notify("Invalid key. Please purchase on " .. DYHUBTHEBEST)
-        task.wait(3)
-        blur:Destroy()
-        return
+if not gameData then
+    if requiredVersion then
+        notify("This game requires " .. requiredVersion .. " access.")
+        task.wait(5)
+        notify("⛔ " .. requiredVersion .. " only game!\n📊 Get " .. requiredVersion .. " to run this script.\n💳 Buy: " .. DYHUBTHEBEST)
     end
-else
-    -- No external key, use GUI
-    if premiumGameData or extra1GameData or extra2GameData or extra3GameData then
-        -- Game requires paid access, show GUI
-        createKeyGui(function()
-            -- Will be handled by GUI logic
-        end)
-        return
-    end
+    blur:Destroy()
+    return
 end
 
 -- =========================================================
 -- 🚀 Script Loader
 -- =========================================================
-if gameData then
+local loadingScript = false
+local function loadScript()
+	if loadingScript then return end
+	loadingScript = true
+	if gameData and gameData.url then
+		local ok = pcall(function()
+			local src = game:HttpGet(gameData.url)
+			local fn = loadstring(src)
+			if fn then fn() end
+		end)
+		if ok then
+			notify("Script loaded successfully.")
+		else
+			notify("Failed to load script.")
+			loadingScript = false
+		end
+	else
+		notify("No script found for this game.")
+		loadingScript = false
+	end
+end
+
+-- =========================================================
+-- ✨ Run for Authorized Users
+-- =========================================================
+if playerPremium or playerExtra1 or playerExtra2 or playerExtra3 then
     blur:Destroy()
     
-    local function loadScript()
-        if gameData and gameData.url then
-            local ok = pcall(function()
-                local src = game:HttpGet(gameData.url)
-                local fn = loadstring(src)
-                if fn then fn() end
-            end)
-            if ok then
-                notify("Script loaded successfully.")
-            else
-                notify("Failed to load script.")
+    -- =========================================================
+    -- 🎯 ฟังก์ชันช่วยแสดงเวลา + แจ้งเตือน Copy Key
+    -- =========================================================
+    local function showAccessAndCopy(versionName, userInfo)
+        -- คำนวณวันหมดอายุ
+        local expireText = "Unknown"
+        local isLifetime = false
+        
+        if userInfo.Time == "Lifetime" or tonumber(userInfo.Time) == -1 then
+            expireText = "Lifetime"
+            isLifetime = true
+        elseif tonumber(userInfo.Time) then
+            expireText = tostring(userInfo.Time) .. " Days"
+        elseif userInfo.Time == nil and tonumber(userInfo.Day) then
+            expireText = tostring(userInfo.Day) .. " Days"
+        end
+        
+        -- แจ้งเตือนสถานะ
+        if isLifetime then
+            notify(versionName .. " loaded. Time: Lifetime")
+        else
+            notify(versionName .. " loaded. Days left: " .. tostring(userInfo.Day or "Unknown"))
+        end
+        
+        -- ถ้ามี Key → แสดงปุ่ม Copy
+        if userInfo.Key then
+            local b = Instance.new("BindableFunction")
+            b.OnInvoke = function(x)
+                if x == "Copy" then
+                    setclipboard("Key: " .. userInfo.Key .. "\nExpire: " .. expireText)
+                end
             end
+            
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "DYHUB",
+                Text = "Copy your saved key?",
+                Button1 = "Copy",
+                Button2 = "No",
+                Callback = b,
+                Duration = 5
+            })
         end
     end
     
+    -- =========================================================
+    -- 🚀 ตรวจสอบสิทธิ์และโหลด
+    -- =========================================================
+    if playerPremium then
+        showAccessAndCopy("Premium", playerPremium)
+    elseif playerExtra1 then
+        showAccessAndCopy("Single", playerExtra1)
+    elseif playerExtra2 then
+        showAccessAndCopy("Extra", playerExtra2)
+    elseif playerExtra3 then
+        showAccessAndCopy("Product", playerExtra3)
+    end
+    
     loadScript()
+    
 else
-    notify("Access denied.")
-    task.wait(2)
-    blur:Destroy()
+    createKeyGui(loadScript)
 end
