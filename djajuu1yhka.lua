@@ -666,7 +666,7 @@ local function createKeyGui(onCorrectKey)
 		local enteredKey = tostring(keyBox.Text or ""):lower():gsub("%s+", "")
 		if enteredKey == VALID_KEY:lower() then
 			codeLine.Text = "> access_granted = true"
-			notify("Access granted. Loading...")
+			notify("Access granted. \nLoading...")
 
 			local okStroke = keyBox:FindFirstChildOfClass("UIStroke")
 			if okStroke then
@@ -771,6 +771,36 @@ if not success then
 end
 
 -- =========================================================
+-- 💾 Load Extra1 User List
+-- =========================================================
+local success1, extra1Users = pcall(function()
+    local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/exlist1")
+    local func = loadstring(code)
+    return func and func() or {}
+end)
+if not success1 then extra1Users = {} end
+
+-- =========================================================
+-- 💾 Load Extra2 User List
+-- =========================================================
+local success2, extra2Users = pcall(function()
+    local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/exlist2")
+    local func = loadstring(code)
+    return func and func() or {}
+end)
+if not success2 then extra2Users = {} end
+
+-- =========================================================
+-- 💾 Load Extra3 User List
+-- =========================================================
+local success3, extra3Users = pcall(function()
+    local code = game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/exlist3")
+    local func = loadstring(code)
+    return func and func() or {}
+end)
+if not success3 then extra3Users = {} end
+
+-- =========================================================
 -- 💾 Load Game List
 -- =========================================================
 local gameLists = {
@@ -848,6 +878,45 @@ local gameLists = {
             ["6407649031"] = {name = "No-Scope Arcade", url = "https://pastefy.app/IQHwChkh/raw"},
             ["14940775218"] = {name = "No-Scope Arcade (2021)", url = "https://pastefy.app/IQHwChkh/raw"},        
             ["70671905624144"] = {name = "Steal A Baddie", url = "https://raw.githubusercontent.com/mabdu21/kjandsaddjadbhahayenajhsjbdwa/refs/heads/main/SABaddie.lua"},
+        }
+    },
+
+	-- =========================================================
+    -- SINGLE VERSION
+    -- =========================================================
+    ExtraVersion1 = {
+        allowedGamesByCreatorId = {
+			[4999963] = {name = "Driving Empire", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/weeee.lua"},
+        },
+
+        allowedGamesByPlaceId = {
+            ["111111"] = {name = "not yet", url = "https://raw.githubusercontent.com/"},
+        }
+    },
+
+    -- =========================================================
+    -- EXTRA VERSION 
+    -- =========================================================
+    ExtraVersion2 = {
+        allowedGamesByCreatorId = {
+            [6022628] = {name = "STBB", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Bbsbsbsbsbsbbs"},
+        },
+
+        allowedGamesByPlaceId = {
+            ["11111"] = {name = "not yet", url = "https://raw.githubusercontent.com/"},
+        }
+    },
+
+    -- =========================================================
+    -- PRODUCT VERSION
+    -- =========================================================
+    ExtraVersion3 = {
+        allowedGamesByCreatorId = {
+            [33720745] = {name = "Block Spin", url = "https://raw.githubusercontent.com/mabdu21/YWVATBAUBAK-FISH-IT/refs/heads/main/Bbsbsbsbsbsbbs"},
+        },
+
+        allowedGamesByPlaceId = {
+            ["111111"] = {name = "not yet", url = "https://raw.githubusercontent.com/"},
         }
     },
 
@@ -931,33 +1000,86 @@ local FreeVersionallowedGamesByCreatorId = gameLists.FreeVersion.allowedGamesByC
 local FreeVersionallowedGamesByPlaceId = gameLists.FreeVersion.allowedGamesByPlaceId
 local allowedGamesforPremiumByCreatorId = gameLists.PremiumVersion.allowedGamesByCreatorId
 local AllowGameforPremiumByPlaceId = gameLists.PremiumVersion.allowedGamesByPlaceId
+local Extra1allowedGamesByCreatorId = gameLists.ExtraVersion1.allowedGamesByCreatorId
+local Extra1allowedGamesByPlaceId = gameLists.ExtraVersion1.allowedGamesByPlaceId
+local Extra2allowedGamesByCreatorId = gameLists.ExtraVersion2.allowedGamesByCreatorId
+local Extra2allowedGamesByPlaceId = gameLists.ExtraVersion2.allowedGamesByPlaceId
+local Extra3allowedGamesByCreatorId = gameLists.ExtraVersion3.allowedGamesByCreatorId
+local Extra3allowedGamesByPlaceId = gameLists.ExtraVersion3.allowedGamesByPlaceId
 
 -- =========================================================
 -- 🧩 Determine Game
 -- =========================================================
 local placeId = tostring(game.PlaceId)
 local creatorId = tonumber(game.CreatorId)
+
 local freeGameData = FreeVersionallowedGamesByPlaceId[placeId] or FreeVersionallowedGamesByCreatorId[creatorId]
 local premiumGameData = AllowGameforPremiumByPlaceId[placeId] or allowedGamesforPremiumByCreatorId[creatorId]
-local gameData = freeGameData or premiumGameData
+local extra1GameData = Extra1allowedGamesByPlaceId[placeId] or Extra1allowedGamesByCreatorId[creatorId]
+local extra2GameData = Extra2allowedGamesByPlaceId[placeId] or Extra2allowedGamesByCreatorId[creatorId]
+local extra3GameData = Extra3allowedGamesByPlaceId[placeId] or Extra3allowedGamesByCreatorId[creatorId]
 
-if not gameData then
-	notify("This game is not supported.")
-	task.wait(2)
+-- เช็คว่าเกมนี้อยู่ในลิสต์ใดลิสต์หนึ่งหรือไม่
+local anyGameData = freeGameData or premiumGameData or extra1GameData or extra2GameData or extra3GameData
+
+if not anyGameData then
+    notify("This game is not supported.")
+    task.wait(2)
     blur:Destroy()
-	return
+    return
 end
 
 -- =========================================================
--- 💳 Premium Check
+-- 💳 Access Check
 -- =========================================================
 local playerPremium = premiumUsers[player.Name]
-if premiumGameData and not playerPremium then
-	notify("Premium is required for this game.")
-	task.wait(5)
-	notify("⛔ Premium only game!\n📊 Get premium to run this script here.\n💳 Buy Premium: " .. DYHUBTHEBEST)
+local playerExtra1 = extra1Users[player.Name]
+local playerExtra2 = extra2Users[player.Name]
+local playerExtra3 = extra3Users[player.Name]
+
+-- เลือก gameData ตามสิทธิ์ของผู้ใช้
+-- ลำดับ: free > premium > extra1 > extra2 > extra3
+-- ❌ Premium ไม่สามารถเข้าเกม Extra ได้ (ตามที่ต้องการ)
+local gameData
+local requiredVersion
+
+if freeGameData then
+    -- เกมอยู่ใน free list → ทุกคนเข้าถึงได้
+    gameData = freeGameData
+elseif premiumGameData then
+    if playerPremium then
+        gameData = premiumGameData
+    else
+        requiredVersion = "Premium"
+    end
+elseif extra1GameData then
+    if playerExtra1 then  -- ✅ ไม่มี playerPremium
+        gameData = extra1GameData
+    else
+        requiredVersion = "Single"
+    end
+elseif extra2GameData then
+    if playerExtra2 then  -- ✅ ไม่มี playerPremium
+        gameData = extra2GameData
+    else
+        requiredVersion = "Extra"
+    end
+elseif extra3GameData then
+    if playerExtra3 then  -- ✅ ไม่มี playerPremium
+        gameData = extra3GameData
+    else
+        requiredVersion = "Product"
+    end
+end
+
+if not gameData then
+    if requiredVersion then
+        notify("This game requires " .. requiredVersion .. " access.")
+        task.wait(5)
+        notify("⛔ " .. requiredVersion .. " only game!\n📊 Get " .. requiredVersion .. " to run this script.\n💳 Buy: " .. DYHUBTHEBEST)
+    end
     blur:Destroy()
-	return
+    return
 end
 
 -- =========================================================
@@ -986,48 +1108,70 @@ local function loadScript()
 end
 
 -- =========================================================
--- ✨ Run for Premium
+-- ✨ Run for Authorized Users
 -- =========================================================
-if playerPremium then
+if playerPremium or playerExtra1 or playerExtra2 or playerExtra3 then
     blur:Destroy()
-    if playerPremium.Time == "Lifetime" or tonumber(playerPremium.Time) == -1 then
-        notify("Premium loaded. Time: Lifetime")
-    else
-        notify("Premium loaded. Days left: " .. tostring(playerPremium.Day or "Unknown"))
+    
+    -- =========================================================
+    -- 🎯 ฟังก์ชันช่วยแสดงเวลา + แจ้งเตือน Copy Key
+    -- =========================================================
+    local function showAccessAndCopy(versionName, userInfo)
+        -- คำนวณวันหมดอายุ
+        local expireText = "Unknown"
+        local isLifetime = false
+        
+        if userInfo.Time == "Lifetime" or tonumber(userInfo.Time) == -1 then
+            expireText = "Lifetime"
+            isLifetime = true
+        elseif tonumber(userInfo.Time) then
+            expireText = tostring(userInfo.Time) .. " Days"
+        elseif userInfo.Time == nil and tonumber(userInfo.Day) then
+            expireText = tostring(userInfo.Day) .. " Days"
+        end
+        
+        -- แจ้งเตือนสถานะ
+        if isLifetime then
+            notify(versionName .. " loaded. Time: Lifetime")
+        else
+            notify(versionName .. " loaded. Days left: " .. tostring(userInfo.Day or "Unknown"))
+        end
+        
+        -- ถ้ามี Key → แสดงปุ่ม Copy
+        if userInfo.Key then
+            local b = Instance.new("BindableFunction")
+            b.OnInvoke = function(x)
+                if x == "Copy" then
+                    setclipboard("Key: " .. userInfo.Key .. "\nExpire: " .. expireText)
+                end
+            end
+            
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "DYHUB",
+                Text = "Copy your saved key?",
+                Button1 = "Copy",
+                Button2 = "No",
+                Callback = b,
+                Duration = 5
+            })
+        end
     end
+    
+    -- =========================================================
+    -- 🚀 ตรวจสอบสิทธิ์และโหลด
+    -- =========================================================
+    if playerPremium then
+        showAccessAndCopy("Premium", playerPremium)
+    elseif playerExtra1 then
+        showAccessAndCopy("Single", playerExtra1)
+    elseif playerExtra2 then
+        showAccessAndCopy("Extra", playerExtra2)
+    elseif playerExtra3 then
+        showAccessAndCopy("Product", playerExtra3)
+    end
+    
     loadScript()
     
-    local list = loadstring(game:HttpGet("https://raw.githubusercontent.com/mabdu21/2askdkn21h3u21ddaa/refs/heads/main/Main/Premium/listpremium.lua"))()
-    local p = game:GetService("Players").LocalPlayer
-    local info = list[p.Name]
-    
-    if info then
-        local expireText = "Unknown"
-        
-        if info.Time == "Lifetime" then
-            expireText = "Lifetime"
-        elseif tonumber(info.Time) then
-            expireText = tostring(info.Time) .. " Days"
-        elseif info.Time == nil and tonumber(info.Day) then
-            expireText = tostring(info.Day) .. " Days"
-        end
-        
-        local b = Instance.new("BindableFunction")
-        b.OnInvoke = function(x)
-            if x == "Copy" and info.Key then
-                setclipboard("Key: " .. info.Key .. "\nExpire: " .. expireText)
-            end
-        end
-        
-        game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "DYHUB",
-            Text = "Copy your saved key?",
-            Button1 = "Copy",
-            Button2 = "No",
-            Callback = b,
-            Duration = 5
-        })
-    end
 else
     createKeyGui(loadScript)
 end
