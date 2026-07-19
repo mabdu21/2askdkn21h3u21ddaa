@@ -176,7 +176,7 @@ return {
     ["Nhatfantasyno1"] = { Tag = "truongpro_", Time = nil, Day = 14, Key = "DYHUB_boost_e2fRp2KJKBs3RpL4pHfW79gXdbgm5kPjqU" },
     ["miawrarachan"] = { Tag = "ryujinx6016", Time = nil, Day = 14, Key = "DYHUB_boost_e2fKp8KJKBs3RpL4pHfW75gXdbgm5kPjqU" },
     ["CatBlitzMaster"] = { Tag = "ob9xz", Time = nil, Day = 19, Key = "DYHUB_boost_j2fKp8WJKPe3RyL4pHfW75gRdbgm5uNjqU" },
-    ["xr99q"] = { Tag = "qr_s", Time = nil, Day = 14, Key = "DYHUB_boost_j8fKp8WJKPe3RyL4pHhW75kRdbgm5uNtqU" },
+    ["Xr99q"] = { Tag = "qr_s", Time = nil, Day = 14, Key = "DYHUB_boost_j8fKp8WJKPe3RyL4pHhW75kRdbgm5uNtqU" },
     
     -- ====================== Giveaway =============================
     ["VanoIsNotNoob"] = { Tag = "wizi993", Time = nil, Day = 7, Key = "DYHUB_g_7d_p9kGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
