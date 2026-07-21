@@ -153,7 +153,7 @@ return {
     ["szka12"] = { Tag = "hoangdatdey_.", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t9gPu5EhGFl3HpF4oUTJ54gFptEt7uHOjU" }, -- today 2026
     ["TheProGuys_1111111"] = { Tag = "h09480", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t9gPu5ErGFl3HpG4oUPJ54gFptEt7uHOjU" }, -- today 2026
     ["Gurigo234"] = { Tag = "lord_wander.more", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a9gPu5ErGFl3HpG5oUPJ54gFptEt7uHOuU" }, -- today 2026
-    ["porhappy20"] = { Tag = "lhomnhow", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a9°2gPu5ErGFl7HpG5oUPJ54gFptEt7uHDuU" }, -- today 2026
+    ["porhappy20"] = { Tag = "lhomnhow", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a9f2gPu5ErGFl7HpG5oUPJ54gFptEt7uHDuU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
