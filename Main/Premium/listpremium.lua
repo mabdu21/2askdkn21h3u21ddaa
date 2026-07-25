@@ -1,4 +1,4 @@
--- // NEW LIST | GV-391
+-- // NEW LIST | GV-392
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
@@ -154,7 +154,7 @@ return {
     ["TheProGuys_1111111"] = { Tag = "h09480", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t9gPu5ErGFl3HpG4oUPJ54gFptEt7uHOjU" }, -- today 2026
     ["Gurigo234"] = { Tag = "lord_wander.more", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a9gPu5ErGFl3HpG5oUPJ54gFptEt7uHOuU" }, -- today 2026
     ["porhappy20"] = { Tag = "lhomnhow", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_a9f2gPu5ErGFl7HpG5oUPJ54gFptEt7uHDuU" }, -- today 2026
-    
+
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-2" },
@@ -184,6 +184,7 @@ return {
     
     -- ====================== Giveaway =============================
     ["VanoIsNotNoob"] = { Tag = "wizi993", Time = nil, Day = 7, Key = "DYHUB_g_7d_p9kGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
+    ["blox_fruits68428"] = { Tag = "barrflys", Time = nil, Day = 7, Key = "DYHUB_g_7d_i9gGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
     
     -- ====================== BUY TH =============================
     ["kguorkkai"] = { Tag = "xeqes", Time = "Lifetime", Day = nil, Key = "DYHUB-D4QF3-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
