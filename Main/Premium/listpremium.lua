@@ -157,6 +157,7 @@ return {
     ["0x444z"] = { Tag = "0x444z", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e3f2gPu5ErGFl3HpG5oUPJ52gFptEt7uHDuU" }, -- today 2026
     ["Karasumashop_X1"] = { Tag = "petchy0592", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_e7f2gPu3ErGFl3HpG5oUPJ52gFptEt7uHDuU" }, -- today 2026
     ["saaofza1230"] = { Tag = "saaofza1230", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_u7f2gPe3EfGFl4HpG5oUPJ52gFptEt7uHDuU" }, -- today 2026
+    ["Great_PTGG"] = { Tag = "jd_susu", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_w7f2gPe3EfGFd4HpG5oUPJ82gFptEt7uHDuU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
@@ -175,6 +176,7 @@ return {
     ["ldbzowv1"] = { Tag = "_supachai.", Time = nil, Day = 7, Key = "DYHUB_7d_e7uRg2SYDEn3SgL4jPhW53" },
     ["Skibidi2025114"] = { Tag = "biasaaj.", Time = nil, Day = 31, Key = "DYHUB_31d_e7uRg2SYDEn3SgL4jPhW53" },
     ["abdelali3032"] = { Tag = "abdelali0173_44000", Time = nil, Day = 67, Key = "DYHUB_67d_e7uRg2SYDEn3SgL4jPhW53" },
+    ["BigX2p"] = { Tag = "xsavage_ness", Time = nil, Day = 31, Key = "DYHUB_31d_a7uRg2SYDEe3SgL4jPhW53" },
     
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
