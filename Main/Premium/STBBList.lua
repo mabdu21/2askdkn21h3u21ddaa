@@ -13,7 +13,7 @@ return {
     ["seek_good9"] = { Tag = "seek_good67", Key = "DYHUB-T3D2K-STBB" },
     ["hoanggamer200"] = { Tag = "hoang9886", Key = "DYHUB-T1A2K-STBB" },
     ["yucan2021"] = { Tag = "yucan2026", Key = "DYHUB-Z1A2K-STBB" },
-    ["adammdmmkj229"] = { Tag = "anan.tima_32322", Key = "DYHUB-Z1A5K-STBB" },
+    ["adammdmmkj229"] = { Tag = "anan.tima_32322", Key = "DYHUB_lt_ej4cb15dh7ohG2ky8nk3" },
     ["LordRed12344"] = { Tag = "devilred404", Key = "DYHUB-D1B5K-STBB" },
     ["SRCSHOP_9317292"] = { Tag = "mysteriousguy0349", Key = "DYHUB-Q3SPK-STBB" },
     ["zamilio12"] = { Tag = "zamilio.", Key = "DYHUB-D5A2K-STBB" },
