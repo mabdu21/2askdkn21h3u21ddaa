@@ -164,6 +164,7 @@ return {
     ["gamebot0005"] = { Tag = "renmaxyz", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_i7g2gPe3tfdFd4HpG3oUPJ84gFptEt5uGDuU" }, -- today 2026
     ["Tar507789"] = { Tag = "sky5252", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_i7g2gPe5tfdFd4HpG3oUTJ84gFptEt5uGDuU" }, -- today 2026
     ["Kawfangtttt"] = { Tag = "coconut_e4r", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t7g2gPe5tfdDd4HpG4oUTJ84gFptEt4uGDuU" }, -- today 2026
+    ["Kanner009988"] = { Tag = "onelove111", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_p7g2gPe5tfdDd5HpG1oUTJ84gFptEt4uGDuU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
