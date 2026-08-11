@@ -166,6 +166,7 @@ return {
     ["Kawfangtttt"] = { Tag = "coconut_e4r", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t7g2gPe5tfdDd4HpG4oUTJ84gFptEt4uGDuU" }, -- today 2026
     ["Kanner009988"] = { Tag = "onelove111", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_p7g2gPe5tfdDd5HpG1oUTJ84gFptEt4uGDuU" }, -- today 2026
     ["Peak_UA3899"] = { Tag = "erfsonalanl2", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_y7g2gPe5tfdDd5RpG1oUTJ84gJptEt4uGDuU" }, -- today 2026
+    ["Musangaiw"] = { Tag = "apirak777", Time = "Lifetime", Day = nil, Key = "DYHUB_sh_y7g2gPe5tfdDd5RpG1oUTJ84gJptEt4uGDuU" }, -- today 2026
     
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
