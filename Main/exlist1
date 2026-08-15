@@ -3,5 +3,5 @@
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
-    ["Kazorebere231"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
+    ["xc23l"] = { Tag = "quietflow9", Time = nil, Day = 3, Key = "DYHUB_3d_jahusns" },
 }
