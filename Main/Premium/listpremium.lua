@@ -12,6 +12,8 @@ return {
     ["Today_0029"] = { Tag = "Sandy", Time = "Lifetime", Day = nil, Key = "DYHUB-SAN" },
     ["top_two7"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
     ["top_two9"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
+    ["333333385"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
+    ["handlecdn09"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
 
     -- ====================== Buyer ================================
     ["kagefym"] = { Tag = "itspect", Time = "Lifetime", Day = nil, Key = "DYHUB-ZXCVB-NMLKJ-HGFDS-APOIU-YTREW-LIFETIME" },
