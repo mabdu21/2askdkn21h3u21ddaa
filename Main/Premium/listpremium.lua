@@ -1,21 +1,35 @@
--- // NEW LIST | GV-412
+-- // NEW LIST | GV-419
 return {
     -- ====================== Admin ================================
     ["Yolmar_43"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
     ["Kazorebere231"] = { Tag = "dyumraisgoodguy", Time = nil, Day = 99999999, Key = "DYHUB-OWNER" },
-    ["55555555555555555455"] = { Tag = "oszq_", Time = nil, Day = 111, Key = "DYHUB-nigga" },
+    ["55555555555555555455"] = { Tag = "oszq_", Time = nil, Day = 111, Key = "DYHUB-player" },
     ["wardenvacillation"] = { Tag = "universal", Time = nil, Day = 500, Key = "DYHUB_sexski4bangyoungjyounggup6ick" },
-    ["handlecdn16"] = { Tag = "oszq_", Time = nil, Day = 111, Key = "nigga" },
+    ["handlecdn16"] = { Tag = "oszq_", Time = nil, Day = 111, Key = "player" },
     ["Go_Ertadx4"] = { Tag = "Free", Time = "Lifetime", Day = nil, Key = "DYHUB-FREE-UNLIMITED" },
     ["Hanehxo91"] = { Tag = "Free", Time = "Lifetime", Day = nil, Key = "DYHUB-FREE-UNLIMITED" },
     ["XxToxicProxX200550"] = { Tag = "nano_1010.", Time = "Lifetime", Day = nil, Key = "DYHUB-NANO-LIFETIME" },
     ["Today_0029"] = { Tag = "Sandy", Time = "Lifetime", Day = nil, Key = "DYHUB-SAN" },
     ["top_two7"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
     ["top_two9"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
-    ["333333385"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
-    ["handlecdn09"] = { Tag = "idk", Time = "Lifetime", Day = nil, Key = "DYHUB-SANs" },
+    ["laofpj"] = { Tag = "laofpj", Time = "Lifetime", Day = nil, Key = "STBB KAITUN" },
+    ["SUB_NOOBIE"] = { Tag = "SUB_NOOBIE", Time = "Lifetime", Day = nil, Key = "STBB KAITUN" },
+    ["333333385"] = { Tag = "nigga", Time = "Lifetime", Day = nil, Key = "key" },
+    ["handlecdn09"] = { Tag = "nigga", Time = "Lifetime", Day = nil, Key = "key" },
 
     -- ====================== Buyer ================================
+    ["EasyBKK_449"] = { Tag = "kfcgg55", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t64fu2RuFFy3IpL2jRtE44gFKgRf4rVOPU" },
+    ["stormyknightthunder2"] = { Tag = "piadocas2020", Time = "Lifetime", Day = nil, Key = "DYHUB-F4Q2I-KEYBOOSTER" },
+    ["2GCP"] = { Tag = "kunsee", Time = "Lifetime", Day = nil, Key = "DYHUB_3d_j64fu2RuxFy3IpL2jRgE44gFKgRf4rVOPU" },
+    ["Cookiebomkkj"] = { Tag = "vitu0253", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_j64fu2RuxFy3IpL2jRgE44gFKgRf4rVOPU" },
+    ["Ariel124z"] = { Tag = "elpapumisteriosoa", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_f64Gu2RuiFy3IpL2jRgJ44gFKgRt4rVOPU" },
+    ["donutpavwich8"] = { Tag = "adisorn55", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_f62Gu2RtiFy3IpL2jRgJ54gFKgRt4rVOPU" },
+    ["Ikkyu_2007"] = { Tag = "ikkyulnwzaa", Time = "Lifetime", Day = nil, Key = "DYHUB_SH_f62Gu2RtiFy3IpL2jRgJ54gFKgRt4rVOPU" },
+    ["kirachaiz"] = { Tag = "jerry869", Time = "Lifetime", Day = nil, Key = "DYHUB_SH_f6uGu2RtiFy3IpL2jRIJ54gFKgRt4rVOPU" },
+    ["Cool_girlin12sec"] = { Tag = "dkfkkaj", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t6uGu2EtiFy3IpL4jRhJ54gFjgRt4rVOjU" },
+    ["KOPCHEESE12"] = { Tag = "piggarettes", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_t8uGu2EtiFy3IpL4jRhR54gFjgRt4rSOjU" },
+    ["shwer009"] = { Tag = "hellobrother_3412", Time = "Lifetime", Day = nil, Key = "DYHUB_SH_t6uGu2EtiFy3IpL4jRhJ54gFjgRt4rVOjU" },
+    ["kakenkaze"] = { Tag = "hara_hoshino", Time = "Lifetime", Day = nil, Key = "DYHUB_STBB_p6uGu2EtiFy3IpL4jUhJ54gFygRt4rVOjU" },
     ["kagefym"] = { Tag = "itspect", Time = "Lifetime", Day = nil, Key = "DYHUB-ZXCVB-NMLKJ-HGFDS-APOIU-YTREW-LIFETIME" },
     ["Yavib_Aga"] = { Tag = "yavib", Time = "Lifetime", Day = nil, Key = "DYHUB-8JY5A-Q3RTW-IK7OL-FRJL2-IPL7W-LIFETIME" },
     ["YMH012"] = { Tag = "idkkkkk0813", Time = "Lifetime", Day = nil, Key = "DYHUB-QWERT-YUIOP-ASDFG-HJKLZ-XCVBN-LIFETIME" },
@@ -25,7 +39,7 @@ return {
     ["DjScrew65"] = { Tag = "pizzaman7654", Time = "Lifetime", Day = nil, Key = "DYHUB-HU6SH-9KSN1-L8SHA-YTW5S-NA84A-LIFETIME" },
     ["CinderellaPT"] = { Tag = "_geisha", Time = "Lifetime", Day = nil, Key = "DYHUB-HYWU8-P9AJ3-M7LA9-0UWN3-4HS67-LIFETIME" },
     ["Masayoshi88"] = { Tag = "musashi_0940", Time = "Lifetime", Day = nil, Key = "DYHUB-Pauljames12300" },
-    ["Knigbryce"] = { Tag = "meboop90", Time = "Lifetime", Day = nil, Key = "DYHUB-JUYV2-A7OIQ-MJ42P-L8KQW-GD4A3-LIFETIME" },
+    ["Dnoo039"] = { Tag = "meboop90", Time = "Lifetime", Day = nil, Key = "DYHUB-JUYV2-A7OIQ-MJ42P-L8KQW-GD4A3-LIFETIME" },
     ["NeoMitsui"] = { Tag = "silent_erro", Time = "Lifetime", Day = nil, Key = "DYHUB-HUIH6-R3DX6-L9PH5-EW2QD-8H54D-LIFETIME" },
     ["Khalil4258"] = { Tag = "kyoromi_.", Time = "Lifetime", Day = nil, Key = "DYHUB-GS6AV-HY5AF-PKAHE-I7AYW-P9QY5-LIFETIME" },
     ["soytteeo"] = { Tag = "pilot110737", Time = "Lifetime", Day = nil, Key = "DYHUB-P8A6G-LA6HD-NAH7A-N6H7G-T7HB1-LIFETIME" },
@@ -43,7 +57,7 @@ return {
     ["nosj3457"] = { Tag = "nonosi12", Time = "Lifetime", Day = nil, Key = "DYHUB-P7R5Q-S3U2T-H6TQ4-C4T6Q-B6A4C-LIFETIME" },
     ["douyin00362"] = { Tag = "bunnyphotos", Time = "Lifetime", Day = nil, Key = "DYHUB-L8JA4-S3U2T-H6TQ4-C4T6Q-S4QT3-LIFETIME" },
     ["Pokeandy42_o"] = { Tag = "andydbandy", Time = "Lifetime", Day = nil, Key = "DYHUB-L8JA4-S3U2T-H6TQ4-C4T6Q-S4QT3-LIFETIME" },
-    ["berliando25"] = { Tag = "sayasukaeskrim", Time = "Lifetime", Day = nil, Key = "DYHUB-D5GA3-X3DQ2-N7B4A-L9MY5-V6BR3-LIFETIME" },
+    ["sayaxilreb666"] = { Tag = "sayasukaeskrim", Time = "Lifetime", Day = nil, Key = "DYHUB-D5GA3-X3DQ2-N7B4A-L9MY5-V6BR3-LIFETIME" },
     ["klnd40glsd60"] = { Tag = "ekngchaa555555", Time = "Lifetime", Day = nil, Key = "DYHUB-JMY7B-BP5VA-KA7NQ-CH4CP-BX4FQ-LIFETIME" },
     ["Goe9415"] = { Tag = "herysas96_09914", Time = "Lifetime", Day = nil, Key = "DYHUB-KAH6F-MU7A1-L91AD-BG3H9-P9CA3-LIFETIME" },
     ["Zeyss404"] = { Tag = "itsme_joo", Time = "Lifetime", Day = nil, Key = "DYHUB-P9CA3-LAJ29-EQ4TS-BA7NQ-OAI8F-LIFETIME" },
@@ -131,7 +145,7 @@ return {
     ["bruh_proxd799"] = { Tag = "holas0467", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_p7mZa2KxVn9LpT4sHrW8cYdFjB6AeNqU" }, -- today 2026
     ["WeAre_Top1"] = { Tag = "devxv9", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_n7mZa2KFxVn9LpT4sHHW8cYdFjB6AeNqU" }, -- today 2026
     ["NEWGOD_2727"] = { Tag = "newgod_2727", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_x7mZa2KFKVn9LpJ4sHHW8cPdFjB6ABNqU" }, -- today 2026
-    ["crfe"] = { Tag = "96ln", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_l7pZa2KFKVn8LpJ4sHHW8cPdFfB6ABNqU" }, -- today 2026
+    ["04650"] = { Tag = "96ln", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_l7pZa2KFKVn8LpJ4sHHW8cPdFfB6ABNqU" }, -- today 2026
     ["buonoloso5"] = { Tag = "sinaloaaaa", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_l7pZk2KFKVn8LpJ4sHHW83cPdbfB6GBNqU" }, -- today 2026
     ["MegaZero_OneForAll"] = { Tag = "trynagetback2u", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_k7pZk2KFKBn8LpJ4sHpW73cPdbfm6GBjqU" }, -- today 2026
     ["ii_2Hx"] = { Tag = "thenewnoncoming", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_v9pZn2KFKBn8ppJ4sHpW73cPvbfm6GBlqU" }, -- today 2026
@@ -170,7 +184,10 @@ return {
     ["Peak_UA3899"] = { Tag = "erfsonalanl2", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_y7g2gPe5tfdDd5RpG1oUTJ84gJptEt4uGDuU" }, -- today 2026
     ["Musangaiw"] = { Tag = "apirak777", Time = "Lifetime", Day = nil, Key = "DYHUB_sh_y7g2gPe5tfdDd5RpG1oUTJ84gJptEt4uGDuU" }, -- today 2026
     ["popza_98"] = { Tag = "f1pop", Time = "Lifetime", Day = nil, Key = "DYHUB_lt_i4g2gPe5tfeDd5RpG5oUTt84gJptEt4uGDuU" }, -- today 2026
-    
+    ["lnwzahouse_007"] = { Tag = "kannn_nnn", Time = "Lifetime", Day = nil, Key = "DYHUB_sh_i4g5gPe5tfeDd5RpY5oUTt84gJptEt4uGDuU" }, -- today 2026
+    ["EthanCatts0407"] = { Tag = "narukami_origin", Time = "Lifetime", Day = nil, Key = "DYHUB_sh_i4g5gPe5tfeDd5RhY5oUTt84gJptEt2uGDuU" }, -- today 2026
+    ["puchisoto321"] = { Tag = "fantom_110", Time = "Lifetime", Day = nil, Key = "DYHUB_stbb_i4g5gPde5tfeDd5RhY5oUTt84agJptEt2uGDuU" }, -- today 2026
+
     -- ====================== YOUTUBE =============================
     ["Jzyyyyyx"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER" },
     ["growwltokens1"] = { Tag = "growwltoken", Time = "Lifetime", Day = nil, Key = "DYHUB-SINISTER-2" },
@@ -181,7 +198,7 @@ return {
     -- ====================== Buyer (Trial / Short-term) =============================
     ["DAFI_119"] = { Tag = "dafirly2605", Time = nil, Day = 7, Key = "DYHUB_7d_p9kGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
     ["st4rr0259"] = { Tag = "wralthrblx", Time = nil, Day = 7, Key = "DYHUB_7d_p9kGa5KJKVj9Lpn4sJHW8cpdFLB6ABNqU" },
-    ["VtAcak8"] = { Tag = "yuki_muhaha", Time = nil, Day = 150, Key = "DYHUB_150d_e4kRp2MFRBn3SpLfmHhW53" },
+    ["ZeroRB_0"] = { Tag = "yuki_muhaha", Time = nil, Day = 150, Key = "DYHUB_150d_e4kRp2MFRBn3SpLfmHhW53" },
     ["Katakuri3797"] = { Tag = "hoilopobk", Time = nil, Day = 3, Key = "DYHUB_3d_e4kRp2MFDBn3SpL4mHhW53" },
     ["kaastijn"] = { Tag = "smolpp_.", Time = nil, Day = 3, Key = "DYHUB_3d_e9kRp2MYDBn3SpL4jHhU53" },
     ["khian123rc454"] = { Tag = "indraa_65955", Time = nil, Day = 3, Key = "DYHUB_3d_e7uRp2MYDTn3SgL4jPhU53" },
@@ -193,7 +210,7 @@ return {
     
     -- ====================== Booster ==============================
     ["NoraJourneys"] = { Tag = "luzzynobigl", Time = nil, Day = 14, Key = "DYHUB-2GVA5-BOOSTER" },
-    ["rotibakar_nyak"] = { Tag = "namillrara", Time = nil, Day = 15, Key = "DYHUB-H4VF2-BOOSTER" },
+    ["rotibakar_nyak"] = { Tag = "namillrara", Time = nil, Day = 20, Key = "DYHUB-H4VF2-BOOSTER" },
     ["Nhatfantasyno1"] = { Tag = "truongpro_", Time = nil, Day = 14, Key = "DYHUB_boost_e2fRp2KJKBs3RpL4pHfW79gXdbgm5kPjqU" },
     ["jiksawww10"] = { Tag = "ryujinx6016", Time = nil, Day = 14, Key = "DYHUB_boost_e2fKp8KJKBs3RpL4pHfW75gXdbgm5kPjqU" },
     ["CatBlitzMaster"] = { Tag = "ob9xz", Time = nil, Day = 19, Key = "DYHUB_boost_j2fKp8WJKPe3RyL4pHfW75gRdbgm5uNjqU" },
@@ -206,7 +223,7 @@ return {
     
     -- ====================== BUY TH =============================
     ["kguorkkai"] = { Tag = "xeqes", Time = "Lifetime", Day = nil, Key = "DYHUB-D4QF3-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
-    ["GODxGSP"] = { Tag = "k7nzz_", Time = "Lifetime", Day = nil, Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
+    ["Mama_Crysss"] = { Tag = "k7nzz_", Time = "Lifetime", Day = nil, Key = "DYHUB-F4VA5-TQ6HL-LQ8V4-BA5GQ-LIFETIME" },
     ["McdonaldCassidy04"] = { Tag = "Hellomn", Time = "Lifetime", Day = nil, Key = "DYHUB-LQ8V4-BBN" },
     ["tfupy"] = { Tag = "natemuhehe", Time = "Lifetime", Day = nil, Key = "DYHUB-LQ8V4-TP6HL-FW8V4-BA5GQ-LIFETIME" },
     ["Ultra_Joke"] = { Tag = "kpzztv024674", Time = "Lifetime", Day = nil, Key = "DYHUB-NQ8F3-TP6HL-FW8V4-BA5GQ-LIFETIME" },
